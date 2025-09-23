@@ -137,3 +137,8 @@ This consolidated guide harmonizes multiple calculation approaches into a unifie
 ## Glossary
 
 - **CEMS**: Continuous Emissions Monitoring System
+
+
+## Glossary
+
+- **CEMS**: Continuous Emissions Monitoring System
