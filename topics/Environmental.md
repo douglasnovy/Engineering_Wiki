@@ -13,131 +13,139 @@ Comprehensive Guide to Ammonia Slip Measurement and Calculation Methods for CEMS
 ---
 
 ### Overview
-Ammonia slip refers to the unreacted ammonia (NH₃) that passes through a Selective Catalytic Reduction (SCR) system into the exhaust stack. Accurate measurement and calculation of ammonia slip is critical for environmental compliance, process optimization, and regulatory reporting under EPA, state, and local air quality management district (AQMD) programs. This guide consolidates multiple engineering white papers and calculation sheets into a unified reference for Continuous Emissions Monitoring Systems (CEMS) operators, engineers, and compliance specialists.
+Ammonia slip refers to the amount of unreacted ammonia (NH₃) that passes through a Selective Catalytic Reduction (SCR) system into the exhaust stack. Accurate measurement and calculation of ammonia slip are critical for environmental compliance, operational efficiency, and meeting permit limits. This guide consolidates multiple engineering white papers and calculation sheets into a unified reference, covering measurement techniques, calculation formulas, certification considerations, and implementation in Continuous Emissions Monitoring Systems (CEMS).
 
 ---
 
 ### Key Concepts
 
 **Ammonia Slip Definition**  
-Ammonia slip is the difference between the ammonia injected into the SCR and the ammonia that reacts with NOₓ in the catalyst, expressed typically in ppmv at a reference oxygen concentration (commonly 15% O₂).
+Ammonia slip is the difference between the ammonia injected into the SCR and the ammonia that reacts with NOₓ in the catalyst, expressed typically in parts per million by volume (ppmv) corrected to a reference oxygen concentration (often 15% O₂).
 
-**SCR Inlet/Outlet NOₓ Method**  
-A widely used approach involves continuous measurement of NOₓ at both the SCR inlet and outlet. The reduction in NOₓ is assumed to correspond to the amount of NH₃ reacted, based on the 1:1 molar reaction ratio.
+**SCR Chemistry**  
+- NOₓ and NH₃ react on a 1:1 molar basis in the SCR.
+- NH₃ slip = NH₃ fed – (NOₓ_in – NOₓ_out) in molar terms.
 
-**Mass Flow and Oxygen Correction**  
-Accurate slip calculation requires conversion of measured concentrations to molar or mass flow rates, correction for stack oxygen content, and application of site-specific correction factors derived from compliance testing.
+**Measurement Approaches**  
+1. **Inlet/Outlet Differential NOₓ Method**  
+   - Requires continuous measurement of NOₓ upstream and downstream of the SCR.
+   - Uses ammonia injection rate and stack flow to calculate slip.
+2. **Direct NH₃ Monitoring**  
+   - Limited by lack of standardized certification methods and calibration gases at low levels.
+3. **Mass Flow Calculations**  
+   - Converts measured concentrations and flow rates to molar or mass emission rates.
 
-**Regulatory Context**  
-While there are no universally adopted certification methodologies for continuous NH₃ monitoring, many facilities use calculated slip values for compliance demonstration, often verified against periodic stack testing.
+**Oxygen Correction**  
+Most ammonia slip values are corrected to a reference oxygen level (e.g., 15% O₂) to standardize readings across varying combustion conditions.
 
 ---
 
 ### Technical Details
 
-#### Core Calculation Formulas
+**General Formula (Mass Flow Molar Values)**  
+From [Document 2], [Document 5], [Document 7], [Document 9]:  
+\[
+\text{NH₃ slip} = \frac{\text{NH₃ Injection Rate (lb/hr)}}{17} - \left( \frac{\text{Dry Gas Flow Rate (lb/hr)}}{29} \times \frac{\text{NOₓ_in - NOₓ_out}}{10^6} \right)
+\]
+Optionally multiplied by:
+\[
+\left( \frac{10^6}{\text{Dry Gas Flow Rate (lb/hr)}/29} \right) \times D \times \frac{20.9 - CF}{20.9 - O₂}
+\]
+Where:
+- **A** = NH₃ injection rate in lb/hr ÷ 17 lb/lb-mol (× %NH₃ if aqueous solution)
+- **B** = Dry exhaust gas flow rate in lb/hr ÷ 29 lb/lb-mol (or scfh ÷ 385.5 scf/lbmol)
+- **C** = Change in NOₓ concentration (ppmv @ reference O₂)
+- **D** = Correction factor (derived annually from compliance testing)
+- **CF** = O₂ correction factor
+- **O₂** = Measured exhaust stack O₂ concentration
 
-1. **Basic Inlet/Outlet NOₓ Method** ([Doc 2], [Doc 5], [Doc 7])  
-   \[
-   \text{NH₃ Slip} = \text{NH₃ Fed} - (\text{NOₓ}_{\text{in}} - \text{NOₓ}_{\text{out}})
-   \]
-   Where NH₃ Fed is in lb/hr converted to lb-moles/hr using MW = 17, NOₓ values are in ppmv @ 15% O₂.
+**Dry Gas Flow Calculation**  
+From [Document 2], [Document 5], [Document 12]:  
+\[
+\text{Dry Gas Flow Rate} = (\text{Fuel Flow} \times \text{Fuel GCV} \times F\text{-Factor}) \times \frac{20.9}{20.9 - O₂}
+\]
+- Fuel GCV: Gross calorific value
+- F-Factor: Fuel-specific constant (e.g., 8710 dscf/MMBtu for gas)
 
-2. **Mass Flow-Based Formula** ([Doc 2], [Doc 3], [Doc 6], [Doc 7], [Doc 8])  
-   \[
-   \text{As} = \left[ A - \frac{B \cdot C}{10^6} \right] \cdot \left( \frac{10^6}{B} \cdot D \right) \cdot \left( \frac{20.9 - CF}{20.9 - O₂} \right)
-   \]
-   - **A**: NH₃ injection rate (lb/hr) ÷ 17 (lb/lb-mol) × %NH₃ in solution  
-   - **B**: Dry exhaust gas flow rate (lb/hr ÷ 29 lb/lb-mol) or (scfh ÷ 385.5 scf/lb-mol)  
-   - **C**: ΔNOₓ across catalyst (ppmv @ reference O₂)  
-   - **D**: Annual correction factor from compliance testing  
-   - **CF**: O₂ correction factor  
-   - **O₂**: Measured stack oxygen (%)
-
-3. **Dry Gas Flow Calculation** ([Doc 2], [Doc 5], [Doc 8], [Doc 12])  
-   Using fuel flow and F-factor:
-   \[
-   \text{Dry Gas Flow} = (\text{Fuel Flow} \times \text{Fuel GCV} \times F_{\text{factor}}) \times \frac{20.9}{20.9 - O₂}
-   \]
-   F-factor units: dscf/MMBtu (e.g., 8710 for gas, 9190 for oil).
-
-4. **TCEQ Equation Variant** ([Doc 8])  
-   \[
-   \text{NH₃ @ 15\% O₂} = \left[ \left( \frac{a}{b} \times 10^6 \right) - c \right] \times d \times \frac{5.9}{20.9 - O₂}
-   \]
-   Where *a*, *b*, *c*, *d* are as defined above.
-
-5. **Molar Ratio Method** ([Doc 9])  
-   \[
-   \text{NH₃ slip, ppm@15\%O₂} = \frac{\text{NH₃ slip lb-moles/hr} \times 10^6 \times CF \times \text{O₂ correction}}{\text{Total exhaust flow lb-moles/hr}}
-   \]
-   CF may be derived from quadratic best-fit to test data.
-
-#### Correction Factor (D Factor)  
-Derived annually during compliance testing by comparing CEMS-calculated slip to reference method measurements:
+**Correction Factor (D)**  
+From [Document 7]:  
 \[
 D = \frac{\text{RM avg}}{\text{CEMS avg}}
 \]
-RM avg: Average of three 20+ minute runs from stack test; CEMS avg: Corresponding DAHS values.
+- RM avg: Average of three Reference Method NH₃ ppm runs
+- CEMS avg: Average of corresponding CEMS NH₃ ppm values
 
-#### NH₃ Tons Conversion ([Doc 10], [Doc 11])  
-To convert ppmv slip to tons/year:
-1. Calculate lb-moles/hr from stack flow and molecular weight.
-2. Convert to lb/hr using MW(NH₃) = 17.03.
-3. Convert to tons/year:
+**Alternate Equations**  
+From [Document 8] (TCEQ §117.8130):  
 \[
-\text{NH₃TONS} = \frac{\text{NH₃ lb/hr} \times \text{Operating Hours/year}}{2000}
+\text{NH₃ @ 15% O₂} = \left[ \left( \frac{a}{b} \times 10^6 \right) - c \right] \times d \times \frac{5.9}{20.9 - O₂}
 \]
+Where:
+- a = NH₃ injection rate ÷ 17 lb/lb-mol
+- b = Dry exhaust flow rate ÷ molecular weight of exhaust gas
+- c = ΔNOₓ ppm
+- d = Correction factor
+
+**NH₃ Tons Conversion**  
+From [Document 10], [Document 11]:  
+\[
+\text{NH₃ Tons/year} = \frac{\text{NH₃ lb/hr} \times \text{Operating Hours/year}}{2000}
+\]
+NH₃ lb/hr = (NH₃ ppm × Stack Flow scfh × MW_NH₃) ÷ (10⁶ × Ideal Gas Constant)
 
 ---
 
 ### Best Practices
 
-- **Continuous Inlet/Outlet NOₓ Monitoring**: Ensure both analyzers are calibrated and maintained to minimize measurement error.
-- **Accurate Fuel Flow and GCV Measurement**: Use site-specific fuel heating values and F-factors for precise dry gas flow calculation.
-- **Oxygen Correction**: Always correct slip values to the regulatory reference oxygen concentration.
-- **Annual Correction Factor Update**: Perform compliance stack testing annually to update D factor and maintain CEMS accuracy.
-- **Data Precision**: Avoid rounding intermediate values, especially O₂ measurements, to preserve calculation accuracy.
-- **Documentation**: Maintain detailed records of calculation parameters, correction factors, and compliance test results for audit purposes.
-- **Regulatory Awareness**: Stay informed about evolving state-specific requirements for ammonia slip reporting and substitution methods.
+1. **Measurement Setup**  
+   - Install and calibrate both inlet and outlet NOₓ analyzers for continuous measurement.
+   - Ensure stack O₂ measurement is precise and unrounded for calculations.
+
+2. **Data Quality**  
+   - Derive correction factor (D) annually during compliance testing.
+   - Use full precision for O₂ values to avoid rounding errors.
+
+3. **Formula Selection**  
+   - Choose calculation method based on regulatory requirements (EPA, SCAQMD, TCEQ).
+   - Apply oxygen correction consistently to standardize results.
+
+4. **CEMS Integration**  
+   - Configure CEMS controller channels for NH₃ injection, molar conversion, flow rate, and ΔNOₓ.
+   - Implement equations directly in DAHS for automated compliance reporting.
+
+5. **Certification Considerations**  
+   - Recognize limitations in NH₃ calibration gas availability.
+   - Document methodology and assumptions for regulatory review.
+
+6. **Operational Adjustments**  
+   - Monitor ammonia slip trends to optimize SCR performance and minimize reagent waste.
+   - Adjust injection rates based on real-time slip data to balance NOₓ reduction and NH₃ emissions.
 
 ---
 
 ### Source Attribution
 
-- **[Document 2]**: Introduced inlet/outlet NOₓ method, mass flow molar calculation, and dry gas flow formula; discussed lack of standardized certification methods.
-- **[Document 3]**: Provided detailed CEMS controller channel setup for slip calculation, oxygen correction, and correction factor derivation.
-- **[Document 5]**: Empire NH₃ slip calculation example with specific plant data and formula variations.
-- **[Document 6]**: ESC DAS implementation details, inclusion of %NH₃ in solution, and scfh-based flow rate conversion.
-- **[Document 7]**: Empire Power Units 11 & 12 procedure, D factor derivation, and compliance demonstration steps.
-- **[Document 8]**: TCEQ equation variant and multiple plant-specific calculation examples.
-- **[Document 9]**: SV Power molar ratio method, quadratic CF derivation, and detailed reacted NOₓ calculation.
-- **[Document 10]**: NH₃ tons/year conversion for oil and gas units, ideal gas conversion factor.
-- **[Document 11]**: Alternate NH₃ tons/year calculation with step-by-step breakdown.
-- **[Document 12]**: EPA Method 2 and Method 19 exhaust flow calculation procedures relevant to dry gas flow determination.
+- **[Document 2] Ammonia Slip Calculation.pdf**: Provided inlet/outlet NOₓ method, mass flow molar formula, stack flow calculation, and certification limitations.
+- **[Document 3] Ammonia Slip Calculation.xlsx**: Detailed CEMS controller channel setup and oxygen correction formula.
+- **[Document 5] Empire NH₃ Slip.xlsx**: Example calculation with actual plant data and dry gas flow derivation.
+- **[Document 6] ESC Ammonia Slip Calculation.xls**: Variation using scfh and 385.5 scf/lbmol, inclusion of %NH₃ in solution.
+- **[Document 7] NH₃ Slip Calculation Approach.pdf**: Defined correction factor derivation and compliance procedure for Empire Power Units.
+- **[Document 8] NH₃ Slip Calculations.xls**: TCEQ equation variant and example plant calculations.
+- **[Document 9] NH₃ SLIP Document_edit.pdf**: Molar ratio approach, correction factor quadratic equation, and detailed reacted NOₓ calculation.
+- **[Document 10] NH₃ TONS from NH₃ PPM.xlsx**: Conversion from ppm to tons/year for gas and oil units.
+- **[Document 11] NH₃ TONS from NH₃ PPM.xlsx**: Step-by-step and single-equation conversion for NH₃ tons/year.
+- **[Document 12] Stack Testing Equations.pdf**: EPA Method 2 and Method 19 exhaust flow calculation methods.
 
 ---
 
-This consolidated guide provides a comprehensive technical reference for ammonia slip calculation methods, ensuring consistent, accurate, and compliant reporting across diverse regulatory environments.
+This consolidated guide provides a complete technical and procedural framework for ammonia slip measurement and calculation, enabling consistent compliance reporting and operational optimization across diverse regulatory environments.
 
-## Glossary
+## See Also
 
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
+- [[Calibration]] - **Direct NH₃ Monitoring**  
+   - Limited by lack o...
+- [[Calibration]] - **Certification Considerations**  
+   - Recognize ...
 
 
 ## Glossary
