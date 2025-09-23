@@ -128,3 +128,8 @@ XScript operates as a specialized ProcessNow Task with enhanced capabilities:
 ---
 
 *This consolidated guide is automatically generated from multiple XScript white papers and documentation sources.*
+
+
+## Glossary
+
+- **CEMS**: Continuous Emissions Monitoring System

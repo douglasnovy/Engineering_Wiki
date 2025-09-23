@@ -1,7 +1,7 @@
 # Consolidation Review Report
 
-**Generated:** 2025-09-23T16:07:07.454092
-**Documents Reviewed:** 8
+**Generated:** 2025-09-23T16:49:36.526550
+**Documents Reviewed:** 12
 **Total Conflicts:** 0
 **High Priority Items:** 0
 
@@ -46,7 +46,7 @@
 *No conflicts detected.*
 
 
-### ℹ️ General_Documents
+### ℹ️ FleetVision_Remote_Monitoring
 **Priority:** .1f
 **Reason:** No significant issues detected
 
@@ -60,7 +60,35 @@
 *No conflicts detected.*
 
 
+### ℹ️ PADEP_Regulatory_Compliance
+**Priority:** .1f
+**Reason:** No significant issues detected
+
+*No conflicts detected.*
+
+
+### ℹ️ Server_Migration_Operations
+**Priority:** .1f
+**Reason:** No significant issues detected
+
+*No conflicts detected.*
+
+
+### ℹ️ StackVision_CEMS_Software
+**Priority:** .1f
+**Reason:** No significant issues detected
+
+*No conflicts detected.*
+
+
 ### ℹ️ System_Architecture
+**Priority:** .1f
+**Reason:** No significant issues detected
+
+*No conflicts detected.*
+
+
+### ℹ️ XScript
 **Priority:** .1f
 **Reason:** No significant issues detected
 
