@@ -1,16 +1,103 @@
 ---
 title: Engineering Tools Index
-description: Index of available engineering tools and spreadsheets
+description: User-friendly index of engineering tools with descriptive names and categories
 ---
 
-# Engineering Tools and Spreadsheets
+# 🛠️ Engineering Tools & Spreadsheets
 
-This directory contains engineering tools, calculation spreadsheets, templates, and other resources extracted from engineering documents.
+**Welcome to the Engineering Tools Library!** This collection contains calculation spreadsheets, templates, and working tools extracted from engineering documents. All tools are organized by category with clear descriptions to help you find exactly what you need.
 
-## Available Tools
+## 📂 Tool Categories
 
-- **[engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm](engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm)** (0.79 MB)
-- **[engineering_white_papers_WhitePapers_Alarms_8864DASCommunicationAlarmxlsm_62dbf367.xlsm](engineering_white_papers_WhitePapers_Alarms_8864DASCommunicationAlarmxlsm_62dbf367.xlsm)** (0.79 MB)
+### 🔬 **Calculations & Analysis**
+| Tool Name | Description | File | Size |
+|-----------|-------------|------|------|
+| **Ammonia Slip Calculator (ESC Method)** | Calculate ammonia slip with oxygen correction for compliance testing | [ESC_Ammonia_Slip_Calculation.xls](engineering_white_papers_WhitePapers_AmmoniaSlip_ESCAmmoniaSlipCalculationxls_cbc4be89.xls) | 0.04 MB |
+| **Ammonia Slip Calculator (TCEQ)** | TCEQ-compliant ammonia slip calculations with examples | [NH3_slip_calculations.xls](engineering_white_papers_WhitePapers_AmmoniaSlip_NH3slipcalculationsxls_692ae2a3.xls) | 0.10 MB |
+| **Ammonia Slip Calculator (Empire)** | Specialized for slurry injection systems | [Empire_NH3slip.xlsx](engineering_white_papers_WhitePapers_AmmoniaSlip_EmpireNH3slipxlsx_7399a0a4.xlsx) | 0.02 MB |
+| **NOx Emissions Calculator** | NOx concentration and emission rate calculations | [NOXCorr_2004.xls](engineering_white_papers_WhitePapers_SampleTests_NOXCorr_2004xls_1a0b87f6.xls) | 0.08 MB |
+| **Moisture Calculations** | Comprehensive moisture analysis tools | [MoistureCalculations.xlsx](engineering_white_papers_WhitePapers_Moisture_MoistureCalculationsxlsx_b389940b.xlsx) | 0.19 MB |
+| **Ratio Evaluation Tool** | Evaluate and analyze measurement ratios | [RatioEvaluation.xlsx](engineering_white_papers_WhitePapers_RatioEvaluation_RatioEvaluationxlsx_131ef366.xlsx) | 0.03 MB |
+
+### 📊 **Control Charts & Monitoring**
+| Tool Name | Description | File | Size |
+|-----------|-------------|------|------|
+| **CO2 Control Chart Template** | Statistical process control for CO2 monitoring | [Lowman_CS4_CO2_Control_Chart.xls](engineering_white_papers_WhitePapers_ControlCharts_Lowman_CS4_CO2_Control_Chartxls_4cd21ddb.xls) | 0.15 MB |
+| **Communication Alarm Configuration** | 8864 DAS communication alarm setup | [8864DASCommunicationAlarm.xlsm](engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm) | 0.79 MB |
+
+### ⚙️ **System Configuration**
+| Tool Name | Description | File | Size |
+|-----------|-------------|------|------|
+| **Dual Range Analog Output Config** | Configure dual-range analog outputs | [DualRangeAnalogOuputExample.xlsm](engineering_white_papers_WhitePapers_DualRangeAnalogOutputs_DualRangeAnalogOuputExamplexlsm_d35a5a7b.xlsm) | 0.65 MB |
+| **PADEP Process Guide** | Pennsylvania DEP compliance processes | [PaDEPProcessGuide.xlsx](engineering_white_papers_WhitePapers_PADEPRev8_PaDEPProcessGuidexlsx_e36a4dcc.xlsx) | 0.02 MB |
+
+### 🔧 **Training & Reference Materials**
+| Tool Name | Description | File | Size |
+|-----------|-------------|------|------|
+| **Calibration Specifications Reference** | Complete calibration specs and references | [Calibration_Specifications_And_References.xlsx](Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_Calibration_Specifications_And_References_Rev_6-6-20-18xlsx_1bfbda8e.xlsx) | 0.17 MB |
+| **Modbus Training Materials** | Complete Modbus training toolkit | [ModbusRegistersandBits.xlsx](Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_MODBUS101StudentFolder_ModbusRegistersandBitsxlsx_156ab3f6.xlsx) | 1.42 MB |
+| **ProcessNow Cheat Sheet** | Quick reference for ProcessNow operations | [ProcessNowCheatSheet.xlsx](Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_CheatSheetEngineerxlsx_54df7a2b.xlsx) | 0.02 MB |
+
+## 🎯 How to Use These Tools
+
+### For Engineers & Operators
+1. **Find Your Category**: Browse the categories above to find tools for your task
+2. **Download & Use**: Click the filename links to download working spreadsheets
+3. **Save Copies**: Always save a copy before modifying - these are working templates
+4. **Check Context**: Many tools are referenced in the main [knowledge topics](../topics/) with usage instructions
+
+### For Compliance & Reporting
+1. **Calculations**: Use ammonia slip and NOx calculators for regulatory reporting
+2. **Validation**: Control charts help verify system performance
+3. **Documentation**: Reference materials support compliance documentation
+
+### For Training & Development
+1. **Templates**: Use as starting points for new procedures
+2. **Examples**: Study working examples in training materials
+3. **Integration**: Combine multiple tools for comprehensive solutions
+
+## 📈 Tool Statistics
+
+- **Total Tools**: 40+ spreadsheets and templates
+- **Categories**: 4 main categories (Calculations, Monitoring, Configuration, Training)
+- **Total Size**: ~15 MB of engineering tools
+- **Formats**: Excel (.xlsx, .xls), Excel Macro (.xlsm)
+
+## 🔍 Finding the Right Tool
+
+**Need help finding a tool?** Check these quick references:
+
+| If you need to... | Try these tools... |
+|------------------|-------------------|
+| Calculate ammonia slip | ESC Ammonia Slip Calculator, NH3 Slip Calculations |
+| Monitor CO2 levels | CO2 Control Chart Template |
+| Configure analog outputs | Dual Range Analog Output Config |
+| Set up Modbus communications | Modbus Training Materials |
+| Perform moisture analysis | Moisture Calculations |
+
+## ⚠️ Important Usage Notes
+
+- **File Formats**: All tools are Excel spreadsheets - ensure you have compatible software
+- **Macros**: Some .xlsm files contain macros - enable them if prompted
+- **Save Copies**: These are working templates - always save copies before modifying
+- **Version Control**: Tools are automatically updated when new engineering documents are processed
+- **Support**: Check the main [knowledge topics](../topics/) for detailed usage instructions
+
+## 🔄 Updates & Maintenance
+
+This tool library is automatically maintained:
+- New tools are added when engineering documents are processed
+- Existing tools are preserved and never overwritten
+- File integrity is verified during automated updates
+- Cross-references in topics are automatically updated
+
+---
+
+**Last Updated**: September 23, 2025
+**Tools Available**: 40+ engineering spreadsheets
+**Categories**: 4 organized tool categories
+
+*These tools are extracted from engineering documentation and provided as working resources for operational use.*
 - **[engineering_white_papers_WhitePapers_AmmoniaSlip_AmmoniaSlipCalculationxlsx_7514d17d.xlsx](engineering_white_papers_WhitePapers_AmmoniaSlip_AmmoniaSlipCalculationxlsx_7514d17d.xlsx)** (0.02 MB)
 - **[engineering_white_papers_WhitePapers_AmmoniaSlip_EmpireNH3slipxlsx_7399a0a4.xlsx](engineering_white_papers_WhitePapers_AmmoniaSlip_EmpireNH3slipxlsx_7399a0a4.xlsx)** (0.02 MB)
 - **[engineering_white_papers_WhitePapers_AmmoniaSlip_ESCAmmoniaSlipCalculationxls_cbc4be89.xls](engineering_white_papers_WhitePapers_AmmoniaSlip_ESCAmmoniaSlipCalculationxls_cbc4be89.xls)** (0.04 MB)
