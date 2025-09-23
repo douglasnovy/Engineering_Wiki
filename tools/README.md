@@ -9,6 +9,8 @@ This directory contains engineering tools, calculation spreadsheets, templates, 
 
 ## Available Tools
 
+- **[engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm](engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm)** (0.79 MB)
+- **[engineering_white_papers_WhitePapers_Alarms_8864DASCommunicationAlarmxlsm_62dbf367.xlsm](engineering_white_papers_WhitePapers_Alarms_8864DASCommunicationAlarmxlsm_62dbf367.xlsm)** (0.79 MB)
 - **[engineering_white_papers_WhitePapers_AmmoniaSlip_AmmoniaSlipCalculationxlsx_7514d17d.xlsx](engineering_white_papers_WhitePapers_AmmoniaSlip_AmmoniaSlipCalculationxlsx_7514d17d.xlsx)** (0.02 MB)
 - **[engineering_white_papers_WhitePapers_AmmoniaSlip_EmpireNH3slipxlsx_7399a0a4.xlsx](engineering_white_papers_WhitePapers_AmmoniaSlip_EmpireNH3slipxlsx_7399a0a4.xlsx)** (0.02 MB)
 - **[engineering_white_papers_WhitePapers_AmmoniaSlip_ESCAmmoniaSlipCalculationxls_cbc4be89.xls](engineering_white_papers_WhitePapers_AmmoniaSlip_ESCAmmoniaSlipCalculationxls_cbc4be89.xls)** (0.04 MB)
@@ -16,6 +18,7 @@ This directory contains engineering tools, calculation spreadsheets, templates, 
 - **[engineering_white_papers_WhitePapers_AmmoniaSlip_NH3TONSfromNH3PPM111210Rev1xlsx_ee61d34a.xlsx](engineering_white_papers_WhitePapers_AmmoniaSlip_NH3TONSfromNH3PPM111210Rev1xlsx_ee61d34a.xlsx)** (0.07 MB)
 - **[engineering_white_papers_WhitePapers_AmmoniaSlip_NH3TONSfromNH3PPMxlsx_4a7890af.xlsx](engineering_white_papers_WhitePapers_AmmoniaSlip_NH3TONSfromNH3PPMxlsx_4a7890af.xlsx)** (0.02 MB)
 - **[engineering_white_papers_WhitePapers_ControlCharts_Lowman_CS4_CO2_Control_Chartxls_4cd21ddb.xls](engineering_white_papers_WhitePapers_ControlCharts_Lowman_CS4_CO2_Control_Chartxls_4cd21ddb.xls)** (0.15 MB)
+- **[engineering_white_papers_WhitePapers_DualRangeAnalogOutputs_DualRangeAnalogOuputExamplexlsm_d35a5a7b.xlsm](engineering_white_papers_WhitePapers_DualRangeAnalogOutputs_DualRangeAnalogOuputExamplexlsm_d35a5a7b.xlsm)** (0.65 MB)
 - **[engineering_white_papers_WhitePapers_Moisture_MoistureCalculationsxlsx_b389940b.xlsx](engineering_white_papers_WhitePapers_Moisture_MoistureCalculationsxlsx_b389940b.xlsx)** (0.19 MB)
 - **[engineering_white_papers_WhitePapers_Moisture_RMBMoistureCalculationxls_107f6bfc.xls](engineering_white_papers_WhitePapers_Moisture_RMBMoistureCalculationxls_107f6bfc.xls)** (0.04 MB)
 - **[engineering_white_papers_WhitePapers_Moisture_SaturationMoistureCalculationxlsx_374381ed.xlsx](engineering_white_papers_WhitePapers_Moisture_SaturationMoistureCalculationxlsx_374381ed.xlsx)** (0.02 MB)
@@ -44,6 +47,12 @@ This directory contains engineering tools, calculation spreadsheets, templates, 
 ### Control
 
 - [engineering_white_papers_WhitePapers_ControlCharts_Lowman_CS4_CO2_Control_Chartxls_4cd21ddb.xls](engineering_white_papers_WhitePapers_ControlCharts_Lowman_CS4_CO2_Control_Chartxls_4cd21ddb.xls) (0.15 MB)
+- [engineering_white_papers_WhitePapers_DualRangeAnalogOutputs_DualRangeAnalogOuputExamplexlsm_d35a5a7b.xlsm](engineering_white_papers_WhitePapers_DualRangeAnalogOutputs_DualRangeAnalogOuputExamplexlsm_d35a5a7b.xlsm) (0.65 MB)
+
+### Monitoring
+
+- [engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm](engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm) (0.79 MB)
+- [engineering_white_papers_WhitePapers_Alarms_8864DASCommunicationAlarmxlsm_62dbf367.xlsm](engineering_white_papers_WhitePapers_Alarms_8864DASCommunicationAlarmxlsm_62dbf367.xlsm) (0.79 MB)
 
 ### Other
 
