@@ -15,6 +15,7 @@ Expert-level summaries and procedures organized by technical domain:
 - **[Environmental](topics/Environmental.md)** - Compliance and regulatory requirements
 - **[Operational Procedures](topics/Operational_Procedures.md)** - Maintenance and operational guidelines
 - **[System Architecture](topics/System_Architecture.md)** - Infrastructure and system design
+- **[XScript](topics/XScript.md)** - Advanced scripting tools for StackVision automation
 
 ### 🛠️ Engineering Tools & Spreadsheets
 **[Complete Tool Index](tools/README.md)** - Direct access to calculation spreadsheets, templates, and working tools:
@@ -61,8 +62,8 @@ Expert-level summaries and procedures organized by technical domain:
 ## 📊 Content Statistics
 
 - **Topics**: 8 consolidated knowledge areas
-- **Tools**: 16+ spreadsheets and calculation tools
-- **Documents Processed**: 93+ engineering documents
+- **Tools**: 20+ spreadsheets and calculation tools
+- **Documents Processed**: 94 engineering documents
 - **Content Size**: 45+ MB of processed documentation
 - **Update Frequency**: Automated updates with new source documents
 
@@ -102,8 +103,8 @@ This knowledge base is automatically generated through:
 
 ---
 
-**Last Updated**: September 23, 2025  
-**Documents Processed**: 93 engineering documents  
-**Tools Available**: 16+ spreadsheets and calculation tools
+**Last Updated**: September 23, 2025
+**Documents Processed**: 94 engineering documents
+**Tools Available**: 20+ spreadsheets and calculation tools
 
 *This knowledge base is automatically maintained and updated with new engineering documentation.*
