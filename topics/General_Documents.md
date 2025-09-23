@@ -145,3 +145,7 @@ This guide provides a comprehensive reference for understanding, configuring, an
 ---
 
 This enhanced guide now serves as a **complete reference** for ESC StackVision Channel Types, from basic definitions to advanced configuration and troubleshooting, ensuring technical accuracy and regulatory compliance.
+
+## Glossary
+
+- **8864**: Data controller platform used by engineering

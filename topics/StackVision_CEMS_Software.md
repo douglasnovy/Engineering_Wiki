@@ -264,3 +264,9 @@ StackVision CEMS Software - Co...
 ## Glossary
 - **CEMS**: Continuous Emissions Monitoring System
 - **MODBUS**: Serial communications protocol for industrial automation
+
+
+## Glossary
+
+- **CEMS**: Continuous Emissions Monitoring System
+- **MODBUS**: Serial communications protocol for industrial automation

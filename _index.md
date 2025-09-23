@@ -15,7 +15,6 @@ This knowledge base contains consolidated engineering documentation and procedur
 - [PADEP_Regulatory_Compliance](topics/PADEP_Regulatory_Compliance.md)
 - [Server_Migration_Operations](topics/Server_Migration_Operations.md)
 - [StackVision_CEMS_Software](topics/StackVision_CEMS_Software.md)
-- [System_Architecture](topics/System_Architecture.md)
 - [XScript](topics/XScript.md)
 
 

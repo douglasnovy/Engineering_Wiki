@@ -133,3 +133,15 @@ This recalculates NOXPPM with debug output written to a file.
 ---
 
 If you’d like, I can also create **a visual flow diagram of a typical ProcessNow sequence** integrating OPC data ingestion, QA tasks, and reporting, which would make this guide even more actionable. Would you like me to add that?
+
+## See Also
+
+- [[Environmental]] - md']  # This would be a timestamp
+---
+
+### Enhance...
+
+
+## Glossary
+
+- **CEMS**: Continuous Emissions Monitoring System
