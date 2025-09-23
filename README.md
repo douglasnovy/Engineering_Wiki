@@ -17,8 +17,7 @@ Expert-level summaries and procedures organized by technical domain:
 - **[Operational Procedures](topics/Operational_Procedures.md)** - Maintenance and operational guidelines
 - **[PADEP Regulatory Compliance](topics/PADEP_Regulatory_Compliance.md)** - Pennsylvania-specific CEMS requirements and reporting
 - **[Server Migration Operations](topics/Server_Migration_Operations.md)** - StackVision system migration and infrastructure management
-- **[StackVision CEMS Software](topics/StackVision_CEMS_Software.md)** - Core CEMS software configuration and maintenance
-- **[System Architecture](topics/System_Architecture.md)** - Infrastructure and system design
+- **[StackVision CEMS Software](topics/StackVision_CEMS_Software.md)** - Core CEMS software configuration, system resources, and maintenance
 - **[XScript](topics/XScript.md)** - Advanced scripting tools for StackVision automation
 
 ### 🛠️ Engineering Tools & Spreadsheets
@@ -54,7 +53,7 @@ Expert-level summaries and procedures organized by technical domain:
 ### Quick Start
 1. **Need a calculation?** → Check [Calculations topic](topics/Calibration.md) + [Tools](tools/README.md)
 2. **Compliance question?** → See [Environmental](topics/Environmental.md) topic
-3. **System configuration?** → Review [System Architecture](topics/System_Architecture.md)
+3. **System configuration?** → Review [StackVision CEMS Software](topics/StackVision_CEMS_Software.md)
 4. **Operational procedure?** → Check [Operational Procedures](topics/Operational_Procedures.md)
 
 ### Finding Specific Content
@@ -65,7 +64,7 @@ Expert-level summaries and procedures organized by technical domain:
 
 ## 📊 Content Statistics
 
-- **Topics**: 12 consolidated knowledge areas
+- **Topics**: 11 consolidated knowledge areas
 - **Tools**: 20+ spreadsheets and calculation tools
 - **Documents Processed**: 94 engineering documents
 - **Content Size**: 45+ MB of processed documentation
@@ -110,6 +109,6 @@ This knowledge base is automatically generated through:
 **Last Updated**: September 23, 2025
 **Documents Processed**: 94 engineering documents
 **Tools Available**: 20+ spreadsheets and calculation tools
-**Knowledge Topics**: 12 comprehensive engineering guides
+**Knowledge Topics**: 11 comprehensive engineering guides
 
 *This knowledge base is automatically maintained and updated with new engineering documentation.*
