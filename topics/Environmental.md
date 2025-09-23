@@ -158,3 +158,9 @@ If you’d like, I can create **flow diagrams** showing decision paths for choos
 
 - **ECMPS**: Emissions Collection and Monitoring Plan System
 - **CEMS**: Continuous Emissions Monitoring System
+
+
+## Glossary
+
+- **ECMPS**: Emissions Collection and Monitoring Plan System
+- **CEMS**: Continuous Emissions Monitoring System

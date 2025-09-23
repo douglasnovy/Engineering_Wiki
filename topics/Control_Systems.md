@@ -105,3 +105,9 @@ be downloade...
 
 - **8864**: Data controller platform used by engineering
 - **MODBUS**: Serial communications protocol for industrial automation
+
+
+## Glossary
+
+- **8864**: Data controller platform used by engineering
+- **MODBUS**: Serial communications protocol for industrial automation
