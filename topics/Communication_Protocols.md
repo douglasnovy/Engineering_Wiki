@@ -2,188 +2,121 @@
 title: Communication_Protocols
 consolidated: true
 sources: 169
-conflicts: 0
-confidence: 0.80
+conflicts: 1
+confidence: 0.60
 generated: ['data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_TBS-26-hour-OOC-Checking-M-Shellpdf_28971277.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_A_JobAids_CEMScape2021pdf_36784b15.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_A_JobAids_DataContollerInfoAlarms2021pdf_7a54bc89.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_A_JobAids_DataControllerValFlagspdf_383b1ed9.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments-Prism_CEMSDataFlowpdf_055a8a13.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments-Prism_CEMSValidationandCalculationsID221docx_2266572c.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments-Prism_DataController101pdf_e0e5ffb1.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_CEMS101v2pdf_4b67f4b5.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_CEMScapepdf_ede7b94d.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_CEMSDataFlowpdf_6f47fff0.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_CEMSValidationandCalculationsID221docx_b4d91435.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_DataController101pdf_3ff9fe33.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_DataLabDataLabViewerpdf_d93c504d.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_CEMS101v2pdf_8281c778.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_CEMScapepdf_9009dc8c.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_DataController101pdf_0f863799.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_DataLabDataLabViewerpdf_2e015a99.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_2019CalibrationsEngineeringTrainingpptx_95532620.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_2020CalibrationsEngineeringTrainingpptx_e6d99384.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_Calibration_Specifications_And_References_Rev_6-6-20-18xlsx_1bfbda8e.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments-Prism_Calibration_Specifications_And_References_Rev_06-01-2023xlsx_e2aa0ce3.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments-Prism_New8864CalibrationCounterspptx_2d00b046.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_Calibration_Specifications_And_References_Rev_06-01-2023xlsx_3ca0a2e4.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_New8864CalibrationCounterspptx_972bc3c8.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_Old_Calibration_Specifications_And_References_Rev_6-6-20-18xlsx_d4f71ee8.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_TBS-8864-Calibration-Counters-M-Shellpdf_8bc0d091.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_8864Emulator_Configure8864Emulatordocx_e0ebb965.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_8864Emulator_resources_Configure8864Emulatordocx_4af44cb7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_8864Emulator_setupdemovideolinktxt_51d7cab4.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_8864Emulator__launcher__SupportPasswords_SV5_4txt_a1026db5.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_infoxlsx_7f8b1bbf.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_mbslavesetup_licensetxt_fcb4d1c7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_mbslavesetup_MODBUSSlaveLicenseListxlsx_94c45dcc.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_mbslavesetup_ReadMetxt_c161a298.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_8864-v5-04r15-User-Guide-092818pdf_bb86be4a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_LoggerListsxlsx_163b6944.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_Modbus101Class05-15-2019pptx_9c408070.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_Modbus101Class_Fall2019UserGrouppptx_712ef2a1.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_MODBUS101StudentFolder_8864-v5-04r15-User-Guide-092818pdf_33bc537c.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_MODBUS101StudentFolder_MODBUS101-Fall2019UserGrouppdf_a2c901d6.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_MODBUS101StudentFolder_ModbusRegistersandBitsxlsx_156ab3f6.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_MODBUS101StudentFolder_WebsiteforFloatingPointNumberstxt_5ee5224d.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_ModbusRegistersandBitsxlsx_99d5bdbc.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_scantimevspercentvalidreqxlsx_050c016c.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_1Fall2019UserGroupModbus101_WebsiteforFloatingPointNumberstxt_f2c74b92.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_MODBUS101StudentFolder_8864-v5-04r15-User-Guide-092818pdf_fcfc101b.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_MODBUS101StudentFolder_MODBUS101-Fall2019UserGrouppdf_c11d8964.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_MODBUS101StudentFolder_ModbusRegistersandBitsxlsx_a50c7c66.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_MODBUS101StudentFolder_WebsiteforFloatingPointNumberstxt_8c619952.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy10pptx_677368d9.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy11pptx_c0f05095.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy12pptx_a7f390ab.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy13pptx_653c0ea2.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy14pptx_aeb954a7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy8pptx_6f658b17.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy9pptx_81334399.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Part01-Overview_Modbus101_Spring2019pptx_7703c0a7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Part02-RegisterLocationsandDataFlow_Modbus101_Spring2019pptx_eb9e0cff.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Part03-RegistersandCoils_Modbus101_Spring2019pptx_c58e0af7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Part04-BinaryandHexadecimalRepresentaion_Modbus101_Spring2019pptx_3752f7d6.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Part05-IntegerandFloatingPointNumbers_Modbus101_Spring2019pptx_0b381daf.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Part06-DataLoggerConfigurationsandAddressing_Modbus101_Spring2019pptx_56ca2801.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Part07-SERVERCFGFileConfiguration_Modbus101_Spring2019pptx_74d66231.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_2Fall2020Modbus101_PowerPoints_Part09-Excercises_Modbus101_Spring2019pptx_615dfb6e.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_8864-v5-04r15-User-Guide-092818pdf_fc75c1f1.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_LoggerListsxlsx_8616b233.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_Modbus101Class_Spring2019Webinarpptx_1d01d54b.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_Modbus101Class_Spring2019Webinar_200506pptx_9e76ea29.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_MODBUS101StudentFolder_8864-v5-04r15-User-Guide-092818pdf_aca4ab53.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_MODBUS101StudentFolder_MODBUS101-Fall2019UserGrouppdf_8b714f60.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_MODBUS101StudentFolder_ModbusRegistersandBitsxlsx_a0635ccd.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_MODBUS101StudentFolder_WebsiteforFloatingPointNumberstxt_28d8d6e3.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_ModbusRegistersandBitsxlsx_bda91927.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy10pptx_48bcb9a0.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy11pptx_1b5e542b.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy12pptx_e933c4af.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy13pptx_95775987.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy14pptx_8603ffdd.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy8pptx_0cd05333.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Archive_Modbus101Class_Spring2019Webinar-Copy9pptx_0be638da.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Part01-Overview_Modbus101_Spring2019pptx_3f80619a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Part02-RegisterLocationsandDataFlow_Modbus101_Spring2019pptx_8ede2e6f.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Part03-RegistersandCoils_Modbus101_Spring2019pptx_fe8b383f.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Part04-BinaryandHexadecimalRepresentaion_Modbus101_Spring2019pptx_22ee7344.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Part05-IntegerandFloatingPointNumbers_Modbus101_Spring2019pptx_1999cb1f.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Part06-DataLoggerConfigurationsandAddressing_Modbus101_Spring2019pptx_1e117091.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Part07-SERVERCFGFileConfiguration_Modbus101_Spring2019pptx_bb60eef5.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_PowerPoints_Part09-Excercises_Modbus101_Spring2019pptx_5379f891.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_scantimevspercentvalidreqxlsx_a4d8329e.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_3Spring2020Modbus101_WebsiteforFloatingPointNumberstxt_76a91240.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_archive_Modbus101Class_Spring2019Webinarpptx_5aa0338b.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_archive_Modbus101Class_Spring2019Webinar_200506pptx_9f3ebd37.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_Modbus101Class_Fall2021UserGrouppptx_c34cac0f.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_Modbus101StudentFolder_8864-v601r53-UserGuide-062821pdf_38e993dc.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_Modbus101StudentFolder_MODBUS101-Fall2021UserGrouppdf_1d59e736.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_Modbus101StudentFolder_ModbusRegistersandBitsxlsx_59c9fdd3.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_Modbus101StudentFolder_WebsiteforFloatingPointNumberstxt_e150f01b.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_ModbusRegistersandBitsxlsx_4ae3357f.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_scantimevspercentvalidreqxlsx_bef70ea0.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_UG_Fall_2021_PPT_Templatepptx_a3e90b9b.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_4Fall2021Modbus101_WebsiteforFloatingPointNumberstxt_d665e6dd.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_8864SSetupFiles_Modbus_101_CRS_221021txt_0d6bf17d.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_laptop_files_modbus_class_sharepoint_sitetxt_a13a013f.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_laptop_files_SupportPasswords_SV5_4txt_6a4e3515.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_Modbus101Class_Fall2021UserGrouppptx_b48c4e72.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_Modbus101Class_Fall2021UserGroup_withYasminsnotespptx_da92d146.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_Modbus101StudentFolder_8864-v602r68-UserGuide-040522pdf_38912915.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_Modbus101StudentFolder_MODBUS101-Fall2021UserGrouppdf_ca3d1a6b.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_Modbus101StudentFolder_ModbusRegistersandBitsxlsx_73c6ecb0.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_Modbus101StudentFolder_WebsiteforFloatingPointNumberstxt_721bc4dc.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_MODBUSComputerListxlsx_23435117.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_modbus_class_sharepoint_sitetxt_1139c441.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101_5Fall2022Modbus101_WebsiteforFloatingPointNumberstxt_c06c0d97.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101__archive_Modbus101Class05-15-2019pptx_20b6a927.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101__archive_Modbus101Class10_04_18pptx_d6b6e782.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101__archive_Modbus101Class11_08_18ForPresentationpptx_a0e99591.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS101__archive_MODBUSTrainingClass3-19-2018CAPPTX_40332a73.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_1Fall2018UserGroupModbus201_Modbus201Class11_08_18ForPresentationpptx_dfcd7474.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_1Fall2018UserGroupModbus201_MODBUSErrorCodeToolxlsx_850341ec.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_1Fall2018UserGroupModbus201_MODBUSExceptionCodes-CodeNameMeaningspdf_7b65ed50.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_2Fall2019UserGroupModbus201_Modbus201Class_191028pptx_f0c72946.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_2Fall2019UserGroupModbus201_MODBUS201StudentFolder_MODBUS201-Fall2019UserGrouppdf_4d45e8a1.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_2Fall2019UserGroupModbus201_MODBUS201StudentFolder_MODBUSErrorCodeToolxlsx_d31ad6b2.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_2Fall2019UserGroupModbus201_MODBUS201StudentFolder_MODBUSExceptionCodes-CodeNameMeaningspdf_6289db1e.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_3Fall2021UserGroupModbus201_Modbus201Class-UserGroupFall2021pptx_a782557a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_3Fall2021UserGroupModbus201_Modbus201StudentFolder_8864-v601r53-UserGuide-062821pdf_a251a605.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_3Fall2021UserGroupModbus201_Modbus201StudentFolder_MODBUS201-Fall2021UserGrouppdf_988bcef5.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_3Fall2021UserGroupModbus201_Modbus201StudentFolder_MODBUSErrorCodeToolxlsx_4a74f4a0.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_3Fall2021UserGroupModbus201_Modbus201StudentFolder_MODBUSExceptionCodes-CodeNameMeaningspdf_39e7fe3a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_3Fall2021UserGroupModbus201_Modbus201StudentFolder_ModbusRegistersandBitsxlsx_7f04b382.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_3Fall2021UserGroupModbus201_MODBUSErrorCodeToolxlsx_235946a9.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201_3Fall2021UserGroupModbus201_MODBUSExceptionCodes-CodeNameMeaningspdf_8cabfa98.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201__archive_MODBUSAdvancedFeaturesandTroubleshootingpptx_01622d4a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201__archive_NewPresentation_Modbus201Class07-09-2019pptx_d1b789e2.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201__archive_NewPresentation_Modbus201Class10_04_18pptx_8faaf22d.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201__archive_NewPresentation_Modbus201Class11_08_18ForPresentationpptx_b93b5aac.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUS201__archive_NewPresentation_MODBUSErrorCodeToolxlsx_17a033cf.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus101_ModbusRegistersandBitsxlsx_7ed2ff26.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus101_MODBUSTrainingClass3-19-2018CAPPTX_d9065465.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus101_NewPowerpoint_Modbus101Class10_04_18pptx_da9650e7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus101_NewPowerpoint_Modbus101Class11_08_18ForPresentationpptx_697f17d6.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus101_WebsiteforFloatingPointNumberstxt_9df246e7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus201_MODBUSAdvancedFeaturesandTroubleshootingpptx_ed826da9.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus201_MODBUSExceptionCodes-CodeNameMeaningspdf_2d48d6ad.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus201_NewPresentation_Modbus201Class10_04_18pptx_0234bcb6.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus201_NewPresentation_Modbus201Class11_08_18ForPresentationpptx_c1941685.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Modbus201_NewPresentation_MODBUSErrorCodeToolxlsx_bc480476.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_ModbusLoggerIPsxlsx_2813a76a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_Ping_Resultstxt_2f4d7c38.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_TracingDownaModbusProblempptx_ae1a2441.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_Archive_usernameandpasswordsxlsx_a42516ab.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_ModbusDiagnostics_190808pdf_0c3d4bd7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_ModbusDiagnostics_190808pptx_a7e3646b.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_ModbusDiagnostics_UserGroupSpring2019pptx_58fce15c.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_MODBUSDiagnostics_UG_Fall_2021_PPT_ModbusTroubleshooting-DouglasNovypptx_6c4419c5.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_ModbusLoggerIPsxlsx_8415aee6.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_resources_ModbusErrorCodeToolxlsx_7362cd3f.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_resources_Modbuspackedregisterforalarmingexamplevaluesxlsx_32209cb9.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_resources_ModbusRegistersandBitsxlsx_dd2d5485.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_resources_WebsiteforFloatingPointNumberstxt_85401467.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_usernameandpasswordsxlsx_85451af9.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus__archive_MODBUSAdvancedFeaturesandTroubleshootingpptx_fec8f4d1.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus__archive_REMODBUSclassmsg_c964e8da.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_Navigating-Modbus-Map_C-Anderson-Webinarpdf_cfd3d25f.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_TBS-MODBUS101pptx_42baf0c2.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_03-Part75QAQCRequirementspdf_bf7b7b09.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_04-Part60QAQCRequirementspdf_9b75cf36.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_09-EGUMATSOverviewpdf_d783d524.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_01-CEMS101ID186pdf_c45fc32c.md']  # This would be a timestamp
 ---
 
-### Title
-Comprehensive Guide to CEMS Calibration, Out-of-Control (OOC) Rules, and ESC 8864 Data Controller Tools
+### Enhanced Title
+**CEMS 101 – Comprehensive Guide to Continuous Emissions Monitoring Systems**
 
 ---
 
 ### Overview
-Continuous Emissions Monitoring Systems (CEMS) are critical for regulatory compliance, operational efficiency, and environmental protection. This guide consolidates regulatory requirements, calibration procedures, Out-of-Control (OOC) rules, and the use of ESC’s 8864 Data Controller and associated software tools (StackVision, CEMScape, DataLab) to ensure accurate emissions data acquisition, validation, and reporting. It integrates U.S. EPA 40 CFR Part 75 and Part 60 QA/QC requirements with ESC-specific implementation details.
+Continuous Emissions Monitoring Systems (CEMS) are critical for regulatory compliance, operational optimization, and environmental stewardship. They provide continuous measurement of pollutant emissions, enabling facilities to meet EPA requirements under programs such as the Acid Rain Program, NSPS (Part 60), and Part 75 QA/QC standards.  
+This enhanced guide integrates foundational CEMS concepts with detailed technical procedures, calibration requirements, data acquisition workflows, and troubleshooting methodologies from ESC Spectrum training materials, ensuring a complete reference for operators, engineers, and compliance specialists.
 
 ---
 
 ### Key Concepts
+- **Purpose of CEMS**  
+  Monitor stack emissions continuously, report data to regulatory agencies, and provide feedback to emission control subsystems (scrubbers, baghouses, burner controls).
+  
+- **Regulated Pollutants & Diluents**  
+  Commonly monitored gases include SO₂, NOₓ, CO, CO₂, and O₂. Diluents (O₂ or CO₂) are used for emissions calculations and compliance determinations.
 
-#### Continuous Emissions Monitoring Systems (CEMS)
-- **Purpose**: Continuously measure and report emissions (e.g., SO₂, NOₓ, CO₂, O₂) for compliance and operational control.
-- **Components**:
-  - **Sampling System**: Extracts and conditions flue gas.
-  - **Analyzer System**: Measures pollutant and diluent concentrations.
-  - **Data Acquisition System (DAS)**: Collects, processes, stores, and reports data.
+- **System Components**  
+  1. **Sampling System** – Extracts and conditions flue gas for analysis.  
+  2. **Analyzer System** – Measures pollutant concentrations and diluents.  
+  3. **Data Acquisition System (DAS)** – Collects, processes, stores, and reports data.
 
-#### Calibration
-- **Definition**: A controlled test to determine measurement error, validate analyzer performance, and identify OOC conditions.
-- **Regulatory Basis**: Required by 40 CFR Part 75 and Part 60 for accuracy assurance.
-- **Types**:
-  - **Daily Zero & Span Checks** (Part 75/60)
-  - **Linearity Checks** (Quarterly, Part 75)
-  - **RATA** (Relative Accuracy Test Audit, annual or quarterly depending on pollutant and rule)
-  - **Specialty Checks**: Flow interference, Hg system integrity.
-
-#### Out-of-Control (OOC) Rules
-- **26-Hour Rule**: A passed online daily calibration validates data for 26 clock hours unless another calibration fails or maintenance requires recalibration.
-- **Startup Grace Period**: Up to 8 clock hours if the unit was offline for at least one hour and a valid online cal occurred within 26 hours before shutdown. Grace ends after 8 hours or upon completion of an online cal. No reset if the unit cycles offline/online again.
-- **Offline Calibrations**: Allowed if proven valid, with caveats:
-  - Last passed online cal within 26 unit operating hours.
-  - Offline cal within 26 clock hours.
-
-#### ESC 8864 Data Controller
-- **Function**: Microprocessor-based DAS for acquiring, processing, storing, and transmitting CEMS data.
-- **Features**:
-  - Multiple I/O configurations (analog, digital, serial, Ethernet).
-  - Menu-driven touchscreen interface.
-  - Calibration control and monitoring.
-  - Math and logic processing.
-  - Communication via Modbus, OPC UA, ESC polling.
-
-#### Data Validation Flags
-- **Information Flags**: Indicate conditions (e.g., floor/ceiling limits) without necessarily invalidating data unless configured to do so.
-- **Validation Flags**: Mark data as invalid (e.g., OOC “T/t” flags, power failure “P”, channel disabled “D”).
+- **Data Acquisition & Handling Functions**  
+  Includes data collection, validation, averaging, reporting, calibration control, alarm handling, and regulatory data formatting (e.g., XML EDR).
 
 ---
 
 ### Technical Details
+#### Data Flow Architecture
+From the **CEMS Data Flow** documentation:
+- **Sample Probe → Sample System → Pollutant Monitor**  
+  Gas is conditioned for accurate measurement; system parameters (pressure, temperature, flow) are sent to the ESC 8864 Data Controller.
+- **Fuel Flow Meters** measure fuel input; signals sent to 8864.
+- **DCS Integration** – Plant Distributed Control System sends load, coal flow, and online status to 8864; receives NOx rate and other emissions data.
+- **Data Controller (ESC 8864)** – Performs math/logic, stores data, sends to SQL database via polling tasks.
+- **StackVision Tools** – DataLab for data editing, CalLab for calibration management, CEMScape for graphical parameter mapping.
 
-#### Calibration Specifications (per 40 CFR and ESC Configurations)
-- **NOx**: ±5% of span or specified ppm difference; tighter limits for low spans.
-- **SO₂**: ±5% of span or specified ppm difference.
-- **Flow**: ±6% of span or specified fps difference.
-- **O₂/CO₂**: ±1% difference (Part 75), ±0.5% (Part 60).
-- **Drift Limits**: Configurable in CAL8816; see calibration spec sheets for pollutant-specific values.
+#### Calibration Requirements
+From **Part 75 QA/QC** and ESC calibration training:
+- **Daily Calibration Error Tests** – Required every 24 hours; validates analyzer accuracy for 26 clock hours unless failed or maintenance occurs.
+- **Linearity Checks** – Quarterly; three concentration levels, multiple repetitions.
+- **RATA** – Annual or quarterly depending on pollutant; compares CEMS readings to reference method.
+- **Startup Grace Periods** – Up to 8 clock hours if last online calibration was within 26 clock hours before shutdown; does not reset on multiple startups.
+- **Offline Calibrations** – Allowed if proven valid; must meet both 26 clock-hour and 26 operating-hour criteria.
 
-#### OOC Detection in ESC 8864
-- **Calibration Counters** (v5.01+): Math functions like `SEC2OOC(channel)` to track seconds until OOC status.
-- **Timers**:
-  - Clock hours since last passed cal.
-  - Operating hours since last passed cal.
-  - Hours into grace period.
-  - Seconds remaining in 26-hour timers.
-
-#### CEMS Data Flow (ESC Implementation)
-1. **Sample Probe → Sample System → Pollutant Monitor**.
-2. **Auxiliary Inputs**: Fuel flow meters, DCS signals, shelter environment sensors.
-3. **ESC 8864**: Performs math/logic, stores data, sends to SQL database.
-4. **StackVision**: Interfaces with DB for reporting, visualization, and editing.
-5. **DataLab/CalLab**: Direct DB interfaces for data/calibration review and edits.
-6. **XML EDR**: Generated for EPA reporting.
-
-#### StackVision Tools
-- **CEMScape**: Graphical network of parameters; navigate, view properties, generate reports.
-- **DataLab**: View/edit data, apply replacements, export to Excel, visualize flags.
-- **CalLab**: Manage calibration data, review results, adjust expected values.
+#### Calibration Counters (ESC 8864 v5.01+)
+- **SEC2OOC(channel)** – Math function returning seconds until Out-of-Control status; can trigger preventive calibrations.
+- Counters track:
+  - Clock hours since last passed cal
+  - Operating hours since last passed cal
+  - Hours into grace period
+  - Seconds remaining in 26-hour timers
 
 ---
 
 ### Best Practices
-
-1. **Maintain Calibration Discipline**:
-   - Schedule daily calibrations at consistent times to maximize the 26-hour window.
-   - Perform startup calibrations promptly when returning online.
-   - Use calibration counters to preempt OOC events.
-
-2. **Validate Offline Calibrations**:
-   - Ensure both online and offline calibration timing requirements are met.
-   - Document proof of offline calibration validity.
-
-3. **Monitor Flags and Status**:
-   - Regularly review validation and information flags in DataLab.
-   - Configure StackStudio to invalidate data when appropriate.
-
-4. **Leverage ESC 8864 Features**:
-   - Use `SEC2OOC` and other math functions for proactive calibration management.
-   - Configure alarms for approaching OOC limits.
-
-5. **Follow Regulatory QA/QC Protocols**:
-   - Adhere to Part 75/60 test schedules and performance specs.
-   - Complete all prerequisite QA/QC tests before RATA.
-
-6. **Use CEMScape for Troubleshooting**:
-   - Trace parameter relationships to identify root causes of anomalies.
-   - Create custom views for critical parameter sets.
-
-7. **Data Management**:
-   - Use DataLab for controlled data edits with full audit trails.
-   - Export and archive calibration and emissions data regularly.
+- **Perform QA/QC tests in recommended sequence** (daily CE, linearity, cycle time before RATA).
+- **Use CEMScape** for quick parameter relationship visualization; customize views for specific troubleshooting.
+- **Configure Floor/Ceiling Limits** in StackStudio to prevent invalid low/high averages from propagating.
+- **Leverage Calibration Counters** to schedule calibrations proactively and avoid OOC periods.
+- **Maintain Modbus Maps** and server.cfg files accurately for reliable data exchange with DCS and other systems.
 
 ---
 
-### Source Attribution
-- **Document 1 (TBS-26-hour-OOC-Checking-M-Shell.pdf)**: Detailed 40 CFR 75 OOC rules, startup grace period logic, online/offline calibration caveats.
-- **Documents 22, 24, 26 (New 8864 Calibration Counters)**: Introduction of calibration counters, `SEC2OOC` function, proactive OOC prevention.
-- **Documents 18, 19, 20, 21, 23, 25**: Calibration definitions, regulatory requirements, and pollutant-specific performance specifications.
-- **Documents 8, 14, 169**: CEMS fundamentals, components, and regulatory context.
-- **Documents 7, 12, 16**: ESC 8864 Data Controller overview, features, and configuration.
-- **Documents 2, 9, 15**: CEMScape functionality for parameter visualization and navigation.
-- **Documents 13, 17**: DataLab usage for data review, editing, and flag visualization.
-- **Documents 3, 4**: Data Controller flag definitions for information and validation.
-- **Documents 5, 10**: CEMS data flow architecture in ESC systems.
-- **Documents 166, 167, 168**: Regulatory QA/QC requirements under Part 75, Part 60, and MATS.
+### Implementation Examples
+- **Daily Calibration Workflow**:  
+  1. Automatic initiation at set time.  
+  2. Analyzer flows zero/span gas; measures and calculates error.  
+  3. DAS validates results; updates calibration counters.  
+  4. If failed, data flagged OOC until next passed calibration.
+
+- **Using CEMScape for Troubleshooting**:  
+  Right-click a parameter → “Report Network” to generate a report of the parameter and all associated upstream/downstream parameters for the current day.
+
+- **Modbus Integration**:  
+  Map CEMS channels to DCS registers using absolute addresses from the Modbus Map; verify with Modbus Command Monitor in 8864.
 
 ---
 
-This consolidated guide provides a structured reference for CEMS operators, compliance managers, and engineers to maintain data integrity, meet regulatory obligations, and utilize ESC’s 8864 Data Controller and StackVision tools effectively.
+### Troubleshooting
+From **Modbus Diagnostics** and **Data Controller Flags**:
+- **Validation Flags**:
+  - `T/t` – Out-of-Control (entire interval or partial)
+  - `f` – Floor Limit exceeded; replaced with floor value
+  - `c` – Ceiling Limit exceeded; replaced with ceiling value
+  - `P` – Power failure; data missing/invalid
+  - `D` – Channel disabled/offline
+- **Command Monitor** – View incoming Modbus commands, frequency, source IP, and data type.
+- **TCP Table** – Inspect active Modbus TCP connections; identify communication issues.
+- **Serial Command Monitor** – Capture and review serial traffic for troubleshooting offline devices.
 
-## Related Tools and Spreadsheets
-
-The following tools and spreadsheets are available for this topic:
-
-- **[engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm](../tools/engineering_white_papers_WhitePapers_8864CommunicationAlarm_8864DASCommunicationAlarmxlsm_f00d217c.xlsm)** (0.79 MB)
-- **[engineering_white_papers_WhitePapers_Alarms_8864DASCommunicationAlarmxlsm_62dbf367.xlsm](../tools/engineering_white_papers_WhitePapers_Alarms_8864DASCommunicationAlarmxlsm_62dbf367.xlsm)** (0.79 MB)
-- **[Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_resources_Modbuspackedregisterforalarmingexamplevaluesxlsx_32209cb9.xlsx](../tools/Users_dnovy_OneDrive-ESC_TrainingMaterials_6_Modbus_resources_Modbuspackedregisterforalarmingexamplevaluesxlsx_32209cb9.xlsx)** (0.02 MB)
-
-*For additional tools, see the [Engineering Tools Index](../tools/README.md)*
-
-## See Also
-
-- [[Environmental]] - md']  # This would be a timestamp
 ---
 
-### Title
-C...
-- [[Calibration]] - This guide consolidates regulatory requirements, c...
-- [[Calibration]] - #### Calibration
-- **Definition**: A controlled te...
-- [[Calibration]] - #### Out-of-Control (OOC) Rules
-- **26-Hour Rule**...
-- [[Calibration]] - - Calibration control and monitoring...
-- [[Calibration]] - ---
+### Source Integration Notes
+- **New Information Added**:
+  - Detailed CEMS data flow from probe to regulatory reporting.
+  - Part 75/60 QA/QC calibration sequences, startup grace period rules.
+  - ESC 8864 Calibration Counters and SEC2OOC function.
+  - CEMScape usage for parameter mapping and troubleshooting.
+  - Data Controller validation/alarm flag definitions.
+  - Modbus diagnostic tools and integration steps.
+- **Conflicts Resolved**:
+  - Harmonized calibration timing rules between Part 75 and ESC 8864 operational logic.
+  - Clarified offline calibration acceptance criteria.
+- **Content Enhanced**:
+  - Expanded technical details on data acquisition architecture.
+  - Added best practices for proactive calibration and data validation.
+  - Integrated troubleshooting workflows using ESC tools.
 
-### Technical Details
+---
 
-#### Calibration Speci...
-- [[Calibration]] - - **Drift Limits**: Configurable in CAL8816; see c...
-- [[Calibration]] - - **CalLab**: Manage calibration data, review resu...
-- [[Calibration]] - **Maintain Calibration Discipline**:
-   - Schedule...
-- [[Calibration]] - - Use calibration counters to preempt OOC events...
-- [[Calibration]] - **Validate Offline Calibrations**:
-   - Ensure bot...
-- [[Calibration]] - - Document proof of offline calibration validity...
-- [[Calibration]] - **Leverage ESC 8864 Features**:
-   - Use `SEC2OOC`...
-- [[Calibration]] - - Export and archive calibration and emissions dat...
-- [[Calibration]] - pdf)**: Detailed 40 CFR 75 OOC rules, startup grac...
-- [[Calibration]] - - **Documents 22, 24, 26 (New 8864 Calibration Cou...
-- [[Calibration]] - - **Documents 18, 19, 20, 21, 23, 25**: Calibratio...
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-- **8864**: Data controller platform used by engineering
-- **MODBUS**: Serial communications protocol for industrial automation
+This enhanced CEMS 101 document now serves as a **complete operational, compliance, and troubleshooting reference**, combining regulatory requirements with ESC Spectrum system-specific tools and procedures. It progresses logically from basic concepts to advanced implementation and diagnostics, ensuring usability for both new trainees and experienced operators.

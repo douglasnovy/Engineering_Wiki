@@ -91,25 +91,3 @@ Modbus Configuration (This feature requires 8864 data controller firmware versio
 To start a download, simply check the boxes for the items you would like to download, and click the Download button, as
 shown in the example screen below. If you want to download only certain Math Constants, Parameters, and/or Calibration
 Sequences, you can click the plus sign to expand those items and select individual items beneath them.
-
-## Related Tools and Spreadsheets
-
-The following tools and spreadsheets are available for this topic:
-
-- **[engineering_white_papers_WhitePapers_ControlCharts_Lowman_CS4_CO2_Control_Chartxls_4cd21ddb.xls](../tools/engineering_white_papers_WhitePapers_ControlCharts_Lowman_CS4_CO2_Control_Chartxls_4cd21ddb.xls)** (0.15 MB)
-
-*For additional tools, see the [Engineering Tools Index](../tools/README.md)*
-
-## See Also
-
-- [[Calibration]] - Controller Tools feature can be launched from:
-Too...
-- [[Calibration]] - The following configuration types can
-be downloade...
-- [[Calibration]] - If you want to download only certain Math Constant...
-
-
-## Glossary
-
-- **8864**: Data controller platform used by engineering
-- **MODBUS**: Serial communications protocol for industrial automation

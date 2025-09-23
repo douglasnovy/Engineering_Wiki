@@ -1,10 +1,10 @@
 ---
 title: StackVision_CEMS_Software
 consolidated: true
-sources: 8
+sources: 9
 conflicts: 0
 confidence: 0.95
-generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_StackVisionControlChartspptx_cceae59d.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_FleetVision_FVOnlineHelpFVAgentandStackVisionConnectiondocx_42a8d9a6.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ForceStackVisionUninstall_HowtoForceUninstallStackVisiondocx_a36d6b2f.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_PADEPRev8_ProcessCodesforPaDEPEDRmaptoReasonCodesinStackVisionasdodocx_117b25f1.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_HowtoForceUninstallStackVisiondocx_e554144b.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_TCP-IPportsusedbyaStackVisionsystempdf_cf196824.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_StackVision_CHKOOC60Validationdocx_a7cc510e.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_StackVision_NewSUBNON75Taskpdf_476d022a.md']
+generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_StackVisionControlChartspptx_cceae59d.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_FleetVision_FVOnlineHelpFVAgentandStackVisionConnectiondocx_42a8d9a6.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ForceStackVisionUninstall_HowtoForceUninstallStackVisiondocx_a36d6b2f.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_PADEPRev8_ProcessCodesforPaDEPEDRmaptoReasonCodesinStackVisionasdodocx_117b25f1.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_HowtoForceUninstallStackVisiondocx_e554144b.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_TCP-IPportsusedbyaStackVisionsystempdf_cf196824.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_StackVision_CHKOOC60Validationdocx_a7cc510e.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_StackVision_NewSUBNON75Taskpdf_476d022a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_CemRC_System_Resourcespdf_fd5a76aa.md']
 ---
 
 ### Title
@@ -60,7 +60,36 @@ This guide consolidates configuration procedures, validation methods, maintenanc
 - **Data Encryption**: Secure data transmission and storage
 - **Backup and Recovery**: Automated backup procedures and disaster recovery
 
+#### E-DAS EMR System Resources Configuration
+
+##### System Resources Overview
+System resources are variables defined in the system's cem.rc file that customize system operations to meet specific site requirements. These resources are accessed by various EMR system programs when configuration information is required.
+
+##### Resource Configuration
+Resource variables are specified in resource files located in the config directory. To configure a resource variable, modify the value in the appropriate resource file. The Basic.cem.rc template file is provided for reference.
+
+**⚠️ WARNING**: Resources should only be changed in consultation with ESC, as changes may have unforeseen consequences on the EMR software.
+
+##### Resource Types
+- **System Resources**: Global scope affecting all users, specified in cem.rc
+- **User Resources**: Individual user scope, specified in <login_name>.rc files
+
+##### Configuration Access
+Resource files can be edited using text editors (Microsoft WordPad recommended, Notepad is not suitable). Only DAS managers are authorized to modify these files.
+
+**Access Path:**
+- Part 60 Users: System Administration → System Configuration → Resource Configuration Editors
+- Part 60 Add-on Users: Configuration → Resource Configuration Editors
+
+##### Resource File Management
+- Files ending in .rc contain resource specifications
+- Lines starting with # are commented out
+- Last definition takes precedence if variables are defined multiple times
+- Commented-out resources use program defaults
+
 ---
+
+
 
 ### Data Validation and Quality Assurance
 
@@ -213,7 +242,7 @@ This guide consolidates configuration procedures, validation methods, maintenanc
 
 ---
 
-*This consolidated guide is automatically generated from 8 StackVision configuration and maintenance documents.*
+*This consolidated guide is automatically generated from 9 StackVision configuration and maintenance documents.*
 
 
 ## See Also
