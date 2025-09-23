@@ -154,3 +154,8 @@ This enhanced guide now serves as a **complete reference** for ESC StackVision C
 ## Glossary
 
 - **8864**: Data controller platform used by engineering
+
+
+## Glossary
+
+- **8864**: Data controller platform used by engineering

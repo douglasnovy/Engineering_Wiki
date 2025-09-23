@@ -162,3 +162,10 @@ From **Part 75 QA/QC...
 - **CEMS**: Continuous Emissions Monitoring System
 - **8864**: Data controller platform used by engineering
 - **MODBUS**: Serial communications protocol for industrial automation
+
+
+## Glossary
+
+- **CEMS**: Continuous Emissions Monitoring System
+- **8864**: Data controller platform used by engineering
+- **MODBUS**: Serial communications protocol for industrial automation

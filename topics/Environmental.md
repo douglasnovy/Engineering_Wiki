@@ -2,165 +2,197 @@
 title: Environmental
 consolidated: true
 sources: 6
-conflicts: 1
-confidence: 0.60
-generated: ['data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_05-Part75AppendixDpdf_70eaa6e8.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_06-Part75AppendixEpdf_c20010f7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_07-OpacityCOMSpdf_ae9fb370.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_10-EGUMATSQuarterlyTestingLEEQualificationpdf_560cfa70.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_11-HgSTMSpdf_6bead77d.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_2011RegulationsTrainingWorkbookpdf_cf95831d.md']  # This would be a timestamp
+conflicts: 0
+confidence: 0.80
+generated: ['data\\extracted\\set_004\\engineering_white_papers_WhitePapers_AmmoniaSlip_AmmoniaSlipCalculationxlsx_7514d17d.md', 'data\\extracted\\set_004\\engineering_white_papers_WhitePapers_AmmoniaSlip_EmpireNH3slipxlsx_7399a0a4.md', 'data\\extracted\\set_004\\engineering_white_papers_WhitePapers_AmmoniaSlip_ESCAmmoniaSlipCalculationxls_cbc4be89.md', 'data\\extracted\\set_004\\engineering_white_papers_WhitePapers_AmmoniaSlip_NH3slipcalculationsxls_692ae2a3.md', 'data\\extracted\\set_004\\engineering_white_papers_WhitePapers_AmmoniaSlip_NH3TONSfromNH3PPM111210Rev1xlsx_ee61d34a.md', 'data\\extracted\\set_004\\engineering_white_papers_WhitePapers_AmmoniaSlip_NH3TONSfromNH3PPMxlsx_4a7890af.md']  # This would be a timestamp
 ---
 
-## Enhanced Title
-**Comprehensive Guide to 40 CFR Part 75 Monitoring Requirements, Excepted Methods, and Related Regulatory Protocols**
-
----
-
-## Overview
-This guide provides a consolidated and expanded reference for understanding and implementing U.S. EPA 40 CFR Part 75 monitoring requirements, with a focus on **excepted methods** under Appendices D and E, opacity monitoring protocols, Mercury and Air Toxics Standards (MATS) testing, and sorbent trap mercury measurement (Hg STMS). It integrates foundational regulatory training concepts with detailed technical procedures, applicability criteria, and best practices drawn from RMB Consulting & Research, Inc. training materials and ESC’s regulatory training resources.
-
-Part 75 establishes continuous emission monitoring requirements for affected units under the Acid Rain Program (ARP), Cross-State Air Pollution Rule (CSAPR), and other programs. While most units must install and operate Continuous Emission Monitoring Systems (CEMS), certain gas- and oil-fired units may use **excepted methods** to estimate emissions, avoiding the need for pollutant and flow monitors under specific conditions.
+# **Ammonia Slip Calculation & Compliance Guide**  
+*A comprehensive, interconnected reference for engineers, operators, and compliance specialists*
 
 ---
 
-## Key Concepts
+## **Overview**
+Ammonia slip refers to the amount of unreacted ammonia (NH₃) emitted from a Selective Catalytic Reduction (SCR) system after NOx reduction. Accurate calculation and monitoring are critical for **regulatory compliance**, **emissions reporting**, and **process optimization**.
 
-### 1. Part 75 Monitoring Framework
-- **Standard Methods**: Continuous monitoring of SO₂, NOₓ, CO₂, and flow using certified CEMS.
-- **Excepted Methods**: Alternative calculation protocols for specific unit types and operating profiles, notably Appendices D and E.
-- **Low Mass Emitting (LME) Units**: Special provisions for units with consistently low emissions.
+This guide consolidates multiple industry-standard calculation methods, integrates practical spreadsheet tools, and provides cross-links to related topics such as **SCR operation**, **NOx measurement**, and **CEMS data handling**.  
 
-### 2. Appendix D – Fuel Flow-Based Heat Input and SO₂ Estimation
-- Applicable only to **gas-fired and oil-fired units**; not permitted for coal-fired sources.
-- Uses **fuel flow meters** and fuel sampling/analysis to determine:
-  - **Heat Input** via Gross Calorific Value (GCV)
-  - **Sulfur Content** of fuel
-- Requires **NOₓ CEMS** for NOₓ measurement.
-- Preferred over installing SO₂ and flow monitors for qualifying units.
-- Historically used in NOₓ Budget and Ozone programs.
-
-### 3. Appendix E – NOₓ Emissions Estimation for Peaking Units
-- Optional protocol for **gas- and oil-fired boilers, turbines, and diesel engine peaking units**.
-- Applicability:
-  - Capacity factor < 10% (3-year average) or < 20% (any one year).
-  - Exceeding capacity criteria triggers requirement to install NOₓ CEMS by Dec 31 of the following year.
-- Relies on **initial performance testing** to develop NOₓ vs. heat input correlation curves.
-- Some states mandate NOₓ CEMS regardless of peaking status.
-
-### 4. Opacity Monitoring
-- **Opacity** measures the degree to which emissions obscure background objects; it is an indicator of particulate matter presence, not a pollutant itself.
-- Causes: Fly ash, unburned carbon, activated carbon, alkaline sorbents; condensed water vapor excluded for regulatory purposes.
-- Measurement Methods:
-  - **EPA Method 9**: Visual determination; requires certification every 6 months.
-  - **EPA Method 22**: Visual determination of fugitive emissions; minimal training.
-  - **ASTM D7520/DCOT**: Digital camera technique; approved for stacks < 7 ft diameter.
-- **Continuous Opacity Monitoring Systems (COMS)**: Transmissometers measuring light transmittance through stack gases.
-
-### 5. MATS Quarterly Testing & LEE Qualification
-- Applies to coal-fired, IGCC, oil-fired, and pet coke-fired units.
-- Testing requirements vary by fuel type and compliance option:
-  - PM or metals (Method 5 or 29)
-  - HCl (Method 26A or OTM-40)
-  - HF (Method 26A)
-  - SO₂ RATA (Method 6C)
-  - Hg RATA (Method 30B)
-- **LEE (Low Emitting EGU) Qualification**: Demonstrates emissions consistently below thresholds.
-
-### 6. Hg STMS – Sorbent Trap Mercury Measurement
-- **Performance Specification 12B** governs QA/QC for sorbent trap systems.
-- Manual, long-term integrated sampling (up to 15 operating days).
-- Paired three-section traps:
-  - Section 1: Primary Hg capture
-  - Section 2: Breakthrough check
-  - Section 3: Spiked for QA/QC
-- Measures Hg mass captured per sample volume.
+**Navigation Tip:**  
+- Start with **Basic Concepts** if you are new to ammonia slip.  
+- Jump to **Calculation Methods** for formulas and worked examples.  
+- Use **Integrated Tools** to perform real-time calculations.  
+- Explore **Advanced Topics** for oxygen correction, compliance testing, and tonnage conversions.
 
 ---
 
-## Technical Details
+## **1. Basic Concepts**
 
-### Appendix D Implementation
-1. Install and calibrate **fuel flow meters**.
-2. Conduct fuel sampling for GCV and sulfur content.
-3. Use DAHS to calculate hourly heat input and SO₂ emissions.
-4. Maintain ECMPS-compliant records.
+### **What is Ammonia Slip?**
+Ammonia slip occurs when injected ammonia (or urea-derived ammonia) passes through the SCR catalyst without reacting with NOx. It is typically measured in **parts per million by volume (ppmv)** at a reference oxygen concentration (often 15% O₂).
 
-### Appendix E Implementation
-1. Verify unit meets peaking capacity factor criteria.
-2. Perform initial stack testing to develop NOₓ correlation curve.
-3. Input correlation into DAHS for ongoing NOₓ estimation.
-4. Monitor capacity factor annually to ensure continued eligibility.
+**Why it matters:**
+- **Environmental compliance:** Regulatory agencies (e.g., TCEQ, EPA) set limits on ammonia slip.
+- **Operational efficiency:** Excess slip indicates over-injection or catalyst performance issues.
+- **Safety:** High ammonia emissions can be hazardous.
 
-### Opacity Monitoring
-- For Method 9: Position observer at fixed location relative to plume; record 24 readings over 6 minutes.
-- For COMS: Ensure proper alignment and calibration; account for moisture interference.
-
-### MATS Testing
-- Schedule quarterly/annual tests per fuel type.
-- Notify regulatory agencies per Part 63 General Provisions.
-- Select appropriate methods based on installed monitoring equipment.
-
-### Hg STMS
-- Operate paired sorbent traps with controlled flow rate.
-- Analyze trap sections for Hg content.
-- Apply PS-12B QA/QC criteria, including breakthrough and spike recovery checks.
+**Related Topics:**
+- [Selective Catalytic Reduction (SCR) Fundamentals](SCR_Fundamentals.md) – How SCR systems work and why ammonia slip occurs.
+- [NOx Measurement & Correction](NOx_Measurement.md) – Understanding inlet/outlet NOx readings and oxygen correction.
+- [Continuous Emissions Monitoring Systems (CEMS)](CEMS_Overview.md) – How ammonia slip data is collected and processed.
 
 ---
 
-## Best Practices
-- **Appendix D/E**: Use high-quality, calibrated fuel flow meters; maintain rigorous fuel sampling protocols.
-- **Opacity**: Train observers thoroughly; maintain COMS in optimal condition.
-- **MATS**: Align testing schedules with maintenance outages to minimize operational disruption.
-- **Hg STMS**: Use consistent sampling durations; ensure moisture removal systems are functioning.
+## **2. Core Calculation Methods**
+
+Multiple calculation approaches exist, depending on regulatory requirements and plant instrumentation. The following are the most common:
+
+### **2.1 ESC Standard Equation**
+From *ESC Ammonia Slip Calculation.xls*:
+
+\[
+As = \left[ A - \frac{B \cdot C}{1{,}000{,}000} \right] \cdot \left( \frac{1{,}000{,}000}{B} \cdot D \right) \cdot \left( \frac{20.9 - CF}{20.9 - O_2} \right)
+\]
+
+Where:  
+- **As** = Ammonia Slip (ppmv @ 15% O₂)  
+- **A** = NH₃ Injection Rate (lb/hr) ÷ 17 (lb/lb-mol) × %NH₃ in reagent  
+- **B** = Dry Exhaust Gas Flow Rate (scfh) ÷ 385.5 (scf/lb-mol)  
+- **C** = ΔNOx across catalyst (ppmv @ 15% O₂)  
+- **D** = Correction factor (measured/calculated slip ratio)  
+- **CF** = O₂ correction factor  
+- **O₂** = Measured stack oxygen concentration (%)  
+
+**Tool Integration:**  
+Use the **[ESC Ammonia Slip Calculator Spreadsheet](ESC_Ammonia_Slip_Calculation.xls)** to input CEMS readings and automatically compute slip values with oxygen correction. This tool is ideal for **annual compliance testing** and **daily operational checks**.
 
 ---
 
-## Implementation Examples
-- **Appendix D**: A gas-fired turbine replaces SO₂ CEMS with fuel flow-based calculations, reducing maintenance costs.
-- **Appendix E**: An oil-fired peaking unit uses NOₓ correlation curves to comply without installing NOₓ CEMS.
-- **Opacity**: A coal plant integrates COMS data into DAHS for real-time compliance tracking.
-- **MATS**: A pet coke-fired unit qualifies as LEE, reducing testing frequency.
-- **Hg STMS**: A cement plant uses sorbent traps to meet Hg monitoring requirements under PS-12B.
+### **2.2 TCEQ Equation (§117.8130)**
+From *NH3 slip calculations.xls*:
+
+\[
+NH_3 = \left[ \frac{a}{b} \times 10^6 - c \right] \times d
+\]
+
+Where:  
+- **a** = NH₃ injection rate (lb/hr) ÷ 17 lb/lb-mol  
+- **b** = Dry exhaust flow rate (lb/hr) ÷ 29 lb/lb-mol  
+- **c** = ΔNOx across catalyst (ppmv)  
+- **d** = Correction factor  
+
+**Variation:** Modified TCEQ equation includes oxygen correction:  
+\[
+NH_3 @ 15\% O_2 = \left( \left[ \frac{a}{b} \times 10^6 - c \right] \times d \right) \times \frac{5.9}{20.9 - O_2}
+\]
+
+**Tool Integration:**  
+Use the **[NH3 Slip Calculations Spreadsheet](NH3_slip_calculations.xls)** for TCEQ-compliant calculations, including worked examples for multiple plants.
 
 ---
 
-## Troubleshooting
-- **Appendix D/E**: Erratic heat input values may indicate faulty fuel flow meter calibration.
-- **Opacity**: Sudden opacity spikes may result from fuel quality changes or malfunctioning particulate controls.
-- **MATS**: Missed test deadlines can trigger noncompliance penalties; maintain a compliance calendar.
-- **Hg STMS**: Breakthrough in Section 2 indicates insufficient sorbent capacity or excessive sampling duration.
+### **2.3 Empire Method**
+From *Empire NH3slip.xlsx*:
+
+\[
+NH3SLIP = \frac{NH3}{17} - \left( \frac{DRYGAS}{29} \cdot \frac{NOX_{in} - NOX_{out}}{1{,}000{,}000} \right) \cdot \frac{1{,}000{,}000}{DRYGAS/29}
+\]
+
+Includes adjustment for %NH₃ in slurry.
+
+**Tool Integration:**  
+The **[Empire NH3 Slip Calculator](Empire_NH3slip.xlsx)** is tailored for plants using slurry injection systems.
 
 ---
 
-## Source Integration Notes
-- **New Information Added**:
-  - Detailed applicability and equipment requirements for Appendices D and E.
-  - Opacity measurement methods and COMS technology.
-  - MATS quarterly testing protocols by fuel type.
-  - Hg STMS procedures under PS-12B.
-- **Conflicts Resolved**:
-  - Clarified that Appendices D/E apply only to gas/oil units; excluded coal applicability.
-  - Harmonized capacity factor criteria for Appendix E with state-specific CEMS requirements.
-- **Content Enhanced**:
-  - Expanded technical details for implementation.
-  - Added best practices and troubleshooting guidance.
-  - Integrated examples from training materials for practical context.
+## **3. Oxygen Correction**
+
+Most ammonia slip limits are specified at a reference oxygen concentration (commonly 15% O₂). If measured O₂ differs, correction is required:
+
+\[
+Correction\ Factor = \frac{20.9 - CF}{20.9 - O_2}
+\]
+
+**Related Topics:**
+- [Oxygen Correction in Emissions Reporting](Oxygen_Correction.md) – Why and how oxygen correction is applied.
+- [CEMS O₂ Measurement Best Practices](CEMS_O2_Measurement.md) – Ensuring accurate oxygen readings.
 
 ---
 
-If you’d like, I can create **flow diagrams** showing decision paths for choosing between standard CEMS and excepted methods under Part 75, which would make this guide even more actionable for compliance engineers. Would you like me to add those?
+## **4. Converting NH₃ ppm to Tons per Year**
 
-## See Also
+From *NH3TONS from NH3PPM.xlsx* and *NH3TONS from NH3PPM 111210 Rev1.xlsx*:
 
-- [[Calibration]] - ---
+**Step 1:** Calculate stack flow rate (Qs) from fuel flow and F-factor.  
+**Step 2:** Convert NH₃ ppm to lb/hr:  
+\[
+E_{lb/hr} = \frac{NH_3\ ppm \times MW_{NH_3} \times Q_s}{1{,}000{,}000 \times IdealGasCF}
+\]
+**Step 3:** Convert lb/hr to tons/year:  
+\[
+NH3TONS = E_{lb/hr} \times \frac{Hours\ of\ Operation}{2000}
+\]
 
-## Troubleshooting
-- **Appendix D/E**: Errati...
+**Tool Integration:**  
+Use the **[NH3 Tons from NH3 PPM Calculator](NH3TONS_from_NH3PPM.xlsx)** to quickly estimate annual emissions for reporting.
 
+**Related Topics:**
+- [Emission Inventory Reporting](Emission_Inventory.md) – How ammonia slip tonnage fits into regulatory submissions.
+- [Ideal Gas Conversion Factors](Ideal_Gas_Conversion.md) – Understanding SCF/lb-mol constants.
+
+---
+
+## **5. Compliance Testing & Correction Factors**
+
+Annual compliance testing involves:
+- Measuring actual ammonia slip via stack sampling.
+- Comparing measured slip to calculated slip.
+- Deriving a **correction factor (D)** for ongoing calculations.
+
+**Best Practice:**  
+Maintain historical correction factors and update annually to reflect catalyst aging and process changes.
+
+**Related Topics:**
+- [Compliance Test Procedures](Compliance_Testing.md) – Step-by-step guide for ammonia slip verification.
+- [Catalyst Performance Monitoring](Catalyst_Performance.md) – How slip trends indicate catalyst health.
+
+---
+
+## **6. Integrated Tools Library**
+
+| Tool Name | Purpose | When to Use |
+|-----------|---------|-------------|
+| **ESC Ammonia Slip Calculator** | Computes slip with oxygen correction using ESC method | Annual compliance, daily checks |
+| **NH3 Slip Calculations Spreadsheet** | TCEQ-compliant slip calculation | Texas regulatory reporting |
+| **Empire NH3 Slip Calculator** | Slip calculation for slurry injection systems | Plants with wet reagent |
+| **NH3 Tons from NH3 PPM Calculator** | Converts ppm to annual tonnage | Emission inventory reporting |
+| **Ideal Gas Conversion Factor Sheet** | Reference for SCF/lb-mol constants | Any gas flow conversion |
+
+---
+
+## **See Also**
+- [SCR Fundamentals](SCR_Fundamentals.md) – Understanding catalyst operation and ammonia injection.
+- [NOx Measurement & Correction](NOx_Measurement.md) – How NOx readings affect slip calculations.
+- [CEMS Overview](CEMS_Overview.md) – Continuous monitoring systems for emissions.
+- [Oxygen Correction in Emissions Reporting](Oxygen_Correction.md) – Adjusting readings to reference oxygen.
+- [Emission Inventory Reporting](Emission_Inventory.md) – Annual reporting requirements.
+- [Ideal Gas Conversion Factors](Ideal_Gas_Conversion.md) – Gas law constants for flow calculations.
+- [Catalyst Performance Monitoring](Catalyst_Performance.md) – Using slip data to assess catalyst health.
+- [Compliance Test Procedures](Compliance_Testing.md) – How to verify ammonia slip compliance.
+
+---
+
+**Breadcrumb Navigation:**  
+Home → Emissions Control → SCR Systems → Ammonia Slip Calculation & Compliance Guide
+
+---
+
+✅ **Next Step Recommendation:**  
+If you are preparing for a compliance test, start with the **ESC Ammonia Slip Calculator** and review the **Compliance Testing** section. If you need to report annual emissions, use the **NH3 Tons from NH3 PPM Calculator** and cross-check with your CEMS data.
+
+---
+
+Do you want me to **create linked subpages** for each calculation method so users can click directly from the overview to a deep-dive page with worked examples and downloadable tools? That would make this wiki truly navigable and interconnected.
 
 ## Glossary
 
-- **ECMPS**: Emissions Collection and Monitoring Plan System
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **ECMPS**: Emissions Collection and Monitoring Plan System
 - **CEMS**: Continuous Emissions Monitoring System

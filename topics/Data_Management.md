@@ -191,3 +191,10 @@ This enhanced documentation now serves as a **complete operational and complianc
 - **ECMPS**: Emissions Collection and Monitoring Plan System
 - **CEMS**: Continuous Emissions Monitoring System
 - **8864**: Data controller platform used by engineering
+
+
+## Glossary
+
+- **ECMPS**: Emissions Collection and Monitoring Plan System
+- **CEMS**: Continuous Emissions Monitoring System
+- **8864**: Data controller platform used by engineering
