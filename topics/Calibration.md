@@ -2,9 +2,9 @@
 title: Calibration
 consolidated: true
 sources: 2
-conflicts: 3
+conflicts: 1
 confidence: 0.60
-generated: ['data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_CalibrationActivityBottlesxlsx_4c681ef1.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_CalibrationsActivityCustomerdocx_242035cd.md']  # This would be a timestamp
+generated: ['data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_CalibrationActivityBottlesxlsx_4c681ef1.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_CalibrationsActivityCustomerdocx_242035cd.md']  # This would be a timestamp
 ---
 
 ## Title  
@@ -13,101 +13,101 @@ generated: ['data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_
 ---
 
 ## Overview  
-Calibration is a critical process for ensuring the accuracy and reliability of emissions monitoring systems, particularly those operating under regulatory frameworks such as U.S. EPA Part 75. This consolidated guide outlines calibration procedures for a dual-range NOx and CO system using O₂ as a diluent, integrated with StackVision and Thermo analyzers. It combines calibration gas specifications with operational scheduling and procedural requirements to support compliance, minimize downtime, and maintain measurement integrity.
+Calibration of Continuous Emissions Monitoring Systems (CEMS) is essential for ensuring accurate measurement and compliance with regulatory requirements such as U.S. EPA Part 75. This consolidated guide focuses on calibration procedures for systems running **dual-range NOx and CO analyzers** with **O₂ as the diluent gas**, specifically within the **StackVision** platform. It integrates calibration gas specifications, operational timing, and procedural sequencing to optimize accuracy and minimize downtime.
 
 ---
 
 ## Key Concepts  
 
-### 1. **Dual-Range Measurement**  
-- **NOx**: Measured in both high and low ranges to accommodate varying emission levels.  
-- **CO**: Also measured in high and low ranges for flexibility in monitoring.  
-- **O₂**: Used as a diluent gas and measured across multiple span levels.
+### 1. **Dual-Range Calibration**  
+Dual-range analyzers measure gases across two distinct concentration ranges (low and high). Calibration must be performed for each range to ensure accuracy across the full measurement spectrum.
 
-### 2. **Calibration Phases**  
-- Each calibration consists of multiple phases (zero, low span, high span) for each gas.  
-- Phase duration: **1 minute**, with only the **last 30 seconds** of data used for evaluation.  
-- Post-calibration settling time: **1 minute**, during which the system remains flagged as "in calibration mode."
+### 2. **Calibration Gases and Concentrations**  
+Calibration gases are stored in bottles with known concentrations. These gases are used to verify analyzer accuracy at multiple span levels.
 
-### 3. **Thermo Analyzer Integration**  
-- Thermo analyzers can initiate diagnostic or internal calibrations.  
-- These calibrations are hardwired to the 8864 controller, which manages calibration mode signaling and feedback.
+**Example Calibration Gas Concentrations:**
+| Gas | Range | Level | Concentration |
+|-----|-------|-------|---------------|
+| NOx | High Range | High | 900 ppm |
+| NOx | High Range | Mid | 500 ppm |
+| NOx | High Range | Low | 200 ppm |
+| NOx | Low Range | High | 90 ppm |
+| CO  | High Range | High | 950 ppm |
+| CO  | Low Range | High | 95 ppm |
+| O₂  | — | High | 0.22 |
+| O₂  | — | Mid | 0.16 |
+| O₂  | — | Low | 0.09 |
 
-### 4. **Regulatory Context**  
-- NOx and O₂ measurements are reported under **Part 75** requirements.  
-- Calibration scheduling and execution must avoid downtime and ensure valid data capture.
+### 3. **Calibration Modes**  
+- **Daily Calibration:** Scheduled routine calibration to verify analyzer performance.
+- **Diagnostic Calibration:** Triggered by analyzer self-checks outside of the daily schedule.
+- **Internal Analyzer Calibration:** Performed by the analyzer itself to address specific range or O₂ measurement issues.
+- **Linearization Calibration:** Used to verify linearity of analyzer response across the measurement range.
 
 ---
 
 ## Technical Details  
 
-### Calibration Gas Specifications (from Document 1)  
-| Gas | Range | Concentration |
-|-----|-------|---------------|
-| NOx | High Range High Level | 900 ppm |
-| NOx | High Range Mid Level  | 500 ppm |
-| NOx | High Range Low Level  | 200 ppm |
-| NOx | Low Range High Level  | 90 ppm  |
-| CO  | High Range High Level | 950 ppm |
-| CO  | Low Range High Level  | 95 ppm  |
-| O₂  | High Level            | 0.22    |
-| O₂  | Mid Level             | 0.16    |
-| O₂  | Low Level             | 0.09    |
+### Calibration Timing and Phase Control  
+- **Phase Duration:** Each calibration phase lasts **1 minute**.  
+- **Data Capture:** Only the **last 30 seconds** of each phase are used for validation to allow stabilization.  
+- **Post-Calibration Settling:** A **1-minute settling period** follows calibration, during which the system remains flagged as "in calibration mode" to external systems.  
+- **Exception:** Thermo internal calibration (#3) may have different timing requirements.
 
-### Calibration Types (from Document 2)  
-1. **Daily Calibration**  
-   - Runs at **06:00** daily or **4 hours after startup**.  
-   - Must start in the first quadrant after valid data capture to avoid downtime.  
-   - Sequence: Zero → Low NOx span → High NOx span → Low CO span → High CO span → O₂ span.  
-   - This sequence improves result consistency.
+### Calibration Sequence (Daily Calibration Example)  
+1. **Zero Check** – Verify baseline measurement with zero gas.  
+2. **NOx Low Span** – Apply low-range NOx calibration gas.  
+3. **NOx High Span** – Apply high-range NOx calibration gas.  
+4. **CO Low Span** – Apply low-range CO calibration gas.  
+5. **CO High Span** – Apply high-range CO calibration gas.  
+6. **O₂ Span** – Apply O₂ calibration gas.
 
-2. **Diagnostic Calibration (Thermo-initiated)**  
-   - Mimics daily calibration but triggered outside the normal schedule.  
-   - Must not overlap with other calibrations to prevent conflicts.
-
-3. **Thermo Internal Calibration**  
-   - Addresses issues with high ranges and O₂ measurements.  
-   - Initiated by Thermo analyzer as needed.  
-   - Feedback is read by the 8864 controller.
-
-4. **Linearization Calibration**  
-   - Required only for specific environmental compliance needs.  
-   - Frequency determined by environmental team.
+### Scheduling Considerations  
+- **Daily Calibration:**  
+  - Runs at **06:00** daily OR **4 hours after startup**.  
+  - Must start in the **first quadrant** after valid data acquisition to avoid downtime flags.  
+- **Diagnostic Calibration:**  
+  - Initiated by Thermo analyzer when required.  
+  - Must not overlap with other calibrations to prevent conflicts.  
+- **Internal Analyzer Calibration:**  
+  - Triggered by analyzer for high-range or O₂ accuracy issues.  
+  - Hardwired to 8864 controller for feedback monitoring.  
+- **Linearization Calibration:**  
+  - Performed only when required by environmental compliance staff.
 
 ---
 
 ## Best Practices  
 
-1. **Scheduling**  
-   - Align calibrations to avoid overlap between daily, diagnostic, and internal calibrations.  
-   - Ensure calibrations occur after valid data capture to prevent downtime.
+1. **Sequence Optimization:**  
+   - Perform zero checks before span checks to ensure baseline accuracy.  
+   - Run NOx calibrations before CO calibrations, followed by O₂, for improved consistency.
 
-2. **Phase Timing**  
-   - Maintain consistent phase durations (1 minute) and data capture windows (last 30 seconds).  
-   - Allow adequate settling time post-calibration while keeping calibration mode active.
+2. **Avoid Overlap:**  
+   - Ensure diagnostic and internal calibrations do not run during scheduled daily calibrations.
 
-3. **Sequence Optimization**  
-   - Follow the recommended order (zero → NOx spans → CO spans → O₂ span) for improved accuracy.  
-   - Verify calibration gas concentrations match specifications.
+3. **Data Integrity:**  
+   - Use only stabilized readings (last 30 seconds of phase) for calibration validation.  
+   - Maintain calibration mode signal during settling to ensure proper data flagging.
 
-4. **Integration Management**  
-   - Monitor Thermo analyzer signals to coordinate with StackVision and 8864 controller logic.  
-   - Prevent simultaneous calibrations to avoid data conflicts.
+4. **Regulatory Compliance:**  
+   - Align calibration schedules and procedures with **EPA Part 75** requirements.  
+   - Document all calibration events, including gas concentrations and analyzer responses.
 
-5. **Regulatory Compliance**  
-   - Document calibration events and results for Part 75 reporting.  
-   - Maintain calibration gas certificates and ensure traceability.
+5. **Maintenance Coordination:**  
+   - Coordinate with environmental staff before performing linearization calibrations.  
+   - Regularly verify calibration gas bottle concentrations and replace as needed.
 
 ---
 
 ## Source Attribution  
 
-- **Document 1**: Provided calibration gas concentration specifications for NOx, CO, and O₂ across multiple ranges and levels.  
-- **Document 2**: Detailed operational calibration procedures, scheduling requirements, phase timing, integration with Thermo analyzers, and regulatory context for Part 75 reporting.
+- **[Document 1]**: Provided detailed calibration gas bottle specifications and concentration values for NOx, CO, and O₂ across multiple ranges and levels.  
+- **[Document 2]**: Contributed operational calibration procedures, timing requirements, sequencing preferences, scheduling logic, and integration details with Thermo analyzers and StackVision systems.
 
 ---
 
-If you’d like, I can also create a **calibration scheduling diagram** that visually maps daily, diagnostic, and internal calibrations to avoid conflicts. Would you like me to add that?
+If you’d like, I can create a **visual flowchart** of the calibration sequence and timing to make this guide easier to follow for operators. Would you like me to add that?
 
 ## Related Tools and Spreadsheets
 
@@ -124,11 +124,13 @@ The following tools and spreadsheets are available for this topic:
 
 ## See Also
 
-- [[Environmental]] - **Linearization Calibration**  
-   - Required only...
-- [[Environmental]] - - Frequency determined by environmental team...
+- [[Environmental]] - - **Linearization Calibration:**  
+  - Performed o...
+- [[Environmental]] - **Maintenance Coordination:**  
+   - Coordinate wi...
 
 
 ## Glossary
 
+- **CEMS**: Continuous Emissions Monitoring System
 - **8864**: Data controller platform used by engineering

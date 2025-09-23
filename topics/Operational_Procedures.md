@@ -4,7 +4,7 @@ consolidated: true
 sources: 12
 conflicts: 0
 confidence: 0.80
-generated: ['data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_calibrationsstandardvsdifferencexlsx_4ec97ec2.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_AECI_MatrikonHOSE_Install_Procedure_IC_rev10202017docx_35753998.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_CheatSheetEngineerxlsx_54df7a2a.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_E-DASEMRP60R3UsersGuide050306ID198pdf_639f88c3.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_E-DASEMRP75R3UsersGuide050306ID197pdf_b32b7e9a.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_Linking-Other-Software_D-Fromepdf_1f8ecde0.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_OPCQuestionsdocx_1202a612.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_ProcessNowNewHireTrainingpptx_ee6a8d3e.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_ProcessNowQuestionsdocx_902e3e5d.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_TheInsandOutsofProcessNowdocx_6c95f335.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_ProcessNowpdf_a5fd2f54.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_ProcessNowpdf_ec2b9d26.md']  # This would be a timestamp
+generated: ['data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_calibrationsstandardvsdifferencexlsx_4ec97ec2.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_AECI_MatrikonHOSE_Install_Procedure_IC_rev10202017docx_35753998.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_CheatSheetEngineerxlsx_54df7a2a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_E-DASEMRP60R3UsersGuide050306ID198pdf_639f88c3.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_E-DASEMRP75R3UsersGuide050306ID197pdf_b32b7e9a.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_Linking-Other-Software_D-Fromepdf_1f8ecde0.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_OPCQuestionsdocx_1202a612.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_ProcessNowNewHireTrainingpptx_ee6a8d3e.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_ProcessNowQuestionsdocx_902e3e5d.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_TheInsandOutsofProcessNowdocx_6c95f335.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_ProcessNowpdf_a5fd2f54.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_ProcessNowpdf_ec2b9d26.md']  # This would be a timestamp
 ---
 
 ## Title
@@ -13,105 +13,100 @@ generated: ['data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_
 ---
 
 ## Overview
-ProcessNow is a core data processing engine within the StackVision environmental data management platform. It automates the transformation, validation, and reporting of emissions and operational data to meet regulatory requirements such as EPA Part 60 and Part 75. This guide consolidates training materials, installation procedures, and operational best practices for ProcessNow, OPC integration using Matrikon HOSE and E-DAS API, and related tools such as E-DAS EMR. It is intended for engineers, system administrators, and compliance specialists responsible for configuring, running, and troubleshooting StackVision data workflows.
+ProcessNow is a core data processing and quality assurance (QA) automation tool within the StackVision environmental data management platform. It streamlines the transformation of raw data from Continuous Emissions Monitoring Systems (CEMS) into validated, compliant records for regulatory reporting. This guide consolidates training materials, installation procedures, operational notes, and best practices for using ProcessNow in conjunction with OPC data interfaces (Matrikon HOSE, E-DAS API) and E-DAS EMR software.
+
+The document covers:
+- ProcessNow logic, configuration, and task sequencing
+- OPC DA and OPC UA integration for external data sources
+- Installation of Matrikon HOSE and E-DAS API
+- E-DAS EMR usage fundamentals
+- Best practices for calibration, data progression, and troubleshooting
 
 ---
 
 ## Key Concepts
 
 ### ProcessNow
-- **Definition**: A user-defined sequence of tasks that process raw data from controllers into validated, report-ready formats.
-- **Purpose**: Streamlines data QA/QC by replacing multiple manual utilities with a single, configurable sequence.
-- **Sequence Structure**: Each sequence contains tasks (e.g., missing data substitution, math calculations, rolling averages) that are dependent on one another.
-- **Scheduling**: Typically runs hourly and daily; can also be triggered manually after data edits.
+- **Purpose**: Automates post-processing of polled data, ensuring it meets EPA/state reporting requirements.
+- **Sequences**: User-defined lists of dependent tasks (e.g., daily record processing, missing data substitution, math calculations, rolling averages).
+- **Scheduling**: Typically runs hourly and daily; can be triggered manually or via other StackVision modules (DataLab, CalLab, RATA editor, Fuel Analysis).
+- **Compliance**: Ensures data is correctly formatted for Electronic Data Reports (EDR) and other permit reports.
 
 ### OPC Integration
-- **OPC Protocols**:
-  - **DA (Data Access)**: Real-time data exchange, legacy COM/DCOM-based.
-  - **HDA (Historical Data Access)**: Retrieval of historical datasets.
-  - **UA (Unified Architecture)**: Modern, cross-platform protocol with certificate-based security.
-- **Matrikon HOSE**: An OPC DA server used to host data tags for StackVision.
-- **E-DAS API**: Required for Matrikon HOSE installation and integration.
+- **OPC DA (Legacy)**: Uses DCOM/COM, Windows-only, more complex configuration.
+- **OPC UA (Unified Architecture)**: OS-independent, certificate-based security, supports real-time and historical data access.
+- **Matrikon HOSE**: OPC DA server used with E-DAS API to host and map data tags from external systems (e.g., OSIsoft PI historian).
 
 ### E-DAS EMR
-- **Function**: Environmental Data Acquisition System for Windows, supporting regulatory data collection and reporting.
-- **Regulatory Context**: Supports EPA Part 60 and Part 75 compliance.
-- **User Guide Structure**: Includes definitions, conventions, and operational procedures.
+- **Function**: Environmental Data Acquisition System for Windows; manages data collection, storage, and preliminary processing.
+- **Release R3**: Includes user guides for Part 60 and Part 75 compliance contexts.
+- **Integration**: Works with Matrikon HOSE and ProcessNow for end-to-end data handling.
+
+### Data Progression & Parameters
+- **Progression Types**: Hours → Days, Hours → Multi-Hour, Hours → Months, etc.
+- **Validation & Conditions**: Parameters have limits, averaging periods, and online conditions; startup periods may be excluded.
+- **Final Parameters**: Calculated values used in compliance reporting.
 
 ---
 
 ## Technical Details
 
-### Installing E-DAS API and Matrikon HOSE (Document 2)
-1. **E-DAS API Installation**:
-   - Copy `1_EDAS_API_R02S5b` from `\\groot\I&C\Matrikon OPC\Matrikon HOSE` to target machine.
-   - Run setup executable; approve UAC prompts.
-   - Follow wizard steps, confirming E-DAS EMR installation if applicable.
-2. **Matrikon HOSE Installation**:
-   - Copy executable from `\\groot\I&C\Matrikon OPC\Matrikon HOSE\2_HOSE_v2.0.0.1_011206`.
-   - Run as administrator; follow wizard to completion.
+### Installing E-DAS API (Prerequisite for Matrikon HOSE)
+1. Copy `1_EDAS_API_R02S5b` from `\\groot\I&C\Matrikon OPC\Matrikon HOSE` to target machine.
+2. Run `setup.exe` as administrator.
+3. Accept prompts (User Account Control, installation wizard).
+4. Confirm E-DAS EMR is installed if prompted.
+5. Complete installation (Next → Finish).
 
-### ProcessNow Operation (Documents 8, 10, 11, 12)
-- **Initiation Methods**:
-  1. **Scheduled**: Hourly/daily runs from the first hour of the current quarter to the current hour minus one.
-  2. **Triggered by Edits**: Runs from the first changed hour after data edits.
-  3. **Manual**: Initiated from DataLab, CalLab, RATA editor, or Fuel Analysis.
-- **Common Tasks**:
-  - **CNDMGR**: Clears Missing Data Calculated (MDC) flags to prepare for substitution.
-  - **MDSUB**: Substitutes missing data per regulatory rules.
-  - **ACCEPT**: Marks data as accepted for downstream processing.
-  - **MATHPACK**: Performs calculations; options include:
-    - `-L -c`: Recalculate logger channels without recalculating selected parameters.
-    - `-O`: Only calculate specified parameters.
-- **Command Line Execution**: Tasks can be run via command line with specific syntax (see ProcessNow Questions for examples).
+### Installing Matrikon HOSE
+1. Copy executable from `\\groot\I&C\Matrikon OPC\Matrikon HOSE\2_HOSE_v2.0.0.1_011206`.
+2. Run as administrator.
+3. Follow installation wizard, accept license, and finish setup.
 
-### OPC UA vs OPC DA (Documents 6, 7)
-- **OPC DA**:
-  - Windows-only, COM/DCOM-based.
-  - Requires Matrikon HOSE and E-DAS API.
-- **OPC UA**:
-  - OS-independent (Windows, Linux, iOS, Android).
-  - Secure via x.509 certificates, supports TCP/IP over SSL/HTTP/HTTPS.
-  - Handles both real-time and historical data.
+### ProcessNow Task Examples
+- **CNDMGR**: Clears Missing Data Calculated (MDC) flags before substitution.
+- **MDSUB**: Substitutes missing data based on rules and MDC status.
+- **ACCEPT**: Marks data as accepted for downstream processing.
+- **MATHPACK**: Performs math calculations with options:
+  - `-L -c`: Recalculate logger channels, skip selected parameters, calculate downstream.
+  - `-O`: Only calculate specified parameters.
+
+### OPC Data Flow
+- **Getting Data Out**: Requires running condition manager to clear MIS/INV flags.
+- **Getting Data In**: Monthly data may be browsable but not auto-updated in some OPC DA setups.
+- **Security**: OPC UA supports TCP/IP over SSL, HTTP/HTTPS with x.509 certificates.
 
 ---
 
 ## Best Practices
 
-1. **Sequence Design**:
-   - Tailor tasks to site-specific requirements (system type, permit conditions, engineering approach).
-   - Include condition management early to ensure accurate substitutions.
-2. **Scheduling**:
-   - Maintain consistent hourly and daily runs to ensure timely QA/QC.
-   - Avoid running daily sequences over periods with incomplete data to prevent erroneous calculations.
-3. **OPC Integration**:
-   - Use OPC UA where possible for enhanced security and cross-platform compatibility.
-   - Document all tag mappings and maintain updated certificates.
-4. **Troubleshooting**:
-   - Enable debugging on tasks when diagnosing issues (e.g., `svmpcalcparm` with debug output to file).
-   - Verify sequence storage and scheduler configurations if tasks fail to run.
-5. **Regulatory Compliance**:
-   - Ensure all processed data meets EPA formatting and reporting requirements.
-   - Regularly review E-DAS EMR user guides for updates to procedures and definitions.
+1. **Sequence Design**: Tailor ProcessNow sequences to site-specific systems, permits, and operational needs.
+2. **Scheduling**: Ensure hourly and daily runs are configured and monitored; troubleshoot missed runs by checking stored schedules.
+3. **Debugging**: Enable debug mode on tasks when diagnosing issues (e.g., `svmpcalcparm UNIT1:NOXPPM -debug > debugfile.txt`).
+4. **Data Recovery**: Use appropriate tasks to rebuild hourly values from minute data when needed.
+5. **OPC Configuration**: Prefer OPC UA for new integrations due to enhanced security and cross-platform support.
+6. **Installation Order**: Install E-DAS API before Matrikon HOSE to ensure proper OPC DA functionality.
+7. **Calibration Management**: Maintain clear distinction between standard and difference calibration methods (requires review of Document 1 once available).
+8. **Security Certificates**: Manage OPC UA certificates carefully to maintain secure client-server communication.
 
 ---
 
 ## Source Attribution
 
-- **Document 1**: Placeholder for calibration standards vs difference (Excel extraction failed; no usable content).
-- **Document 2**: Provided step-by-step installation procedures for E-DAS API and Matrikon HOSE.
-- **Document 3**: Listed parameter limits, averaging periods, and data progression rules for engineering reference.
-- **Document 4 & 5**: E-DAS EMR User Guides for EPA Part 60 and Part 75 compliance; definitions, conventions, and operational context.
-- **Document 6**: Explained OPC protocols, security, and integration considerations; highlighted Matrikon HOSE and E-DAS API usage.
-- **Document 7**: Posed key OPC integration questions; contrasted OPC DA and UA features.
-- **Document 8**: ProcessNow New Hire Training slides; overview, configuration, and operational context.
-- **Document 9**: ProcessNow troubleshooting and command line execution questions; debugging examples.
+- **Document 1**: Placeholder for calibration standard vs. difference methodology (Excel extraction failed; requires manual review).
+- **Document 2**: Detailed installation steps for E-DAS API and Matrikon HOSE.
+- **Document 3**: Parameter definitions, limits, data progression types, and validation rules.
+- **Document 4 & 5**: E-DAS EMR User’s Guides for Part 60 and Part 75 compliance contexts.
+- **Document 6**: OPC UA vs. OPC DA comparison, security considerations, and integration notes.
+- **Document 7**: OPC-related customer Q&A, setup requirements for PI-to-StackVision data push.
+- **Document 8**: ProcessNow overview, objectives, and operational context from new hire training.
+- **Document 9**: ProcessNow troubleshooting and command-line usage examples.
 - **Document 10**: Detailed description of common ProcessNow tasks and their purposes.
-- **Document 11 & 12**: Reference presentations on ProcessNow logic, initiation methods, and sequence behavior.
+- **Document 11 & 12**: ProcessNow logic, sequence behavior, and initiation methods from reference documents/presentations.
 
 ---
 
-This consolidated guide should serve as a foundational reference for anyone working with ProcessNow, OPC integration, and E-DAS EMR within StackVision systems, ensuring both technical accuracy and operational efficiency.
+This consolidated guide provides a unified reference for technical staff working with StackVision’s ProcessNow, OPC integration, and E-DAS EMR systems, ensuring consistent understanding and application across installations and operational contexts.
 
 ## Related Tools and Spreadsheets
 
@@ -137,8 +132,14 @@ The following tools and spreadsheets are available for this topic:
 **...
 - [[Environmental]] - ### E-DAS EMR
 - **Function**: Environmental Data A...
+- [[Calibration]] - **Calibration Management**: Maintain clear distinc...
 - [[Calibration]] - ---
 
 ## Source Attribution
 
 - **Document 1**: Plac...
+
+
+## Glossary
+
+- **CEMS**: Continuous Emissions Monitoring System

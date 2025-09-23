@@ -4,131 +4,134 @@ consolidated: true
 sources: 6
 conflicts: 0
 confidence: 0.80
-generated: ['data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_05-Part75AppendixDpdf_70eaa6e8.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_06-Part75AppendixEpdf_c20010f7.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_07-OpacityCOMSpdf_ae9fb370.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_10-EGUMATSQuarterlyTestingLEEQualificationpdf_560cfa70.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_11-HgSTMSpdf_6bead77d.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_2011RegulationsTrainingWorkbookpdf_cf95831d.md']  # This would be a timestamp
+generated: ['data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_05-Part75AppendixDpdf_70eaa6e8.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_06-Part75AppendixEpdf_c20010f7.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_07-OpacityCOMSpdf_ae9fb370.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_10-EGUMATSQuarterlyTestingLEEQualificationpdf_560cfa70.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_9_Regulations_11-HgSTMSpdf_6bead77d.md', 'data\\extracted\\ui_generated_1758664953\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_2011RegulationsTrainingWorkbookpdf_cf95831d.md']  # This would be a timestamp
 ---
 
 ## Title
-**Consolidated Overview of Part 75 Appendix D & E Requirements, Opacity Monitoring, and MATS/Hg Testing Protocols**
+**Consolidated Overview of 40 CFR Part 75 Excepted Methods, Opacity Monitoring, and MATS Testing Requirements**
 
 ---
 
 ## Overview
-This consolidated entry provides a comprehensive reference for U.S. EPA regulatory requirements under **40 CFR Part 75** (Appendices D and E), **opacity monitoring methods**, and **Mercury and Air Toxics Standards (MATS)** testing protocols, including sorbent trap mercury measurement (Hg STMS). These regulations govern emissions monitoring, reporting, and compliance for electric generating units (EGUs) and other affected sources, with specific provisions for gas- and oil-fired units, peaking units, and coal-fired sources. Understanding these requirements is critical for compliance officers, environmental engineers, and plant operators to ensure accurate emissions measurement, maintain regulatory compliance, and optimize monitoring strategies.
+This consolidated entry provides a comprehensive summary of U.S. EPA regulatory requirements under **40 CFR Part 75** for excepted monitoring methods (Appendices D and E, Low Mass Emissions), **opacity monitoring** under NSPS and related standards, and **Mercury and Air Toxics Standards (MATS)** testing protocols, including sorbent trap mercury measurement (Hg STMS). These regulations govern emissions monitoring, testing, and reporting for electric generating units (EGUs) and other affected sources, ensuring compliance with federal air quality programs such as the Acid Rain Program (ARP), NOx Budget Trading Program, Cross-State Air Pollution Rule (CSAPR), and MATS.
 
 ---
 
 ## Key Concepts
 
-### Part 75 Appendix D
-- **Applicability**: Gas- and/or oil-fired units; cannot be used for coal-fired sources.
-- **Purpose**: Allows use of fuel flow data and fuel analysis in lieu of continuous SO₂ and flow monitors to determine hourly SO₂ emissions and heat input.
-- **Historical Use**: Common in NOₓ Budget and NOₓ Ozone Programs.
-- **Measurement Basis**:
-  - Fuel flow meters for heat input.
-  - Fuel sampling for gross calorific value (GCV) and sulfur content.
-  - Requires NOₓ Continuous Emissions Monitoring Systems (CEMS).
-
-### Part 75 Appendix E
-- **Applicability**: Gas- and oil-fired boilers, turbines, and diesel engine peaking units.
-- **Capacity Factor Limits**:
-  - <10% (3-year average) or <20% (any one year).
-  - Exceeding limits requires NOₓ CEMS installation by December 31 of the following year.
-- **Purpose**: Optional NOₓ emissions estimation protocol for peaking units; NOₓ CEMS not required if criteria met.
-- **Measurement Basis**:
-  - Stack test results to develop NOₓ vs. heat input correlation.
-  - Fuel flow meters and DAHS (Data Acquisition and Handling Systems).
+### Part 75 Excepted Methods
+- **Appendix D**: Allows gas- and oil-fired units to determine hourly SO₂ emissions and heat input without continuous SO₂ and flow monitors, using fuel flow meters and fuel sampling/analysis.
+- **Appendix E**: Provides an optional NOx emissions estimation protocol for qualifying peaking units, using periodic testing instead of continuous NOx CEMS.
+- **Low Mass Emissions (LME)**: Applies to units with low annual emissions, allowing use of default emission factors and simplified heat input determination.
 
 ### Opacity Monitoring
-- **Definition**: Degree to which emissions reduce light transmission and obscure background objects; not a pollutant itself.
-- **Causes**: Particulate matter (fly ash, unburned carbon, sorbents) and condensed water vapor (excluded for regulatory purposes).
+- **Opacity**: A measure of the degree to which emissions reduce light transmission and obscure background objects; an indicator of particulate matter emissions.
 - **Measurement Methods**:
-  - **EPA Method 9**: Visual determination; certified every 6 months.
-  - **EPA Method 22**: Visual determination of fugitive emissions; minimal training.
-  - **ASTM 7520/DCOT**: Digital camera technique; approved for stacks <7 ft diameter.
-- **COMS Technology**: Continuous Opacity Monitoring Systems (transmissometers) measure light transmittance through stack gases.
+  - EPA Method 9: Visual determination of opacity from stationary sources.
+  - EPA Method 22: Visual determination of fugitive emissions and flare smoke.
+  - ASTM D7520 / ALT-082: Digital Camera Opacity Technique (DCOT).
+- **Continuous Opacity Monitoring Systems (COMS)**: Transmissometers that measure light transmittance through stack gases.
 
-### MATS Quarterly Testing & LEE Qualification
-- **Applicability**: Coal-fired, IGCC, liquid oil-fired, and pet coke-fired units.
-- **Testing Requirements**:
-  - Quarterly PM or metals (Method 5 or 29).
-  - Quarterly HCl (Method 26A or OTM-40) and/or HF.
-  - Annual SO₂ RATA (Method 6C) or Hg RATA (Method 30B).
-- **LEE (Low Emitting EGU) Qualification**: Special considerations for reduced testing frequency if emissions consistently below thresholds.
-
-### Hg Sorbent Trap Monitoring Systems (STMS)
-- **Regulatory Basis**: Performance Specification 12B (PS-12B), 40 CFR Part 60 Appendix B.
-- **Method**: Manual, long-term integrated sampling (up to 15 operating days).
-- **Equipment**:
-  - Paired three-section carbon sorbent traps.
-  - Probe, vacuum pump, heated sample lines, dry gas/mass flow meters, moisture removal, temperature/pressure sensors.
-- **Sections**:
-  - Section 1: Primary Hg capture.
-  - Section 2: Breakthrough determination.
-  - Section 3: QA/QC spike with known Hg⁰ concentration.
-- **Calculation**: Hg concentration = mass captured / sample volume.
+### MATS Testing Requirements
+- **Quarterly and Annual Testing**: PM, metals, HCl, HF, SO₂, and Hg depending on fuel type and compliance option.
+- **Hg Sorbent Trap Monitoring Systems (STMS)**: Manual, time-integrated mercury measurement method per PS-12B.
 
 ---
 
 ## Technical Details
 
-### Appendix D Procedures
-1. Install and calibrate fuel flow meters.
-2. Conduct fuel sampling for GCV and sulfur content.
-3. Use NOₓ CEMS for NOₓ emissions measurement.
-4. Calculate hourly SO₂ emissions and heat input from fuel data.
+### Appendix D – Fuel-Based SO₂ and Heat Input Determination
+- **Applicability**: Gas- or oil-fired units; not for coal-fired sources.
+- **Equipment**:
+  - Fuel flow meters (measure volumetric or mass fuel flow).
+  - Fuel sampling for gross calorific value (GCV) and sulfur content.
+  - NOx CEMS required for NOx measurement.
+- **Advantages**: Avoids installation/maintenance of pollutant and flow monitors; historically used in NOx trading programs.
+- **Gas Specifications**: Sulfur content limits for pipeline natural gas and other gaseous fuels.
 
-### Appendix E Procedures
-1. Verify unit meets peaking criteria (capacity factor thresholds).
-2. Perform initial performance testing to establish NOₓ vs. heat input curve.
-3. Use fuel flow meters and DAHS to record operational data.
-4. Apply correlation to estimate NOₓ emissions without CEMS.
+### Appendix E – NOx Emissions Estimation for Peaking Units
+- **Applicability Criteria**:
+  - Gas/oil-fired boilers, turbines, diesel engines.
+  - Capacity factor <10% (3-year average) or <20% (any single year).
+- **Protocol**:
+  - Initial performance testing to develop NOx vs. heat input correlation.
+  - Periodic retesting to maintain correlation validity.
+- **CEMS Requirement Trigger**: Exceeding capacity factor thresholds requires NOx CEMS installation by Dec 31 of following year.
+- **State Variations**: Some states mandate NOx CEMS regardless of peaking status.
 
-### Opacity Monitoring Procedures
-- **Method 9**: Position observer, take 24 readings every 15 seconds, average over 6 minutes.
-- **Method 22**: Observe and record duration of visible emissions.
-- **COMS**: Install transmissometer, calibrate, and continuously record opacity data.
+### Low Mass Emissions (LME)
+- **Applicability**: Units with low annual emissions.
+- **Monitoring**: Default emission factors; fuel flow records or maximum heat input.
 
-### MATS Testing Procedures
-- Schedule quarterly and annual tests per fuel type and compliance option.
-- Notify regulatory agencies per performance test notification requirements.
-- Conduct RATA for applicable CEMS (SO₂, Hg).
-- Maintain QA/QC documentation.
+### Opacity Monitoring
+- **Causes**:
+  - Particulate matter (fly ash, unburned carbon, activated carbon, alkaline sorbents).
+  - Condensed water vapor (excluded for regulatory opacity).
+- **Measurement Methods**:
+  - **Method 9**: Certified visual observations; 24 readings over 6 minutes.
+  - **Method 22**: Duration of visible emissions; minimal training.
+  - **ASTM D7520**: Digital image analysis; approved for stacks <7 ft diameter.
+- **COMS Technology**:
+  - Measures transmittance (T = I/I₀) of a light beam through stack gases.
+  - Applications include stack opacity, water turbidity, and visual range determination.
 
-### Hg STMS Procedures
-1. Install paired sorbent traps in sampling console.
-2. Operate pump at known flow rate for up to 15 days.
-3. Analyze trap sections for Hg content.
-4. Apply PS-12B QA/QC criteria to validate results.
+### MATS Quarterly Testing & LEE Qualification
+- **Coal-Fired Units**:
+  - Quarterly PM/metals (Method 5 or 29).
+  - Quarterly HCl or annual SO₂ RATA (Method 26A, OTM-40, Method 6C).
+  - Annual Hg RATA (Method 30B).
+- **IGCC Units**:
+  - Similar PM/metals and HCl requirements; annual Hg testing.
+- **Oil-Fired Units**:
+  - Liquid: Quarterly PM/metals, HCl, HF.
+  - Solid oil-derived (pet coke): Quarterly PM/metals, HCl or annual SO₂ RATA, annual Hg RATA.
+- **Performance Test Notifications**: Must align with Part 63 General Provisions.
+
+### Hg Sorbent Trap Monitoring Systems (STMS)
+- **Regulatory Basis**: PS-12B in 40 CFR Part 60, Appendix B.
+- **Method**:
+  - Paired three-section carbon sorbent traps.
+  - Section 1: Primary Hg capture.
+  - Section 2: Breakthrough determination.
+  - Section 3: QA/QC spike with known Hg⁰.
+- **Sampling Duration**: Up to 15 operating days.
+- **Equipment**: Probe, vacuum pump, heated lines, dry gas/mass flow meter, moisture removal, temperature/pressure sensors.
+- **Calculation**: Hg concentration = mass captured / sample volume.
 
 ---
 
 ## Best Practices
-- **Appendix D/E**:
-  - Use Appendix D for gas/oil units to avoid installing SO₂ and flow monitors.
-  - Monitor capacity factors closely to maintain peaking unit status under Appendix E.
-- **Opacity Monitoring**:
-  - Maintain observer certification for Method 9.
-  - Use COMS for continuous compliance assurance.
-- **MATS Testing**:
-  - Align quarterly testing schedules with maintenance outages to minimize operational disruption.
-  - Keep detailed records for LEE qualification.
-- **Hg STMS**:
-  - Ensure proper trap handling to avoid contamination.
-  - Follow PS-12B paired train requirements strictly for QA/QC.
+1. **Select Appropriate Monitoring Method**:
+   - Use Appendix D for qualifying gas/oil units to reduce monitoring complexity.
+   - Use Appendix E only if peaking criteria are met; monitor capacity factors closely.
+2. **Maintain Calibration and QA/QC**:
+   - Regularly calibrate fuel flow meters, CEMS, and COMS.
+   - Follow PS-12B QA/QC protocols for sorbent trap sampling.
+3. **Document and Report**:
+   - Maintain accurate fuel sampling records, test results, and DAHS data.
+   - Ensure timely submission to ECMPS or other required reporting systems.
+4. **Stay Informed on State Requirements**:
+   - Verify if state rules impose stricter monitoring than federal Part 75.
+5. **Opacity Monitoring**:
+   - Train and certify Method 9 observers every 6 months.
+   - Use COMS for continuous compliance assurance.
+6. **MATS Testing**:
+   - Schedule quarterly/annual tests in advance.
+   - Align notifications with applicable Part 63 provisions.
 
 ---
 
 ## Source Attribution
-- **Document 1**: Provided detailed Appendix D applicability, measurement methods, and equipment requirements.
-- **Document 2**: Contributed Appendix E applicability criteria, capacity factor thresholds, and NOₓ correlation testing procedures.
-- **Document 3**: Supplied opacity definitions, causes, measurement methods, and COMS technology details.
-- **Document 4**: Outlined MATS quarterly/annual testing requirements for various fuel types and LEE qualification considerations.
-- **Document 5**: Delivered comprehensive Hg STMS methodology, PS-12B specifications, and sorbent trap section functions.
-- **Document 6**: Contextualized Part 75 within broader regulatory training, including monitoring fundamentals and excepted methods.
+- **Document 1**: Key details on Appendix D applicability, equipment, fuel sampling, and sulfur limits; historical context in NOx programs.
+- **Document 2**: Appendix E applicability criteria, testing protocols, and state-specific considerations; LME summary.
+- **Document 3**: Definitions, causes, and measurement methods for opacity; COMS technology description.
+- **Document 4**: MATS quarterly and annual testing requirements by fuel type; LEE qualification considerations.
+- **Document 5**: Technical specifications and procedures for Hg STMS per PS-12B; sorbent trap design and QA/QC.
+- **Document 6**: Regulatory training context; Part 75 module structure and overview of monitoring requirements.
 
 ---
 
-Would you like me to also create a **visual compliance decision tree** that integrates Appendix D/E applicability, opacity monitoring method selection, and MATS testing requirements? This could help operators quickly determine which protocols apply to their unit.
+Would you like me to also create a **visual compliance decision tree** that shows when to use Appendix D, Appendix E, LME, or full CEMS based on unit type and capacity factor? That could make this guidance more actionable for operators.
 
 ## Related Tools and Spreadsheets
 
@@ -147,6 +150,13 @@ The following tools and spreadsheets are available for this topic:
 
 *For additional tools, see the [Engineering Tools Index](../tools/README.md)*
 
+## See Also
+
+- [[Calibration]] - **Maintain Calibration and QA/QC**:
+   - Regularly...
+
+
 ## Glossary
 
+- **ECMPS**: Emissions Collection and Monitoring Plan System
 - **CEMS**: Continuous Emissions Monitoring System
