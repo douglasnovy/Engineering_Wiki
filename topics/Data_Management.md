@@ -13,152 +13,149 @@ generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePap
 ---
 
 ## Overview
-This consolidated knowledge base entry provides a comprehensive guide to managing environmental monitoring data, validating continuous source monitoring results, and performing essential server migration tasks for StackVision and related systems. It integrates procedures for **DataRules configuration**, **Pennsylvania Department of Environmental Protection (PADEP) data validation and reporting**, **fuel factor updates**, **ECMPS test history tracking**, and **SQL-based server migration techniques**. The goal is to ensure accurate data handling, compliance with regulatory requirements, and smooth operational transitions during system upgrades or migrations.
+This consolidated knowledge base entry provides a comprehensive guide to managing data rules, validating environmental monitoring data, and executing server migration procedures for Continuous Source Monitoring Systems (CSMS) such as StackVision. It integrates operational guidance for rule-based data processing, compliance with Pennsylvania Department of Environmental Protection (PADEP) Revision 8 requirements, fuel factor updates, test history tracking, and best practices for database backup during server migrations. The goal is to ensure accurate data handling, regulatory compliance, and smooth infrastructure transitions.
 
 ---
 
 ## Key Concepts
 
-### 1. DataRules Framework
-- **Rule Sets**: Collections of data rules applied to parameters.
-- **Parameter Lists**: Groups of parameters to which Rule Sets can be applied.
-- **Process Execution**: Rule Sets are applied via the `DATARULES ProcessNow` task, specifying Rule Set (`-rs`), Parameter List (`-pl`), and optional real-time alarming (`-r`).
-- **SQL Integration**: DataRules uses SQL directly for faster execution compared to CNDMGR.
+### 1. Data Rules
+- **Rule Sets**: Collections of data rules that can be applied to multiple parameters.
+- **Parameter Lists**: Groups of parameters to which a single Rule Set can be applied.
+- **Independence of Rules and Parameters**: Rule Sets are not inherently tied to parameters; association occurs during task creation.
+- **SQL Integration**: DataRules uses SQL directly for faster processing compared to legacy systems like CNDMGR.
 
-### 2. PADEP Data Validation
+### 2. Data Validation (PADEP Rev 8)
 - **Valid Data Reading**: Defined as a valid one-minute average.
-- **Hourly Average Validation**: Criteria outlined in PADEP Continuous Source Monitoring Manual Revision No. 8.
-- **Supplemental Guidance**: Clarification documents provide examples for DAHS programming to ensure proper coding/calculation.
+- **Hourly Average Validation**: Criteria clarified by DEP to ensure DAHS systems calculate and code averages correctly.
+- **Regulatory Context**: Policies supplement existing requirements but do not replace regulations.
 
-### 3. PADEP Reporting Requirements
-- **Reason and Action Codes**: Must be coded for each hour; use RC=8 for normal operation.
-- **Missing Values**: Fill with `0` for PADEP parameters.
+### 3. PADEP Reporting
+- **Reason and Action Codes**: Must be coded for each hour (RC=8 for normal operation).
+- **Missing Values**: Fill with zero for PADEP parameters.
 - **Process Completion**: Ensure PADEP PN process finishes before running EDR error checks.
 
 ### 4. Fuel Factor Updates
-- **Prorated Fuel Factor**: Adjustments to coal and gas fuel factors based on hourly data.
-- **Parameter Tracking**: Includes heat input, CO₂, flow rates, NOx, Hg, SO₂, and calculated fuel factors.
+- **Prorated Fuel Factor**: Adjustments to fuel factor values based on hourly data for coal and gas.
+- **Parameter Tracking**: Includes heat input, CO₂ emissions, flow rates, NOx, Hg, and SO₂ metrics.
 
-### 5. ECMPS Test History
-- **Test Tracking**: Records QA, diagnostic, and other test results for units/stacks.
-- **Submission Status**: Indicates whether tests have been submitted to EPA.
-- **Facility Metadata**: Includes facility name, location, and ORISPL ID.
+### 5. Test History Tracking (ECMPS)
+- **QA and Diagnostic Tests**: Record and track test results, reasons, and submission status.
+- **Regulatory Submission**: Ensure tests are submitted to EPA when required.
 
-### 6. Server Migration & SQL Network Drive Mapping
-- **Backup Location Constraints**: Limited local disk space may require network-based backups.
-- **Network Drive Mapping**: Map a network location to SQL Server for direct backups.
-- **DataLink Configuration Issue**: Incorrect or blank configuration can cause uncontrolled table growth in `dbo.AverageValueLog`.
+### 6. Server Migration and Database Backup
+- **DataLink Configuration Issue**: Incorrect or blank configuration can cause uncontrolled table growth.
+- **Network Drive Mapping**: Required when local storage is insufficient for backups.
+- **SQL Commands for Mapping**: Use `XP_CMDSHELL` and `sp_configure` to enable and map drives.
+- **Backup Execution**: Perform backups via SSMS to mapped network locations.
 
 ---
 
 ## Technical Details
 
-### DataRules SQL Tables
-- `dbo.DataRulesRule`: Stores Rule Sets.
-- `dbo.DataRulesParameterList`: Stores Parameter Lists.
-- `dbo.AlarmNotificationConfig`: Stores alarm settings.
-- `dbo.EmailAddressList`: Stores email notification lists.
+### DataRules Task Creation
+**Required Arguments:**
+- `-rs` : Rule Set name
+- `-pl` : Parameter List name
 
-**Parameter List Creation**:
-- Created in DataRulesEditor (Excel).
-- Copied into SQL via SSMS.
+**Optional Argument:**
+- `-r` : Real-time alarming flag
 
-**Example Command**:
-```bash
+**Example:**
+```
 DATARULES ProcessNow -rs MINVELOCITY -pl VELOCITY -r
 ```
+
+**SQL Tables Used:**
+- `dbo.DataRulesRule` – Stores Rule Sets
+- `dbo.DataRulesParameterList` – Stores Parameter Lists
+- `dbo.AlarmNotificationConfig` – Stores alarm settings
+- `dbo.EmailAddressList` – Stores email lists
 
 ---
 
 ### PADEP Data Validation Criteria
 - **Hourly Average Validity**: Must be based on valid one-minute averages.
-- **Manual Reference**: Page 64, sections 4.a and 4.b of PADEP Manual Rev. 8.
-- **Flexibility**: DEP may allow more stringent criteria upon petition.
+- **Stringency Option**: Facilities may petition DEP for more stringent criteria.
+- **DAHS Programming**: Ensure correct coding/calculation of averages per DEP guidance.
 
 ---
 
 ### PADEP Reporting Workflow
 1. Assign reason/action codes for each hour.
-2. Enter RC=8 for normal operations.
-3. Fill missing PADEP parameter values with `0`.
+2. Use RC=8 for normal operation.
+3. Fill missing PADEP parameter values with zero.
 4. Complete PADEP PN process.
 5. Run PADEP EDR to identify and correct errors.
 
 ---
 
 ### Fuel Factor Update Procedure
-- Compare **before** and **after** values for fuel factors.
-- Adjust `FF Gas` and `FF Coal` based on updated heat input and flow data.
-- Monitor emissions parameters for compliance.
+- Review hourly data for coal and gas usage.
+- Update fuel factor values (`FF Gas`, `FF Coal`) based on heat input and emissions data.
+- Track differences (`DIFF`) and ensure consistency across parameters.
 
 ---
 
-### ECMPS Test History Reporting
-- Maintain records of all QA and diagnostic tests.
-- Verify submission status to EPA.
-- Include facility identifiers and test metadata.
+### ECMPS Test History Management
+- Record unit/stack/pipe IDs, test numbers, types, dates, and reasons.
+- Log test results and availability.
+- Maintain submission status to EPA.
 
 ---
 
-### SQL Network Drive Mapping for Backups
-**Steps**:
+### Server Migration – DataLink Issue Resolution
+1. **Identify Tables**: `dbo.AverageValueLog` and `dbo.AverageValueLogConfig`.
+2. **Edit Config**: If blank, set first box to `1` and second to `6` to limit logging.
+3. **Truncate Large Tables**: Use `TRUNCATE TABLE AverageValueLog` in StackVision DB.
+
+---
+
+### Mapping a Network Drive to SQL
 1. Share target folder on network.
-2. Map network drive on old server.
-3. In SQL Server, run:
-```sql
-EXEC XP_CMDSHELL 'net use S: \\RemoteServer\Share /user:USERNAME PASSWORD'
-```
-4. Enable `xp_cmdshell` if disabled:
-```sql
-EXEC sp_configure 'show advanced options', 1;
-RECONFIGURE;
-EXEC sp_configure 'xp_cmdshell', 1;
-RECONFIGURE;
-```
+2. Map network drive in Windows (e.g., `S:`).
+3. In SQL:
+   ```
+   EXEC XP_CMDSHELL 'net use S: \\RemoteServer\Share /user:USERNAME PASSWORD'
+   ```
+4. Enable `XP_CMDSHELL` if disabled:
+   ```
+   EXEC sp_configure 'show advanced options', 1;
+   RECONFIGURE;
+   EXEC sp_configure 'xp_cmdshell', 1;
+   RECONFIGURE;
+   ```
 5. Verify mapping:
-```sql
-EXEC XP_CMDSHELL 'Dir S:'
-```
-6. Perform backup via SSMS GUI.
-
----
-
-### DataLink Configuration Fix
-- **Issue**: Blank `dbo.AverageValueLogConfig` causes excessive logging.
-- **Solution**:
-  - Edit top 200 records in `dbo.AverageValueLogConfig`.
-  - Set first box to `1`, second box to `6` (hourly logging for one parameter).
-  - If table is large, truncate:
-```sql
-TRUNCATE TABLE dbo.AverageValueLog;
-```
-*(Ensure correct database selection before truncation.)*
+   ```
+   EXEC XP_CMDSHELL 'Dir S:'
+   ```
+6. Backup database via SSMS to mapped drive.
 
 ---
 
 ## Best Practices
-- **DataRules**: Keep Rule Sets generic and apply them via Parameter Lists for flexibility.
-- **Validation**: Align DAHS programming with PADEP criteria to avoid compliance issues.
+- **DataRules**: Keep Rule Sets and Parameter Lists well-documented; avoid redundant rules.
+- **Validation**: Align DAHS programming with DEP guidance; periodically audit averages.
 - **Reporting**: Automate reason/action code assignment where possible.
-- **Fuel Factor**: Regularly review and update based on operational changes.
-- **Testing**: Maintain complete ECMPS test records for audits.
-- **Migration**: Always verify network drive mapping before initiating backups.
-- **DataLink**: Configure logging parameters to prevent uncontrolled table growth.
+- **Fuel Factors**: Regularly review and update based on operational changes.
+- **Test History**: Maintain complete records for compliance audits.
+- **Server Migration**: Always check DataLink configuration post-install; map drives securely with proper permissions.
+- **Backups**: Test backup and restore procedures before migration.
 
 ---
 
 ## Source Attribution
-- **Document 1**: Provided DataRules architecture, SQL table definitions, and task execution examples.
-- **Document 2**: Clarified PADEP hourly average validation criteria and DAHS programming guidance.
-- **Document 3**: Detailed PADEP reporting requirements and workflow.
-- **Document 4**: Supplied fuel factor update data structure and parameters.
-- **Document 5**: Outlined ECMPS test history reporting format and metadata.
-- **Document 6**: Identified DataLink configuration issue and SQL fix procedure.
-- **Documents 7 & 8**: Delivered step-by-step SQL network drive mapping instructions for server migration backups.
+- **Document 1 (DataRules Whitepaper)**: Provided foundational concepts, SQL table structures, and task creation procedures for DataRules.
+- **Document 2 (PADEP Data Validation Clarification)**: Clarified DEP criteria for valid hourly averages and DAHS programming requirements.
+- **Document 3 (PADEP Reporting Notes)**: Detailed reporting workflow, reason/action codes, and error checking.
+- **Document 4 (Fuel Factor Updates)**: Supplied structure and parameters for fuel factor adjustments.
+- **Document 5 (ECMPS Test History)**: Outlined test tracking and submission requirements.
+- **Document 6 (DataLink Issue Email)**: Identified DataLink configuration issue and resolution steps.
+- **Documents 7 & 8 (Mapping Network Drive to SQL)**: Provided step-by-step instructions for mapping drives and backing up databases during server migration.
 
 ---
 
-Would you like me to also create a **visual workflow diagram** showing the relationship between DataRules, PADEP validation, and server migration tasks? This could help operators see the end-to-end process more clearly.
+Would you like me to also create a **visual workflow diagram** that integrates DataRules processing, PADEP validation, and server migration steps for quick reference? That could make this knowledge base entry more actionable.
 
 ## Related Tools and Spreadsheets
 
@@ -175,7 +172,7 @@ The following tools and spreadsheets are available for this topic:
 
 ## Title
 **...
-- [[Environmental]] - It integrates procedures for **DataRules configura...
+- [[Environmental]] - It integrates operational guidance for rule-based ...
 
 
 ## Glossary
