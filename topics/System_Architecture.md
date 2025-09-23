@@ -1,148 +1,129 @@
 ---
 title: System_Architecture
 consolidated: true
-sources: 3
+sources: 4
 conflicts: 0
 confidence: 0.80
-generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_CO2controlchartSVConfigurationdocx_47da83fd.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_Regulations_SubpartTTTT-CO2MassEmissions12MonthAverageGuidelinesRev11-01-21pdf_91bcb2f5.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_TCP-IPportsusedbyaStackVisionsystempdf_cf196824.md']  # This would be a timestamp
+generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_CO2controlchartSVConfigurationdocx_47da83fd.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_StackVisionControlChartspptx_cceae59d.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_Regulations_SubpartTTTT-CO2MassEmissions12MonthAverageGuidelinesRev11-01-21pdf_91bcb2f5.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_TCP-IPportsusedbyaStackVisionsystempdf_cf196824.md']  # This would be a timestamp
 ---
 
 ## Title
-**CO₂ Control Chart Configuration, Regulatory Compliance, and StackVision Network Port Requirements**
+**CO₂ Control Charts and StackVision Configuration for Emissions Monitoring and Compliance**
 
 ---
 
 ## Overview
-This consolidated guide provides a comprehensive reference for configuring CO₂ control charts in StackVision, ensuring compliance with Subpart TTTT 12-month CO₂ mass emission guidelines, and understanding TCP/IP port usage for StackVision systems.  
-It integrates configuration procedures, regulatory calculation rules, and network communication specifications to support accurate emissions reporting, operational efficiency, and secure system connectivity.
+CO₂ control charts are a critical tool in emissions monitoring systems, enabling operators to detect process variation, identify potential equipment issues such as sampling system in-leakage, and ensure compliance with regulatory limits. Within the StackVision platform, proper configuration of parameters, load bins, and data sequences is essential for generating accurate control chart reports. These charts support both operational optimization and adherence to regulations such as Subpart TTTT, which governs CO₂ mass emissions and output-based standards.
 
 ---
 
 ## Key Concepts
 
 ### Control Charts
-Control charts in StackVision are used to monitor and analyze CO₂ emissions data against load bins, enabling performance tracking and compliance verification.
+- **Purpose**: Monitor, control, and improve process performance over time by studying variation and its sources.
+- **Functions**:
+  - Detect and monitor process variation.
+  - Differentiate between common and special causes of variation.
+  - Provide a basis for corrective actions.
+  - Enable consistent, predictable process performance.
+  - Serve as a common language for discussing process metrics.
 
-### Subpart TTTT Compliance
-U.S. EPA regulations under Subpart TTTT require facilities to calculate and report 12-month average CO₂ mass emissions on an output basis (lb/MWh or kg/MWh), ensuring data validity and completeness.
+### CO₂ as a Control Parameter
+- CO₂ concentration is used due to its relatively low variability within a given load band.
+- Analysis typically involves daily averages, baseline means, and standard deviations over a defined period.
 
-### StackVision Network Architecture
-StackVision uses specific TCP/IP ports for communication between servers, clients, controllers, and external data sources. Proper configuration of these ports is essential for data integrity and system security.
+### Load Bins
+- Load bins categorize operational load ranges for analysis.
+- Common calculation: Load bin = MW/10 (or MW/20 for common stacks).
+- Accurate load bin configuration is essential for meaningful control chart data.
+
+### Regulatory Context – Subpart TTTT
+- Governs CO₂ mass emissions and output-based standards.
+- Requires 12-month rolling averages of CO₂ emissions per MWh.
+- Specifies data validity rules and inclusion/exclusion criteria for hourly data.
 
 ---
 
 ## Technical Details
 
-### 1. CO₂ Control Chart Configuration in StackVision
-To enable and correctly configure CO₂ control charts:
+### StackVision Configuration for CO₂ Control Charts
+1. **Enable Load Bin Calculations**:
+   - Navigate to *Configuration → StackStudio → Plant-Sources-Parameters*.
+   - On the *Part 75 Settings* tab, check:
+     - **Parameter Daily Record?**
+     - **Load Range Enabled?**
+2. **Configure Daily Sequence (PDR Step)**:
+   - Go to *ProcessNow → Sequences*.
+   - Select the daily sequence and ensure **Task PDR** is enabled.
+   - Include the desired parameter in the PDR list (or leave blank to include all).
+3. **Apply Changes**:
+   - Click the apply icon to update the StackVision Server.
+4. **Verify Load Bin Selection**:
+   - Use DataLab to check the *Load Range* field under *Fields → Part 75*.
 
-1. **Enable Load Bin Calculations**  
-   - Navigate to **Configuration → StackStudio → Plant-Sources-Parameters**.  
-   - Select the desired parameter (e.g., CO₂ or backup CO₂).  
-   - On the **Part 75 Settings** tab, check:
-     - *Parameter Daily Record?*
-     - *Load Range Enabled?*
+### Data Requirements for Control Chart Analysis
+- **CO₂ Concentration**:
+  - Hourly data used as control parameter.
+  - Daily averages require ≥6 valid hours per day.
+- **Load Bin Data**:
+  - Derived from MW measurements.
+- **Baseline Calculations**:
+  - Mean and standard deviation over 30 days of valid data.
+- **Additional Data**:
+  - Method of Determination Code (MODC).
+  - CO₂ Relative Accuracy Test Audit (RATA) results.
 
-2. **Configure Daily ProcessNow Sequence**  
-   - Go to **ProcessNow → Sequences**.  
-   - Select the daily sequence from the pick list.  
-   - Ensure **Task PDR** is enabled.  
-   - If the *Parameters* field is blank, all parameters are included; otherwise, verify the desired parameter is checked.
+### Subpart TTTT Compliance Guidelines
+- **Hourly CO₂ lbs Calculation**:
+  - Based on hourly fuel flow data.
+  - Exclude hours with missing/invalid load or CO₂ data.
+- **Load MWh Calculation**:
+  - Invalid if CO₂ data is invalid.
+- **12-Month Rolling Average**:
+  - Includes startup/shutdown data.
+  - Must always cover 12 operating months (look back if months are non-operating).
+- **Permit Limits**:
+  - Commonly 1000 lb/MWh.
+- **Data Entry**:
+  - Annual Energy Sold and Potential Electric Output must be entered manually in EDR XML.
 
-3. **Apply Changes**  
-   - Click the *Apply* icon to update the StackVision Server.
-
-4. **Verify Load Bin Selection**  
-   - In **DataLab**, add the *Load Range* field from **Fields → Part 75** to confirm the correct bin number.
-
----
-
-### 2. Subpart TTTT – 12-Month CO₂ Mass Emission Guidelines
-
-**Hourly Data Rules:**
-- Use hourly fuel flow data to calculate CO₂ lbs.
-- Exclude hours where:
-  - Load is missing/invalid.
-  - Fuel flow is missing, invalid, or substituted under Part 75 missing data rules.
-  - CO₂ lbs is missing, invalid, or substituted.
-- For no-load hours, use load = 0 with actual CO₂ lbs.
-- Include startup and shutdown data.
-
-**12-Month Rolling Average:**
-- Always include 12 operating months; if a month is non-operating, look back further to maintain 12 months.
-- Operating month = any month with fuel combustion.
-
-**Parameters:**
-- CO₂#/MWh and CO₂KGMWh typically configured.
-- Many permits specify ≤ 1000 lb/MWh.
-- Annual Energy Sold and Annual Potential Electric Output must be entered manually in the EDR XML file (not calculated/stored in StackVision).
-
-**Configuration Formulas:**
-- **CO₂LBS** = CO₂T/HR × 2000 × UNITOPHR#100  
-  (No invalidation logic based on load; load never invalid.)
-- **LOADMWH** = (UNITLOAD × UNITOPHR#100) + (CO₂LBS × 0)  
-  (Invalid if CO₂ is invalid; excluded from daily/monthly totals.)
-- **UNITOPHR** = OPTIME parameter for Group 0.
-
----
-
-### 3. TCP/IP Ports Used by StackVision Systems
-
-**StackVision Server – Inbound Connections:**
-- SQL Reporting Services (from SV Client)
-- Data Link from FleetVision
-- OPC/PI (if installed)
-- StackVision Client Service
-- Controller Emulation from SV Client
-
-**StackVision Server – Outbound Connections:**
-- Controller file transfer: ports **8832** or **8864** (to Data Controller)
-- Controller Emulation: **8864** only
-- Controller Configuration Compare: **8864** only
-- SQL Server (if remote)
-- Controller Polling: **8832** or **8864**
-
-**StackVision Client – Outbound Connections:**
-- SQL Reporting Services (to SQL Server)
-- StackVision Client Service (to SV Server)
-- Controller Emulation (to SV Server)
-
-**Data Controller (8832) – Inbound Ports:**
-- File Transfer and Controller Emulation (specific port assignments per configuration)
+### StackVision Network Configuration (TCP/IP Ports)
+- **Server Inbound Ports**:
+  - SQL Reporting Services, FleetVision Data Link, OPC/PI (if installed), StackVision Client Service.
+- **Server Outbound Ports**:
+  - Controller file transfer (8832/8864), SQL Server connections, Controller polling.
+- **Client Outbound Ports**:
+  - SQL Reporting Services, StackVision Client Service, Controller Emulation.
+- **Data Controller Ports**:
+  - File transfer and emulation ports (8832/8864).
 
 ---
 
 ## Best Practices
-
-1. **Configuration Integrity**
-   - Always verify parameter inclusion in PDR sequences.
-   - Confirm load bin assignments before running control chart reports.
-
-2. **Regulatory Compliance**
-   - Maintain strict adherence to Subpart TTTT data validity rules.
-   - Regularly audit hourly data for missing or substituted values.
-   - Keep manual EDR XML entries up to date for annual metrics.
-
-3. **Network Security & Reliability**
-   - Document and secure all TCP/IP port configurations.
-   - Restrict inbound connections to trusted sources.
-   - Monitor port activity to detect unauthorized access.
-
-4. **Data Validation**
-   - Use DataLab to cross-check load ranges and CO₂ calculations.
-   - Implement automated checks for invalid or missing data before reporting.
+1. **Ensure Parameter Configuration**:
+   - Verify that all relevant CO₂ parameters have load bin calculations enabled.
+2. **Maintain Data Validity**:
+   - Follow Subpart TTTT rules for excluding invalid or substituted data.
+3. **Regularly Review Control Charts**:
+   - Identify trends or anomalies early to prevent compliance issues.
+4. **Document Baseline Periods**:
+   - Keep clear records of baseline mean and standard deviation calculations.
+5. **Secure Network Communication**:
+   - Confirm correct TCP/IP port configurations for StackVision components to ensure reliable data transfer.
+6. **Integrate Regulatory Checks**:
+   - Align control chart monitoring with permit limits and regulatory reporting requirements.
 
 ---
 
 ## Source Attribution
-
-- **[Document 1]**: Provided detailed procedures for enabling and configuring CO₂ control charts in StackVision, including load bin setup, PDR sequence configuration, and DataLab verification.
-- **[Document 2]**: Outlined Subpart TTTT regulatory guidelines for calculating 12-month CO₂ mass emissions averages, including hourly data validity rules, parameter configurations, and compliance thresholds.
-- **[Document 3]**: Listed TCP/IP port usage for StackVision servers, clients, and controllers, detailing inbound/outbound communication paths essential for system operation and security.
+- **Document 1**: Provided detailed StackVision configuration steps for enabling load bins, setting up daily sequences, and verifying load range data for CO₂ control charts.
+- **Document 2**: Explained the purpose and functions of control charts, outlined data requirements, and described baseline calculation methods for CO₂ analysis.
+- **Document 3**: Detailed Subpart TTTT compliance guidelines, including data validity rules, calculation methods for CO₂ lbs and load MWh, and 12-month rolling average requirements.
+- **Document 4**: Listed TCP/IP port configurations for StackVision servers, clients, and data controllers, ensuring proper network communication for emissions monitoring systems.
 
 ---
 
-Would you like me to also create a **visual configuration workflow diagram** that integrates CO₂ control chart setup, Subpart TTTT compliance checks, and network port mapping? That would make this guide even more actionable.
+Would you like me to also create a **visual workflow diagram** showing the relationship between StackVision configuration, data collection, control chart generation, and regulatory compliance? This could make the process easier to follow for operators.
 
 ## Glossary
 

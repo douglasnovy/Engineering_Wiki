@@ -1,103 +1,103 @@
 ---
 title: Communication_Protocols
 consolidated: true
-sources: 2
+sources: 3
 conflicts: 0
 confidence: 0.80
-generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_SecureCommunication_SettingupSecureCommunicationsr4docx_3749cf68.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_ESCSecureCommunicationPortspdf_d3ae44db.md']  # This would be a timestamp
+generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_Alarms_EngineeringStandard-8864DASCommunicationAlarmmsg_208fb445.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_SecureCommunication_SettingupSecureCommunicationsr4docx_3749cf68.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_ESCSecureCommunicationPortspdf_d3ae44db.md']  # This would be a timestamp
 ---
 
 ## Title
-**Secure Communications Between StackVision and 8864 Devices**
+**Secure Communication and Alarm Integration for StackVision and 8864 DAS Systems**
 
 ---
 
 ## Overview
-Secure communications between StackVision servers and 8864 devices are critical for ensuring data integrity, confidentiality, and reliable remote access in industrial monitoring and control environments. Beginning with firmware version 5.02, the 8864 supports a secure communication method based on SSH reverse tunneling, eliminating the need for inbound firewall penetration. This approach, combined with strong encryption, authentication, and key management practices, provides a robust framework for secure data exchange.
+This consolidated entry provides guidance on configuring secure communications between StackVision servers and 8864 Data Acquisition Systems (DAS), as well as implementing communication alarms to ensure system reliability. Secure communication is critical for protecting data integrity and confidentiality, while communication alarms provide early detection of failures in data transfer or system services. Together, these measures enhance operational resilience, security, and compliance in environmental monitoring and industrial control systems.
 
 ---
 
 ## Key Concepts
 
-### Reverse SSH Tunneling
-- **Definition**: A secure communication method where the client (8864) initiates and maintains an SSH tunnel to the server (StackVision).
-- **Purpose**: Enables secure, port-specific VPN-like connections without requiring inbound firewall rules.
-- **Directionality**: Connection is initiated outbound from the 8864 to the StackVision server.
+### StackVision
+StackVision is a data acquisition and reporting platform used in environmental compliance monitoring. It interfaces with field instruments such as the 8864 DAS to collect, process, and store emissions and operational data.
 
-### Public/Private Key Authentication
-- **RSA-2048 Keys**: Used for mutual authentication between the 8864 and StackVision server.
-- **Key Exchange**: Public keys are exchanged and installed on both ends; private keys remain secure and are never transmitted.
-- **Security Implication**: Public keys can be distributed over insecure channels, but installation must be strictly controlled.
+### 8864 DAS
+The 8864 DAS is a hardware device used for data acquisition from environmental monitoring instruments. It supports secure communication protocols and can be integrated with StackVision for automated data transfer.
 
-### Encryption and Integrity
-- **AES-128 Encryption**: Ensures confidentiality of transmitted data.
-- **HMAC-SHA256 Signing**: Provides message integrity verification.
-- **Diffie-Hellman Key Exchange**: Used for establishing session keys securely.
+### Secure Communications
+Secure communications ensure that data exchanged between the 8864 DAS and StackVision is encrypted, authenticated, and protected from unauthorized access. This is achieved using SSH reverse tunneling and cryptographic key exchange.
+
+### Communication Alarms
+Communication alarms detect and alert operators when data transfer between the DAS and StackVision fails, or when core services stop functioning. These alarms can be configured to run entirely within StackStudio or via external scheduling tools.
 
 ---
 
 ## Technical Details
 
-1. **Connection Establishment**:
-   - On boot, the 8864 device initiates an outbound SSH connection to the StackVision server.
-   - The reverse tunnel acts as a secure conduit for specific ports, similar to a VPN.
+### Secure Communication Implementation
+Beginning with firmware version **v5.02**, the 8864 DAS supports secure communications via **SSH reverse tunneling**:
+- **Connection Direction**: Initiated from the 8864 DAS to the StackVision server (outbound only), eliminating the need to open inbound firewall ports.
+- **Encryption & Authentication**:
+  - **RSA-2048** public/private key authentication
+  - **AES-128** encryption
+  - **HMAC-SHA256** message signing
+  - **Diffie-Hellman** key exchange
+- **Key Management**:
+  - Public keys for each 8864 must be installed on the StackVision server’s SSH service.
+  - The StackVision server’s public key must be installed on each 8864 DAS.
+  - Keys can be distributed over unsecured channels but must be monitored to prevent unauthorized installations.
 
-2. **Firewall Considerations**:
-   - No inbound ports need to be opened on the firewall between the 8864 and StackVision server.
-   - Only outbound connections from the 8864 are required, reducing attack surface.
+### Network Port Requirements
+- **StackVision Server**: No inbound ports required for DAS connections.
+- **Modbus Communication**:
+  - Modbus client connections from DCS or instruments do not require inbound firewall penetration.
+  - Modbus server connections require instrument inbound ports but can be closed if unused.
 
-3. **Authentication Process**:
-   - Each 8864 has a unique RSA-2048 key pair.
-   - The public key of the 8864 must be installed on the StackVision server’s SSH configuration.
-   - The StackVision server’s public key must be installed on each 8864.
-   - Keys must be monitored to prevent unauthorized access.
-
-4. **Encryption and Signing**:
-   - Data is encrypted using AES-128.
-   - Messages are signed with HMAC-SHA256 for integrity.
-   - Diffie-Hellman is used for secure session key negotiation.
-
-5. **Port Configuration**:
-   - StackVision server inbound ports for Modbus communication may be configured depending on client/server roles.
-   - If unused, certain ports can be closed to further enhance security.
+### Communication Alarm Configuration
+- **Purpose**: Detects communication failures between StackVision and the 8864 DAS, including cases where StackVision core services stop.
+- **Implementation Options**:
+  - **Windows Task Scheduler**: Commonly used in past implementations.
+  - **StackStudio Configuration**: Fully integrated approach using an 8864 counter channel for monitoring.
+- **Advantages of StackStudio Approach**:
+  - Operates entirely within the StackVision ecosystem.
+  - Provides alarms even if core services fail.
+  - Updated configuration supports the 8864 counter channel.
+- **Future Development**: Planned integration of alarm functionality directly into 8864 firmware.
 
 ---
 
 ## Best Practices
 
-- **Key Management**:
-  - Maintain strict control over key installation and updates.
-  - Regularly audit installed keys to detect and remove rogue entries.
+1. **Use Outbound-Only Connections**  
+   Configure the 8864 DAS to initiate connections to StackVision to minimize firewall exposure.
 
-- **Firewall Configuration**:
-  - Ensure outbound SSH connections from the 8864 are permitted.
-  - Keep unused ports closed to minimize exposure.
+2. **Enforce Strong Key Management**  
+   Maintain strict control over public key installation and monitor for unauthorized changes.
 
-- **Encryption Standards**:
-  - Use AES-128 for data encryption and HMAC-SHA256 for integrity checks.
-  - Ensure Diffie-Hellman parameters are strong and up-to-date.
+3. **Enable Communication Alarms**  
+   Implement alarms within StackStudio for seamless integration and enhanced reliability.
 
-- **Firmware Updates**:
-  - Keep 8864 firmware updated to leverage the latest security features.
-  - Verify compatibility between StackVision server and 8864 firmware versions.
+4. **Regularly Test Secure Connections**  
+   Verify SSH tunnel integrity and encryption settings during routine maintenance.
 
-- **Monitoring and Logging**:
-  - Enable logging of SSH tunnel connections for auditing and troubleshooting.
-  - Monitor for unusual connection patterns that may indicate security issues.
+5. **Close Unused Ports**  
+   Disable unused Modbus or other communication ports to reduce attack surface.
+
+6. **Plan for Firmware Updates**  
+   Stay current with 8864 firmware releases to leverage built-in secure communication and alarm features.
 
 ---
 
 ## Source Attribution
 
-- **Document 1 (Mark Shell, 2021)**:  
-  Provided detailed explanation of reverse SSH tunneling implementation in 8864 firmware v5.02, key installation procedures, firewall considerations, and RSA-2048 authentication.
-
-- **Document 2 (2016)**:  
-  Contributed encryption and signing specifications (AES-128, HMAC-SHA256), Diffie-Hellman key exchange details, and port configuration guidelines for StackVision network connections.
+- **Document 1**: Provided details on communication alarm configuration using StackStudio and Windows Task Scheduler, advantages of integrated alarm monitoring, and future firmware integration plans. *(Brian Perlov, PE)*
+- **Document 2**: Explained secure communication setup between StackVision and 8864 DAS using SSH reverse tunneling, RSA key authentication, and firewall considerations. *(Mark Shell)*
+- **Document 3**: Outlined network port requirements, encryption standards (AES-128, HMAC-SHA256), and authentication protocols (RSA-2048, Diffie-Hellman) for StackVision secure communications.
 
 ---
 
-Would you like me to also include a **diagram** showing the reverse SSH tunnel architecture between the 8864 and StackVision server? This could make the consolidated entry more visually clear.
+If you’d like, I can create a **step-by-step configuration guide** that combines the secure communication setup with the alarm integration process so operators can deploy both measures in a single workflow. Would you like me to prepare that?
 
 ## Glossary
 
