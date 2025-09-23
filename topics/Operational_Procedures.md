@@ -13,116 +13,134 @@ generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePap
 ---
 
 ### Overview
-This consolidated guide provides technical procedures, configuration standards, and best practices for managing Continuous Emission Monitoring Systems (CEMS) and associated data workflows. It integrates processes for logger reconciliation, report transfer, regulatory-specific task configuration, and compliance with Pennsylvania Department of Environmental Protection (PaDEP) Revision 8 and federal regulations such as 40 CFR Part 60 Subpart Da and Subpart TTTT. The goal is to ensure accurate data capture, seamless system updates, and adherence to environmental reporting requirements.
+This consolidated guide provides engineering teams with a unified reference for configuring environmental monitoring systems, managing data and reports, performing system reconciliations, and ensuring compliance with key regulatory frameworks such as EPA Regulation 60.48Da(f), Pennsylvania DEP (PaDEP) Continuous Source Monitoring Manual (CSMM) Revision 8, and Subpart TTTT CO₂ Mass Emissions guidelines. It integrates procedures for DAHS (Data Acquisition and Handling System) setup, logger reconciliation, report migration, and regulatory data validation, ensuring operational integrity and adherence to environmental standards.
 
 ---
 
 ### Key Concepts
 
-1. **Logger Reconciliation**  
-   Capturing a complete snapshot of a logger’s configuration before updates or upgrades to prevent data loss and maintain operational integrity.
+1. **Environmental Monitoring Systems (EMS)**
+   - Systems such as StackVision and DAHS collect, process, and report emissions data from industrial units.
+   - Continuous Emission Monitoring Systems (CEMS) are critical for regulatory compliance.
 
-2. **Report Transfer via RSScripter**  
-   Using RSScripter.exe to migrate or duplicate SQL-based reports between servers or units, ensuring consistent reporting across environments.
+2. **Regulatory Frameworks**
+   - **EPA Regulation 60.48Da(f)**: Specifies particulate matter (PM) averaging and exceedance alarm requirements for certain steam-generating units.
+   - **PaDEP CSMM Rev 8**: Defines data validation, reporting formats, QA/QC activities, and process codes for emissions reporting.
+   - **Subpart TTTT**: Establishes CO₂ mass emissions calculation and averaging guidelines over a 12-month operating period.
 
-3. **Regulatory-Specific Task Configuration**  
-   Setting up calculation tasks (e.g., PMDAILYAVG) to comply with specific environmental regulations, including data validity checks and alarm triggers.
+3. **Data Integrity and Reconciliation**
+   - Logger reconciliation ensures configuration preservation during updates or upgrades.
+   - Proper mapping of process, reason, monitor, and method codes between PaDEP EDR and StackVision is essential for accurate reporting.
 
-4. **PaDEP Revision 8 Compliance**  
-   Implementing monitoring plans, validating data, and mapping process/method codes between PaDEP EDR and StackVision for accurate reporting.
-
-5. **CO2 Mass Emissions 12-Month Average (Subpart TTTT)**  
-   Configuring parameters and calculations to meet CO2 emission limits and reporting requirements based on continuous operational data.
+4. **Report Management**
+   - RSScripter facilitates migration of SQL-based reports between servers or units, ensuring consistent reporting across environments.
 
 ---
 
 ### Technical Details
 
-#### 1. Logger Reconciliation Procedure
-- **Pre-Reconciliation Steps**:
-  - Record network details (IP, subnet mask, gateway).
-  - Access controller via PuTTY/Telnet (8832: Telnet/PuTTY, 8864: PuTTY).
+#### 1. PMDAILYAVG Task Configuration (Regulation 60.48Da(f))
+- **System Resources**:  
+  `DAY_EXCLUDE_CENTRAL_SITE_PARAMETER = TH`
+- **Server Channels**:  
+  - Channel Type: 6 – Block Average  
+  - Percent Valid Required: 1  
+  - Trigger Alarm on Exceedance: True  
+  - Time Weight: N  
+  - Standard Limit Operator: > or >= (based on rounding preference)  
+  - Standard Limit: x.xxxx
+- **Condition Manager**:  
+  - Marks PM parameter as Missing/Invalid when Time Online = 0.
+  - Task applies only to units constructed/reconstructed/modified after Feb 28, 2005.
+- **Process Sequence**:  
+  - Run Condition Manager before PMDAILYAVG task.
+  - Configure DAYROLLAVG tasks to exclude PM parameter or run them prior.
+- **Alarm Messages**:  
+  - Enable `EXCEALM` for exceedance alarms.
+
+#### 2. Logger Reconciliation Procedure
+- **Pre-Reconciliation**:
+  - Record network details (IP, subnet, gateway).
+  - Access controller via PuTTY/Telnet (8832 via Telnet/PuTTY; 8864 via PuTTY).
   - Log in with integrator-level credentials.
-  - Navigate to *Configuration → System Parameters* and document settings.
-- **Configuration Capture**:
-  - Use StackStudio to snapshot current settings.
-  - Ensure all critical parameters are backed up before firmware or hardware changes.
+  - Capture system parameters from StackStudio.
+- **Purpose**:
+  - Preserve configuration before cold starts, firmware updates, or hardware upgrades.
 
-#### 2. RSScripter Report Transfer
-- **Requirements**:
-  - .NET 3.5 enabled on the server.
-  - Run RSScripter.exe on the SQL report server (especially for split-server setups).
-- **Procedure**:
-  - Launch RSScripter.exe, set report server version, retrieve catalog.
-  - Select and script desired reports to an output folder.
-  - Edit `RS Scripter Load All Items.cmd` to set correct paths for script location and RS.EXE.
-  - Update `.rss` files for unit-specific report sources if needed.
+#### 3. PaDEP CSMM Rev 8 Implementation
+- **CEMDPS Access**:
+  - Use GreenPort web portal for monitoring plan submission and certification.
+- **Migration Error Check**:
+  - Validate facility emission standards and analyzer information.
+- **LMESE (Lowest Monitored Emission Standard Equivalent)**:
+  - Default = FS ÷ 2 (except for opacity, CO₂, O₂, VFR).
+  - Used for daily zero/upscale calibration drift determination.
+- **Process Guide Steps**:
+  - Evaluate monitoring plans, petitions, and LMESE.
+  - Migrate corrected plans, deploy on DAHS, validate data, and generate EDRs.
 
-#### 3. PMDAILYAVG Task Configuration (Regulation 60.48Da(f))
-- **System Resources**:
-  - `DAY_EXCLUDE_CENTRAL_SITE_PARAMETER = TH`
-- **Channel Settings**:
-  - Type: 6 – Block Average
-  - Percent Valid Required: 1%
-  - Alarm on exceedance: Enabled
-  - Standard Limit Operator: `>` or `>=` (based on rounding preference)
-- **Condition Manager**:
-  - Mark PM parameter as missing/invalid if `Time Online` equals 0.
-- **Execution Order**:
-  - Condition Manager task → DAYROLLAVG task → PMDAILYAVG task.
-- **Alarm Messages**:
-  - Enable `EXCEALM` for exceedance alerts.
+#### 4. Process and Code Mapping
+- Map PaDEP EDR process codes to StackVision reason codes.
+- Map monitor codes to action codes.
+- Align method codes between PaDEP EDR and StackVision.
 
-#### 4. PaDEP Revision 8 Implementation
-- **Process Flow**:
-  - Request facility file access.
-  - Evaluate and migrate monitoring plans via CEMDPS.
-  - Perform error checks and implement configuration changes per PaDEP Rev8.
-  - Generate and validate EDR data with correct process, monitoring, and method codes.
-- **Code Mapping**:
-  - Map PaDEP EDR process codes to StackVision reason codes.
-  - Map monitor codes to action codes and method codes consistently.
-
-#### 5. Subpart TTTT CO2 Emissions Guidelines
-- **Hourly Data Rules**:
-  - Use valid hourly fuel flow and load data.
-  - Exclude hours with missing/invalid load or substituted fuel flow.
-- **12-Month Average Calculation**:
+#### 5. CO₂ Mass Emissions (Subpart TTTT)
+- **Hourly Calculations**:
+  - Use valid hourly fuel flow data; exclude hours with missing/invalid load or substituted data.
   - Include startup/shutdown data.
-  - Always maintain 12 operating months in the average (look back for non-operating months).
-- **Parameter Configuration**:
-  - `CO2LBS`: `(CO2T/HR * 2000 * UNITOPHR#100)`
-  - `LOADMWH`: `(UNITLOAD * UNITOPHR#100)`
-  - Ensure invalid CO2 invalidates load for daily/monthly totals.
-- **Permit Limits**:
-  - Typical limit: 1000 lb/MWh.
+- **12-Month Average**:
+  - Always include 12 operating months; look back for non-operating months.
+  - Typical permit limit: 1000 lb/MWh.
+- **Configuration Parameters**:
+  - `CO2LBS`: CO₂ tons/hour × 2000 × UNITOPHR#100.
+  - `LOADMWH`: (UNITLOAD × UNITOPHR#100).
+  - `UNITOPHR`: OPTIME parameter for Group 0.
+
+#### 6. Report Migration with RSScripter
+- **Requirements**:
+  - .NET 3.5 enabled.
+  - Run on SQL report server for split-server setups.
+- **Procedure**:
+  - Launch RSScripter, set report server version, retrieve catalog, select reports.
+  - Script reports to output folder, edit `RS Scripter Load All Items.cmd` paths.
+  - Locate RS.EXE in SQL Server Tools\Binn folder.
+  - Modify `.rss` files for unit-specific report sources.
 
 ---
 
 ### Best Practices
 
-- **Pre-Change Documentation**: Always perform logger reconciliation before any update or upgrade.
-- **Validation First**: Run data validity checks before executing regulatory calculation tasks.
-- **Execution Order Discipline**: Maintain strict task execution sequences to ensure accurate averages and compliance.
-- **Consistent Code Mapping**: Use standardized mappings between PaDEP and StackVision to avoid reporting errors.
-- **Data Integrity in Transfers**: When using RSScripter, verify paths and report sources to prevent broken links or incorrect data.
-- **Regulatory Awareness**: Stay updated on both state (PaDEP) and federal (EPA) requirements to ensure configurations meet current standards.
+- **Configuration Management**:
+  - Document all DAHS and CEMS settings before changes.
+  - Use condition managers to ensure data validity.
+- **Data Validation**:
+  - Follow PaDEP Rev 8 QA/QC protocols.
+  - Exclude invalid/substituted data from regulatory calculations.
+- **Regulatory Compliance**:
+  - Align averaging periods and limits with applicable regulations.
+  - Maintain accurate process/method code mappings.
+- **Report Consistency**:
+  - Use RSScripter for controlled migration of reports.
+  - Verify report functionality post-migration.
+- **Operational Continuity**:
+  - Perform logger reconciliations before any system upgrade.
+  - Validate post-change data against pre-change baselines.
 
 ---
 
 ### Source Attribution
 
-- **[Document 1] Shaun Ellis**: Detailed PMDAILYAVG task configuration for Regulation 60.48Da(f), including Condition Manager setup and execution order.
-- **[Document 2] Brian Perlov**: Step-by-step procedure for using RSScripter.exe to transfer reports between servers/units.
-- **[Document 3] Carl Reid**: Logger reconciliation process, pre-reconciliation steps, and configuration capture methods.
-- **[Document 4] Eric Swisher (All4 Inc.)**: PaDEP Rev8 background, implementation process, and LMESE standards.
-- **[Document 5] Unknown**: PaDEP transition guide workflow from monitoring plan evaluation to EDR generation.
-- **[Document 6] Ashley Partington**: Mapping of PaDEP EDR process/method codes to StackVision codes.
-- **[Document 7] Information Systems Group**: Subpart TTTT CO2 mass emissions 12-month average calculation guidelines and configuration parameters.
+- **[Document 1: Shaun Ellis]**: Detailed PMDAILYAVG task configuration for Regulation 60.48Da(f), including condition manager setup and alarm configuration.
+- **[Document 2: Brian Perlov]**: RSScripter usage for report migration between servers/units.
+- **[Document 3: Carl Reid]**: Logger reconciliation procedures to preserve configurations during updates/upgrades.
+- **[Document 4: Eric Swisher]**: PaDEP CSMM Rev 8 implementation process, QA/QC activities, and LMESE definitions.
+- **[Document 5: Unknown]**: PaDEP process guide steps for monitoring plan evaluation, migration, and EDR generation.
+- **[Document 6: Ashley Partington]**: Mapping of process, reason, monitor, and method codes between PaDEP EDR and StackVision.
+- **[Document 7: Information Systems Group]**: Subpart TTTT CO₂ mass emissions calculation guidelines and configuration parameters.
 
 ---
 
-Would you like me to also create a **visual workflow diagram** that shows the relationship between logger reconciliation, report transfer, regulatory task execution, and compliance validation? This could make the process easier to follow for engineers.
+Would you like me to also create **workflow diagrams** for these procedures so that engineers can visually follow the configuration and compliance steps? This could make the guide more actionable.
 
 ## See Also
 
@@ -131,9 +149,8 @@ Would you like me to also create a **visual workflow diagram** that shows the re
 
 ### Title
 *...
-- [[Environmental]] - It integrates processes for logger reconciliation,...
-- [[Environmental]] - The goal is to ensure accurate data capture, seaml...
-- [[Environmental]] - , PMDAILYAVG) to comply with specific environmenta...
+- [[Environmental]] - It integrates procedures for DAHS (Data Acquisitio...
+- [[Calibration]] - - Used for daily zero/upscale calibration drift de...
 
 
 ## Glossary
