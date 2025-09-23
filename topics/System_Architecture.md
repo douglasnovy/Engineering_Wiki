@@ -121,3 +121,8 @@ If you’d like, I can extend this consolidated entry with **a procedural checkl
 ## Glossary
 
 - **CEMS**: Continuous Emissions Monitoring System
+
+
+## Glossary
+
+- **CEMS**: Continuous Emissions Monitoring System
