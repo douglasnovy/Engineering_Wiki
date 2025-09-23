@@ -1,112 +1,96 @@
 ---
 title: Control_Systems
 consolidated: true
-sources: 4
+sources: 1
 conflicts: 0
-confidence: 0.80
-generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_CO2controlchartSVConfigurationdocx_47da83fd.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_EPA_Control_Chart_Methodology_for_DetectingUndepdf_8bb1c3ce.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_Lowman_CS4_CO2_Control_Chartxls_4cd21ddb.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ControlCharts_StackVisionControlChartspptx_cceae59d.md']  # This would be a timestamp
+confidence: 1.00
+generated: ['data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_A_JobAids_Controllertools2021pdf_6f884cca.md']  # This would be a timestamp
 ---
 
-## Title
-**CO₂ Control Chart Configuration and Methodology for Emissions Monitoring**
-
+---
+author: Mark Astudillo
+created: '2025-08-11T10:26:58.152947'
+modified: '2023-02-24T15:41:58'
+source_hash: 52b6c976093c4a763403c5f1c45e59a797e7c67b4c997996c7df592ddc2613d5
+source_path: C:\Users\dnovy\OneDrive - ESC\Training Materials\A_Job Aids\Controller
+  tools 2021.pdf
+title: ''doc_type: tool_utility
 ---
 
-## Overview
-Control charts are a statistical process control tool used to monitor, control, and improve process performance over time by detecting unusual variation. In emissions monitoring, particularly for CO₂, control charts help identify potential sampling system in-leakage or other monitoring system issues that can lead to under-reporting of emissions. Early detection of such anomalies can prevent regulatory non-compliance, avoid costly penalties, and ensure accurate environmental reporting.
-
-The U.S. Environmental Protection Agency (EPA) and industry tools such as StackVision and DataLab provide methodologies and configurations for generating and interpreting CO₂ control charts. These charts rely on accurate load bin calculations, baseline data, and statistical limits to flag deviations from expected performance.
-
----
-
-## Key Concepts
-
-### Control Chart Fundamentals
-- **Purpose**: Monitor process variation over time, differentiate between common and special causes, and guide corrective action.
-- **Components**:
-  - **Data Points**: Average measurements over defined intervals (e.g., daily CO₂ averages).
-  - **Center Line**: Overall mean of the dataset.
-  - **Upper and Lower Control Limits (UCL/LCL)**: Statistical thresholds beyond which variation is considered unusual.
-- **Benefits**:
-  - Continuous process control.
-  - Early detection of anomalies.
-  - Common language for discussing performance.
-  - Supports consistent, predictable operations.
-
-### Load Bins
-- **Definition**: Narrow operating bands based on unit load (MW), often calculated as MW/10 (or MW/20 for common stacks).
-- **Purpose**: Reduce variability due to changing operating conditions by analyzing data within consistent load ranges.
-
-### CO₂ RATA (Relative Accuracy Test Audit)
-- **Role**: Annual test to verify accuracy of emissions monitoring systems.
-- **Limitation**: Infrequent; control charts provide ongoing monitoring between RATA events.
-
----
-
-## Technical Details
-
-### System Configuration (StackVision)
-1. **Enable Load Bin Calculations**:
-   - Navigate to *Configuration → StackStudio → Plant-Sources-Parameters*.
-   - On the *Part 75 Settings* tab, check:
-     - **Parameter Daily Record?**
-     - **Load Range Enabled?**
-2. **Include Parameter in Daily Sequence**:
-   - Go to *ProcessNow → Sequences*.
-   - Select the daily sequence and ensure **Task PDR** is enabled.
-   - If parameters are listed, ensure the CO₂ parameter is checked.
-3. **Apply Changes**:
-   - Click the apply icon to update the StackVision Server.
-4. **Verify Load Bin Selection**:
-   - Use DataLab to view the *Load Range* field under *Fields → Part 75*.
-
-### EPA Methodology for Detecting Under-Reported Emissions
-1. **Identify Load Bin**:
-   - Focus on the most-used load bin for maximum data.
-   - Optionally evaluate multiple bins to check load dependency.
-2. **Baseline Creation**:
-   - Use 30 days of daily CO₂ averages (≥6 valid hours/day).
-   - Calculate mean and standard deviation.
-3. **Control Limits**:
-   - UCL = Mean + (k × Standard Deviation)
-   - LCL = Mean − (k × Standard Deviation)
-   - *k* typically set based on desired sensitivity.
-4. **Ongoing Monitoring**:
-   - Compare new daily averages to control limits.
-   - Investigate points outside limits for potential system issues.
-
-### Data Handling (Lowman_CS4 Example)
-- **Data Sources**:
-  - RATA data from DataLab.
-  - CO₂ PPM and unit load for 30 days post-RATA.
-  - Quarter-to-date CO₂ and load data.
-- **Filtering**:
-  - Restrict to normal load range determined via Load Range Analysis.
-- **Excel Processing**:
-  - Separate date/hour fields.
-  - Calculate daily averages, standard deviations, and control limits.
-
----
-
-## Best Practices
-- **Maintain Accurate Load Bin Configuration**: Ensures meaningful statistical analysis by controlling for operational variability.
-- **Use Sufficient Baseline Data**: At least 30 days of valid daily averages improves reliability of control limits.
-- **Regularly Update Baseline**: Reflects current operating conditions and equipment performance.
-- **Investigate Out-of-Control Points Promptly**: Could indicate sampling system leaks, calibration drift, or other monitoring issues.
-- **Cross-Check with RATA Results**: Confirms findings and supports corrective actions.
-- **Document Procedures**: Maintain clear instructions for data retrieval, filtering, and chart generation to ensure repeatability.
-
----
-
-## Source Attribution
-- **Document 1 (CO₂ Control Chart SV Configuration)**: Provided detailed StackVision configuration steps for enabling load bin calculations and including parameters in daily sequences.
-- **Document 2 (EPA Control Chart Methodology)**: Outlined the EPA’s step-by-step procedure for detecting under-reported emissions using control charts, including data requirements and statistical approach.
-- **Document 3 (Lowman_CS4 CO₂ Control Chart)**: Offered practical instructions for data extraction, filtering, and Excel-based control chart creation using RATA and quarter-to-date data.
-- **Document 4 (StackVision Control Charts Presentation)**: Explained the purpose and benefits of control charts, identified relevant data types, and described baseline and control limit calculations.
-
----
-
-Would you like me to also include a **visual workflow diagram** showing the process from data collection to control chart interpretation? That could make the methodology easier to follow for operators.
+StackVision Quick Reference
+Controller Tools
+Copyright 2021©, All rights reserved.
+Controller Tools
+The Controller Tools feature allows you to review data controller polling status and perform download, control, and data
+retrieval tasks.
+Data controllers are usually stationed at remote areas, often quite a distance from the StackVision polling computer. The
+StackVision Controller Tools feature provides a convenient method of communicating with and configuring data controllers
+using the standard client application.
+Controller Tools feature can be launched from:
+Tools-Controller Tools
+Right clicking on the selected data
+controller
+link in the properties panel of the selected
+data controller
+Double clicking the Communications Status
+icon
+Controller Tools also provides
+the following polling and data
+controller operations from the
+StackVision client computer:
+
+Configuration Backup
+(XML)
+
+Clock synchronization
+
+Controller console
+emulation
+
+Calibration control
+
+Manual retrieval of
+average and calibration
+data
+
+Controller tables
+StackVision Quick Reference
+Controller Tools
+Copyright 2021©, All rights reserved.
+Controller Tools - Downloading Configuration Changes
+The Download tab in the Controller Tools feature provides a way of sending parameter configuration information to a data
+controller, without having to physically go to the site and manually type in the information in the data controller.
+You can select all tables or multiple tables to download to multiple controllers at once. The following configuration types can
+be downloaded:
+•
+Digital Inputs
+•
+Digital Outputs
+•
+Math Constants
+•
+Parameters
+•
+Calibration Sequences
+•
+Average Alarms
+•
+Digital Events
+•
+Analog Outputs
+•
+Calibration Alarms
+•
+Digitally Triggered Events
+•
+Parameter Average Validation
+•
+GSI Command Strings
+•
+Modbus Configuration (This feature requires 8864 data controller firmware version 5.01 or later.)
+To start a download, simply check the boxes for the items you would like to download, and click the Download button, as
+shown in the example screen below. If you want to download only certain Math Constants, Parameters, and/or Calibration
+Sequences, you can click the plus sign to expand those items and select individual items beneath them.
 
 ## Related Tools and Spreadsheets
 
@@ -118,6 +102,14 @@ The following tools and spreadsheets are available for this topic:
 
 ## See Also
 
-- [[Environmental]] - Early detection of such anomalies can prevent regu...
-- [[Environmental]] - Environmental Protection Agency (EPA) and industry...
-- [[Calibration]] - - **Investigate Out-of-Control Points Promptly**: ...
+- [[Calibration]] - Controller Tools feature can be launched from:
+Too...
+- [[Calibration]] - The following configuration types can
+be downloade...
+- [[Calibration]] - If you want to download only certain Math Constant...
+
+
+## Glossary
+
+- **8864**: Data controller platform used by engineering
+- **MODBUS**: Serial communications protocol for industrial automation

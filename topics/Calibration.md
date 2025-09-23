@@ -1,154 +1,113 @@
 ---
 title: Calibration
 consolidated: true
-sources: 5
-conflicts: 0
-confidence: 0.80
-generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_Calculations_OptimePrecision20050211JLBpdf_2c025a7f.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_CalibrationCorrection_EngineeringStandard-CalibrationCorrection-Rev11-01-2021pdf_605a61ca.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_PADEPRev8_PADEPTermsandNotesdocx_cf04b587.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_SampleTests_7-DayCalibrationErrorTestpdf_f17bcd7c.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_StackVision_CHKOOC60Validationdocx_a7cc510e.md']  # This would be a timestamp
+sources: 2
+conflicts: 3
+confidence: 0.60
+generated: ['data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_CalibrationActivityBottlesxlsx_4c681ef1.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_CalibrationsActivityCustomerdocx_242035cd.md']  # This would be a timestamp
 ---
 
-### Title
-**Calibration Precision, Correction, and Out-of-Control (OOC) Management in Continuous Emissions Monitoring Systems (CEMS)**
-
----
-
-### Overview
-Continuous Emissions Monitoring Systems (CEMS) are subject to strict regulatory requirements under **40 CFR Part 60** and **Part 75**. These requirements mandate regular calibration, drift testing, and corrective actions to ensure data accuracy and compliance. This consolidated document outlines the key concepts, technical procedures, and best practices for:
-
-- Calculating optimal calibration precision and operating time
-- Implementing automatic calibration correction
-- Understanding Pennsylvania Department of Environmental Protection (PADEP) certification terms
-- Conducting 7-day calibration error tests
-- Validating and managing Out-of-Control (OOC) periods using CHKOOC60
+## Title  
+**Calibration Procedures for Dual-Range NOx and CO Systems with O₂ Diluent in StackVision**
 
 ---
 
-### Key Concepts
-
-1. **Calibration Precision**  
-   Precision refers to the smallest measurable change in analyzer output that can be reliably detected. It impacts how often calibration should occur and how operating minutes are calculated.
-
-2. **Calibration Correction**  
-   Automatic calibration correction adjusts analyzer readings based on daily zero and span reference values to maintain accuracy between calibrations.
-
-3. **PADEP Certification Requirements**  
-   PADEP mandates specific certification tests (e.g., 7-day drift, DAHS verification) and defines calculation methods such as LMESE (Lowest Monitored Emissions Standard Equivalent).
-
-4. **7-Day Calibration Error Test**  
-   A regulatory test to verify that analyzer drift remains within allowable limits over a seven-day period.
-
-5. **Out-of-Control (OOC) Management**  
-   OOC periods occur when calibration results exceed regulatory limits. Tools like CHKOOC60 automate identification and flagging of OOC data.
+## Overview  
+Calibration is a critical process for ensuring the accuracy and reliability of emissions monitoring systems, particularly those operating under regulatory frameworks such as U.S. EPA Part 75. This consolidated guide outlines calibration procedures for a dual-range NOx and CO system using O₂ as a diluent, integrated with StackVision and Thermo analyzers. It combines calibration gas specifications with operational scheduling and procedural requirements to support compliance, minimize downtime, and maintain measurement integrity.
 
 ---
 
-### Technical Details
+## Key Concepts  
 
-#### 1. Calibration Precision Calculation (Document 1)
-Two formulas are used depending on whether precision is greater than 60 or less than/equal to 60:
+### 1. **Dual-Range Measurement**  
+- **NOx**: Measured in both high and low ranges to accommodate varying emission levels.  
+- **CO**: Also measured in high and low ranges for flexibility in monitoring.  
+- **O₂**: Used as a diluent gas and measured across multiple span levels.
 
-- **Precision > 60:**
-  ```c
-  calcdoptime = (int)((((3600.0/(calcprecision * 60.0) -1 + (calcminutes *60.0))/3600.0) * (calcprecision*60.0)) + 0.001) / (calcprecision * 60.0);
-  ```
-- **Precision ≤ 60:**
-  ```c
-  calcdoptime = (int)((((60.0/calcprecision -1 + calcminutes)/60.0) *calcprecision) + 0.001) / calcprecision;
-  ```
+### 2. **Calibration Phases**  
+- Each calibration consists of multiple phases (zero, low span, high span) for each gas.  
+- Phase duration: **1 minute**, with only the **last 30 seconds** of data used for evaluation.  
+- Post-calibration settling time: **1 minute**, during which the system remains flagged as "in calibration mode."
 
-These calculations determine optimal operating minutes between calibrations based on analyzer precision.
+### 3. **Thermo Analyzer Integration**  
+- Thermo analyzers can initiate diagnostic or internal calibrations.  
+- These calibrations are hardwired to the 8864 controller, which manages calibration mode signaling and feedback.
 
----
-
-#### 2. Calibration Correction Implementation (Document 2)
-- **Inputs:** Expected Span (default 1), Expected Zero (default 0), Span Result (default 1), Zero Result (default 0)
-- **Process:**
-  - Calculate zero offset and gain from daily calibration results.
-  - Write constants at the end of calibration phase (set “Write Constants at End of Phase” to NO).
-  - Include pseudo digital I/O to disable gain/offset when necessary.
-  - Record all adjustments for compliance documentation.
-- **Regulatory Note:** Adjustments must be logged and reset at the next calibration.
+### 4. **Regulatory Context**  
+- NOx and O₂ measurements are reported under **Part 75** requirements.  
+- Calibration scheduling and execution must avoid downtime and ensure valid data capture.
 
 ---
 
-#### 3. PADEP Certification Terms (Document 3)
-- **Tests Required:** 7-day drift, DAHS verification, QA/QC plan
-- **LMESE Calculation:**  
-  Default = Full Scale (FS) ÷ 2  
-  Calibration Error (CE) = |Reference – Actual| ÷ LMESE × 100
-- **Phase Implementation:**
-  - Phase I: Implementation and Monitoring Plan approval
-  - Phase II: Testing within 210 days of startup or 60 days of achieving normal capacity
-  - Phase III: Certification for DAHS and EDR samples
+## Technical Details  
+
+### Calibration Gas Specifications (from Document 1)  
+| Gas | Range | Concentration |
+|-----|-------|---------------|
+| NOx | High Range High Level | 900 ppm |
+| NOx | High Range Mid Level  | 500 ppm |
+| NOx | High Range Low Level  | 200 ppm |
+| NOx | Low Range High Level  | 90 ppm  |
+| CO  | High Range High Level | 950 ppm |
+| CO  | Low Range High Level  | 95 ppm  |
+| O₂  | High Level            | 0.22    |
+| O₂  | Mid Level             | 0.16    |
+| O₂  | Low Level             | 0.09    |
+
+### Calibration Types (from Document 2)  
+1. **Daily Calibration**  
+   - Runs at **06:00** daily or **4 hours after startup**.  
+   - Must start in the first quadrant after valid data capture to avoid downtime.  
+   - Sequence: Zero → Low NOx span → High NOx span → Low CO span → High CO span → O₂ span.  
+   - This sequence improves result consistency.
+
+2. **Diagnostic Calibration (Thermo-initiated)**  
+   - Mimics daily calibration but triggered outside the normal schedule.  
+   - Must not overlap with other calibrations to prevent conflicts.
+
+3. **Thermo Internal Calibration**  
+   - Addresses issues with high ranges and O₂ measurements.  
+   - Initiated by Thermo analyzer as needed.  
+   - Feedback is read by the 8864 controller.
+
+4. **Linearization Calibration**  
+   - Required only for specific environmental compliance needs.  
+   - Frequency determined by environmental team.
 
 ---
 
-#### 4. 7-Day Calibration Error Test (Document 4)
-- **Purpose:** Verify analyzer drift remains within limits over seven consecutive days.
-- **Parameters Tested:** Example – MC3NOXLO, MC3O2DRY, MC3NOXHI
-- **Results:** Pass/Fail based on percent calibration error compared to limits.
-- **Data Recorded:** Zero-level and span-level reference vs. actual values, percent error, and pass/fail status.
+## Best Practices  
+
+1. **Scheduling**  
+   - Align calibrations to avoid overlap between daily, diagnostic, and internal calibrations.  
+   - Ensure calibrations occur after valid data capture to prevent downtime.
+
+2. **Phase Timing**  
+   - Maintain consistent phase durations (1 minute) and data capture windows (last 30 seconds).  
+   - Allow adequate settling time post-calibration while keeping calibration mode active.
+
+3. **Sequence Optimization**  
+   - Follow the recommended order (zero → NOx spans → CO spans → O₂ span) for improved accuracy.  
+   - Verify calibration gas concentrations match specifications.
+
+4. **Integration Management**  
+   - Monitor Thermo analyzer signals to coordinate with StackVision and 8864 controller logic.  
+   - Prevent simultaneous calibrations to avoid data conflicts.
+
+5. **Regulatory Compliance**  
+   - Document calibration events and results for Part 75 reporting.  
+   - Maintain calibration gas certificates and ensure traceability.
 
 ---
 
-#### 5. CHKOOC60 Validation and OOC Rules (Document 5)
-- **Function:** Validates Part 60 parameters during calibration drift and flags OOC periods.
-- **Key Switches:**
-  - `-n` No database update
-  - `-r` No OOC flag propagation
-  - `-o` Disable cascading
-  - `-m` Overwrite method code
-- **OOC Period Definitions (40 CFR 60):**
-  - Start: End of previous good calibration
-  - End: End of subsequent good calibration (limits vary by exceedance factor)
-  - Special rules for consecutive exceedances and 24-hour limits
-- **Dual Range Analyzer Handling:** Marks merge channel parameter OOC when either range is OOC.
+## Source Attribution  
+
+- **Document 1**: Provided calibration gas concentration specifications for NOx, CO, and O₂ across multiple ranges and levels.  
+- **Document 2**: Detailed operational calibration procedures, scheduling requirements, phase timing, integration with Thermo analyzers, and regulatory context for Part 75 reporting.
 
 ---
 
-### Best Practices
-
-1. **Precision Management**
-   - Use correct formula based on precision value.
-   - Regularly review precision settings to optimize calibration intervals.
-
-2. **Calibration Correction**
-   - Always log adjustments and reset at next calibration.
-   - Implement disable functionality for troubleshooting or maintenance.
-
-3. **Compliance Testing**
-   - Schedule and document all PADEP-required tests.
-   - Maintain clear records of LMESE calculations and CE results.
-
-4. **OOC Handling**
-   - Configure CHKOOC60 with correct parameter group and fuel control file.
-   - Ensure OOC periods are accurately flagged to prevent compliance violations.
-
-5. **Data Integrity**
-   - Avoid modifying historical calibration data unless required for compliance.
-   - Use pseudo I/O controls to safeguard against unintended gain/offset changes.
-
----
-
-### Source Attribution
-- **[Document 1: Optime Precision.xls]**  
-  Provided formulas for calculating optimal operating minutes based on analyzer precision.
-
-- **[Document 2: Calibration Correction Standard]**  
-  Detailed procedure for implementing automatic calibration correction, including configuration constants and disable functionality.
-
-- **[Document 3: PADEP Terms and Notes]**  
-  Defined certification phases, LMESE calculation, and calibration error formula.
-
-- **[Document 4: 7-Day Calibration Error Test]**  
-  Provided example test data, parameters, and pass/fail criteria for drift testing.
-
-- **[Document 5: CHKOOC60 Validation]**  
-  Explained OOC detection logic, tool switches, and regulatory definitions for OOC periods.
-
----
-
-I can also create a **flowchart or procedural checklist** that integrates these calibration, correction, and OOC management steps if you want a visual operational guide. Would you like me to prepare that next?
+If you’d like, I can also create a **calibration scheduling diagram** that visually maps daily, diagnostic, and internal calibrations to avoid conflicts. Would you like me to add that?
 
 ## Related Tools and Spreadsheets
 
@@ -165,29 +124,11 @@ The following tools and spreadsheets are available for this topic:
 
 ## See Also
 
-- [[Environmental]] - This consolidated document outlines the key concep...
+- [[Environmental]] - **Linearization Calibration**  
+   - Required only...
+- [[Environmental]] - - Frequency determined by environmental team...
 
 
 ## Glossary
 
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
+- **8864**: Data controller platform used by engineering

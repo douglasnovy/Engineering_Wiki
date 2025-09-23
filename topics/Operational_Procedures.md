@@ -1,142 +1,117 @@
 ---
 title: Operational_Procedures
 consolidated: true
-sources: 7
+sources: 12
 conflicts: 0
 confidence: 0.80
-generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_Calculations_ConfigurePMDAILYAVGProcessNowTaskforRegulation6048Dafdocx_3992f4be.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_CopyReportsrsscripter_RSScripterProceduredocx_b431424a.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_LoggerReconciliation_ProcessforEngineeringLoggerReconciliationsMay2019docx_9734c828.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_PADEPRev8_ExternalDOC-csmm_8_implementation___lesson_learned_standardspdf_2143f765.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_PADEPRev8_PaDEPProcessGuidexlsx_e36a4dcc.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_PADEPRev8_ProcessCodesforPaDEPEDRmaptoReasonCodesinStackVisionasdodocx_117b25f1.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_Regulations_SubpartTTTT-CO2MassEmissions12MonthAverageGuidelinesRev11-01-21pdf_91bcb2f5.md']  # This would be a timestamp
+generated: ['data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_calibrationsstandardvsdifferencexlsx_4ec97ec2.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_AECI_MatrikonHOSE_Install_Procedure_IC_rev10202017docx_35753998.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_CheatSheetEngineerxlsx_54df7a2a.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_E-DASEMRP60R3UsersGuide050306ID198pdf_639f88c3.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_E-DASEMRP75R3UsersGuide050306ID197pdf_b32b7e9a.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_Linking-Other-Software_D-Fromepdf_1f8ecde0.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_OPCQuestionsdocx_1202a612.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_ProcessNowNewHireTrainingpptx_ee6a8d3e.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_ProcessNowQuestionsdocx_902e3e5d.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_7_Processnow_TheInsandOutsofProcessNowdocx_6c95f335.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_ProcessNowpdf_a5fd2f54.md', 'data\\extracted\\ui_generated_1758664533\\Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferencePresentations_ProcessNowpdf_ec2b9d26.md']  # This would be a timestamp
 ---
 
-### Title
-**Comprehensive Guide to Environmental Monitoring System Configuration, Data Management, and Regulatory Compliance**
-
----
-
-### Overview
-This consolidated guide provides engineering and technical personnel with a unified reference for configuring environmental monitoring systems, managing data and reports, performing system reconciliations, and ensuring compliance with key regulatory requirements. It integrates procedures for particulate matter (PM) daily average calculations, report transfer between systems, logger reconciliation, Pennsylvania Department of Environmental Protection (PaDEP) Continuous Source Monitoring Manual (CSMM) Revision 8 processes, and CO₂ mass emissions averaging under Subpart TTTT.
+## Title
+**Comprehensive Guide to ProcessNow, OPC Integration, and E-DAS EMR in StackVision Systems**
 
 ---
 
-### Key Concepts
-
-1. **Environmental Monitoring Systems (EMS)**
-   - Systems such as StackVision and DAHS (Data Acquisition and Handling Systems) collect, process, and report emissions data from industrial units.
-   - Continuous Emission Monitoring Systems (CEMS) are critical for regulatory compliance.
-
-2. **Regulatory Framework**
-   - **40 CFR Part 60, Subpart Da**: Standards for PM emissions from certain boilers.
-   - **PaDEP CSMM Rev 8**: State-specific requirements for data validation, reporting, and QA/QC.
-   - **Subpart TTTT**: Federal guidelines for CO₂ mass emissions and 12-month rolling averages.
-
-3. **Data Integrity and Transfer**
-   - Maintaining accurate configurations during upgrades or migrations.
-   - Transferring reports between test and production environments.
-
-4. **Averaging and Validation**
-   - Daily and multi-month averaging for compliance.
-   - Excluding invalid or substituted data from calculations.
+## Overview
+ProcessNow is a core data processing engine within the StackVision environmental data management platform. It automates the transformation, validation, and reporting of emissions and operational data to meet regulatory requirements such as EPA Part 60 and Part 75. This guide consolidates training materials, installation procedures, and operational best practices for ProcessNow, OPC integration using Matrikon HOSE and E-DAS API, and related tools such as E-DAS EMR. It is intended for engineers, system administrators, and compliance specialists responsible for configuring, running, and troubleshooting StackVision data workflows.
 
 ---
 
-### Technical Details
+## Key Concepts
 
-#### 1. PM Daily Average Configuration (Regulation 60.48Da(f))
-- **System Resources**:  
-  `DAY_EXCLUDE_CENTRAL_SITE_PARAMETER = TH`
-- **Server Channels**:  
-  - Channel Type: 6 – Block Average  
-  - Percent Valid Required: 1  
-  - Trigger Alarm on Exceedance: True  
-  - Time Weight: N  
-  - Standard Limit Operator: `>` or `>=` (based on rounding preference)  
-  - Standard Limit: x.xxxx
-- **Condition Manager**:  
-  - Marks PM parameter as Missing/Invalid if Time Online = 0.
-- **Execution Order**:  
-  - Condition Manager task runs before PMDAILYAVG task.  
-  - DAYROLLAVG tasks must exclude PM parameter or run prior.
-- **Alarm Messages**:  
-  - Enable `EXCEALM` for exceedance alarms.
+### ProcessNow
+- **Definition**: A user-defined sequence of tasks that process raw data from controllers into validated, report-ready formats.
+- **Purpose**: Streamlines data QA/QC by replacing multiple manual utilities with a single, configurable sequence.
+- **Sequence Structure**: Each sequence contains tasks (e.g., missing data substitution, math calculations, rolling averages) that are dependent on one another.
+- **Scheduling**: Typically runs hourly and daily; can also be triggered manually after data edits.
 
-#### 2. Report Transfer via RSScripter
-- **Prerequisites**:  
-  - .NET 3.5 enabled on server.  
-  - Run on SQL report server for split server setups.
-- **Procedure**:  
-  - Launch `RSScripter.exe` → Configure options → Get Catalog → Select reports → Script to output folder.  
-  - Edit `RS Scripter Load All Items.cmd` to set paths for script location and `RS.EXE`.  
-  - Modify `.rss` files for unit-specific report sources.
+### OPC Integration
+- **OPC Protocols**:
+  - **DA (Data Access)**: Real-time data exchange, legacy COM/DCOM-based.
+  - **HDA (Historical Data Access)**: Retrieval of historical datasets.
+  - **UA (Unified Architecture)**: Modern, cross-platform protocol with certificate-based security.
+- **Matrikon HOSE**: An OPC DA server used to host data tags for StackVision.
+- **E-DAS API**: Required for Matrikon HOSE installation and integration.
 
-#### 3. Logger Reconciliation
-- **Purpose**:  
-  - Capture ("snapshot") logger configuration before updates/upgrades to prevent data loss.
-- **Steps**:  
-  - Record network details (IP, subnet, gateway).  
-  - Access controller via PuTTY/Telnet.  
-  - Navigate to Configuration → System Parameters → Record settings.  
-  - Capture StackStudio configuration.
-
-#### 4. PaDEP CSMM Rev 8 Implementation
-- **CEMDPS Access**:  
-  - Web-based portal for CEMS data submission (GreenPort).
-- **Process Steps**:  
-  - Evaluate monitoring plans, petitions, and LMESE.  
-  - Perform migration error checks.  
-  - Deploy updated monitoring plans to DAHS.  
-  - Validate data and generate EDRs with proper codes.
-- **LMESE**:  
-  - Lowest Monitored Emission Standard Equivalent = FS ÷ 2 (default).  
-  - Not applicable for opacity, CO₂, O₂, VFR.
-
-#### 5. CO₂ Mass Emissions – Subpart TTTT
-- **Hourly Calculations**:  
-  - Use fuel flow data; exclude hours with missing/invalid load or CO₂ data.  
-  - Include startup/shutdown data.
-- **12-Month Average**:  
-  - Rolling average over 12 operating months; look back for non-operating months.
-- **Parameters**:  
-  - `CO2#/MWH` and `CO2KGMWH` (limit typically 1000 lb/MWh).
-- **Configuration**:  
-  - `CO2LBS` = CO₂ tons/hour × 2000 × `UNITOPHR#100`.  
-  - `LOADMWH` invalid if CO₂ invalid.
+### E-DAS EMR
+- **Function**: Environmental Data Acquisition System for Windows, supporting regulatory data collection and reporting.
+- **Regulatory Context**: Supports EPA Part 60 and Part 75 compliance.
+- **User Guide Structure**: Includes definitions, conventions, and operational procedures.
 
 ---
 
-### Best Practices
+## Technical Details
 
-1. **Maintain Execution Order**  
-   - Ensure prerequisite tasks (Condition Manager, DAYROLLAVG) run before PMDAILYAVG.
+### Installing E-DAS API and Matrikon HOSE (Document 2)
+1. **E-DAS API Installation**:
+   - Copy `1_EDAS_API_R02S5b` from `\\groot\I&C\Matrikon OPC\Matrikon HOSE` to target machine.
+   - Run setup executable; approve UAC prompts.
+   - Follow wizard steps, confirming E-DAS EMR installation if applicable.
+2. **Matrikon HOSE Installation**:
+   - Copy executable from `\\groot\I&C\Matrikon OPC\Matrikon HOSE\2_HOSE_v2.0.0.1_011206`.
+   - Run as administrator; follow wizard to completion.
 
-2. **Validate Before Migration**  
-   - Perform thorough error checks before deploying new monitoring plans.
+### ProcessNow Operation (Documents 8, 10, 11, 12)
+- **Initiation Methods**:
+  1. **Scheduled**: Hourly/daily runs from the first hour of the current quarter to the current hour minus one.
+  2. **Triggered by Edits**: Runs from the first changed hour after data edits.
+  3. **Manual**: Initiated from DataLab, CalLab, RATA editor, or Fuel Analysis.
+- **Common Tasks**:
+  - **CNDMGR**: Clears Missing Data Calculated (MDC) flags to prepare for substitution.
+  - **MDSUB**: Substitutes missing data per regulatory rules.
+  - **ACCEPT**: Marks data as accepted for downstream processing.
+  - **MATHPACK**: Performs calculations; options include:
+    - `-L -c`: Recalculate logger channels without recalculating selected parameters.
+    - `-O`: Only calculate specified parameters.
+- **Command Line Execution**: Tasks can be run via command line with specific syntax (see ProcessNow Questions for examples).
 
-3. **Snapshot Configurations**  
-   - Always capture current logger and system settings before upgrades.
-
-4. **Exclude Invalid Data**  
-   - Configure calculations to omit substituted or invalid readings.
-
-5. **Document Paths and Versions**  
-   - For report transfers, record exact paths to executables and scripts.
-
-6. **Regulatory Awareness**  
-   - Stay updated on federal and state-specific emission standards and reporting formats.
+### OPC UA vs OPC DA (Documents 6, 7)
+- **OPC DA**:
+  - Windows-only, COM/DCOM-based.
+  - Requires Matrikon HOSE and E-DAS API.
+- **OPC UA**:
+  - OS-independent (Windows, Linux, iOS, Android).
+  - Secure via x.509 certificates, supports TCP/IP over SSL/HTTP/HTTPS.
+  - Handles both real-time and historical data.
 
 ---
 
-### Source Attribution
+## Best Practices
 
-- **[Document 1] Shaun Ellis**: PMDAILYAVG task configuration for Regulation 60.48Da(f), Condition Manager setup, alarm configuration.
-- **[Document 2] Brian Perlov**: RSScripter procedure for report transfer between systems, prerequisites, and file path configurations.
-- **[Document 3] Carl Reid**: Logger reconciliation process, pre-reconciliation steps, configuration capture.
-- **[Document 4] Eric Swisher (All4 Inc.)**: PaDEP CSMM Rev 8 background, implementation process, LMESE definition.
-- **[Document 5] Unknown**: PaDEP transition guide workflow from plan evaluation to EDR generation.
-- **[Document 6] Ashley Partington**: Mapping of PaDEP EDR process/method codes to StackVision codes.
-- **[Document 7] Information Systems Group**: Subpart TTTT CO₂ mass emissions calculation guidelines, configuration details.
+1. **Sequence Design**:
+   - Tailor tasks to site-specific requirements (system type, permit conditions, engineering approach).
+   - Include condition management early to ensure accurate substitutions.
+2. **Scheduling**:
+   - Maintain consistent hourly and daily runs to ensure timely QA/QC.
+   - Avoid running daily sequences over periods with incomplete data to prevent erroneous calculations.
+3. **OPC Integration**:
+   - Use OPC UA where possible for enhanced security and cross-platform compatibility.
+   - Document all tag mappings and maintain updated certificates.
+4. **Troubleshooting**:
+   - Enable debugging on tasks when diagnosing issues (e.g., `svmpcalcparm` with debug output to file).
+   - Verify sequence storage and scheduler configurations if tasks fail to run.
+5. **Regulatory Compliance**:
+   - Ensure all processed data meets EPA formatting and reporting requirements.
+   - Regularly review E-DAS EMR user guides for updates to procedures and definitions.
 
 ---
 
-Would you like me to also **integrate a visual workflow diagram** showing the sequence from data collection → validation → averaging → reporting for both PM and CO₂ compliance? This could make the guide more actionable for engineers.
+## Source Attribution
+
+- **Document 1**: Placeholder for calibration standards vs difference (Excel extraction failed; no usable content).
+- **Document 2**: Provided step-by-step installation procedures for E-DAS API and Matrikon HOSE.
+- **Document 3**: Listed parameter limits, averaging periods, and data progression rules for engineering reference.
+- **Document 4 & 5**: E-DAS EMR User Guides for EPA Part 60 and Part 75 compliance; definitions, conventions, and operational context.
+- **Document 6**: Explained OPC protocols, security, and integration considerations; highlighted Matrikon HOSE and E-DAS API usage.
+- **Document 7**: Posed key OPC integration questions; contrasted OPC DA and UA features.
+- **Document 8**: ProcessNow New Hire Training slides; overview, configuration, and operational context.
+- **Document 9**: ProcessNow troubleshooting and command line execution questions; debugging examples.
+- **Document 10**: Detailed description of common ProcessNow tasks and their purposes.
+- **Document 11 & 12**: Reference presentations on ProcessNow logic, initiation methods, and sequence behavior.
+
+---
+
+This consolidated guide should serve as a foundational reference for anyone working with ProcessNow, OPC integration, and E-DAS EMR within StackVision systems, ensuring both technical accuracy and operational efficiency.
 
 ## Related Tools and Spreadsheets
 
@@ -144,6 +119,12 @@ The following tools and spreadsheets are available for this topic:
 
 - **[engineering_white_papers_WhitePapers_Moisture_SaturationMoistureCalculationxlsx_374381ed.xlsx](../tools/engineering_white_papers_WhitePapers_Moisture_SaturationMoistureCalculationxlsx_374381ed.xlsx)** (0.02 MB)
 - **[engineering_white_papers_WhitePapers_RatioEvaluation_RatioEvaluationxlsx_131ef366.xlsx](../tools/engineering_white_papers_WhitePapers_RatioEvaluation_RatioEvaluationxlsx_131ef366.xlsx)** (0.03 MB)
+- **[Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_Calibration_Specifications_And_References_Rev_6-6-20-18xlsx_1bfbda8e.xlsx](../tools/Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_Calibration_Specifications_And_References_Rev_6-6-20-18xlsx_1bfbda8e.xlsx)** (0.17 MB)
+- **[Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_CalibrationActivityBottlesxlsx_4c681ef1.xlsx](../tools/Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_CalibrationActivityBottlesxlsx_4c681ef1.xlsx)** (0.02 MB)
+- **[Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_calibrationsstandardvsdifferencexlsx_4ec97ec2.xlsx](../tools/Users_dnovy_OneDrive-ESC_TrainingMaterials_5_Calibrations_calibrationsstandardvsdifferencexlsx_4ec97ec2.xlsx)** (0.03 MB)
+- **[Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments-Prism_Calibration_Specifications_And_References_Rev_06-01-2023xlsx_e2aa0ce3.xlsx](../tools/Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments-Prism_Calibration_Specifications_And_References_Rev_06-01-2023xlsx_e2aa0ce3.xlsx)** (0.17 MB)
+- **[Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_Calibration_Specifications_And_References_Rev_06-01-2023xlsx_3ca0a2e4.xlsx](../tools/Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_Calibration_Specifications_And_References_Rev_06-01-2023xlsx_3ca0a2e4.xlsx)** (0.17 MB)
+- **[Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_Old_Calibration_Specifications_And_References_Rev_6-6-20-18xlsx_d4f71ee8.xlsx](../tools/Users_dnovy_OneDrive-ESC_TrainingMaterials_ReferenceDocuments_Old_Calibration_Specifications_And_References_Rev_6-6-20-18xlsx_d4f71ee8.xlsx)** (0.17 MB)
 
 *For additional tools, see the [Engineering Tools Index](../tools/README.md)*
 
@@ -152,31 +133,12 @@ The following tools and spreadsheets are available for this topic:
 - [[Environmental]] - md']  # This would be a timestamp
 ---
 
-### Title
-*...
-- [[Environmental]] - It integrates procedures for particulate matter (P...
+## Title
+**...
+- [[Environmental]] - ### E-DAS EMR
+- **Function**: Environmental Data A...
+- [[Calibration]] - ---
 
+## Source Attribution
 
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
-
-
-## Glossary
-
-- **CEMS**: Continuous Emissions Monitoring System
+- **Document 1**: Plac...
