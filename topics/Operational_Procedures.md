@@ -157,3 +157,9 @@ Would you like me to also create **workflow diagrams** for these procedures so t
 
 - **CEMS**: Continuous Emissions Monitoring System
 - **8864**: Data controller platform used by engineering
+
+
+## Glossary
+
+- **CEMS**: Continuous Emissions Monitoring System
+- **8864**: Data controller platform used by engineering
