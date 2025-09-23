@@ -7,123 +7,115 @@ confidence: 0.80
 generated: ['data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_DataRules_DataRulesWhitepaperrev1docx_b06ed322.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_PADEPRev8_Data_Validation-Rev_8-030712-Cleanpdf_93c395c0.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ProratedFuelFactor_COAL_Boswell_Fuel_Factor_Updates_U4_Hourly_Dataxls_21987164.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_Item_To_Check_In_Migration_Databasesmsg_5a0c6fad.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_ServerMigration_MappingaNetworkDrivetoSQLforDatabaseBackupsdocx_0ef1e6a2.md', 'data\\extracted\\set_whitepapers\\engineering_white_papers_WhitePapers_SQL_MappingaNetworkDrivetoSQLforDatabaseBackupsdocx_8eda1cfb.md']  # This would be a timestamp
 ---
 
-### Title
-**Data Management, Validation, and Migration Procedures for Continuous Source Monitoring Systems**
+## Title
+**Data Management, Validation, and Migration Procedures for StackVision and Related Systems**
 
 ---
 
-### Overview
-This consolidated knowledge base entry provides a comprehensive guide to managing, validating, and migrating data within Continuous Source Monitoring Systems (CSMS), with a focus on StackVision environments. It integrates procedures for defining and applying data rules, clarifying regulatory data validation requirements, handling fuel factor updates, and performing safe server migrations and database backups. The goal is to ensure technical accuracy, regulatory compliance, and operational efficiency during both routine operations and system transitions.
+## Overview
+This consolidated guide provides a comprehensive reference for managing data rules, validating continuous source monitoring data, handling fuel factor updates, and performing server migration tasks in StackVision and associated SQL-based systems. It integrates operational procedures, technical specifications, and best practices from multiple engineering white papers to ensure accurate data processing, regulatory compliance, and efficient system transitions.
 
 ---
 
-### Key Concepts
+## Key Concepts
 
-1. **Data Rules and Rule Sets**  
-   - **Rule Sets**: Collections of data rules that can be applied to multiple parameters via parameter lists.  
-   - **Parameter Lists**: Groupings of parameters to which a single Rule Set can be applied.  
-   - **Independence**: Rule Sets are not inherently tied to specific parameters or intervals; these are defined when creating tasks.
+### 1. **Data Rules in StackVision**
+- **Rule Sets**: Collections of data rules that define conditions or thresholds for parameters.
+- **Parameter Lists**: Groups of parameters to which a Rule Set can be applied.
+- **Independence of Rules and Parameters**: Rule Sets are not inherently tied to specific parameters; they are linked during task creation.
+- **Execution**: Rules are applied via the `DATARULES ProcessNow` task with required arguments for Rule Set (`-rs`) and Parameter List (`-pl`), plus optional real-time alarming (`-r`).
 
-2. **Data Validation**  
-   - **Valid Data Reading**: Defined by the Pennsylvania DEP as a valid one-minute average.  
-   - **Hourly Averages**: Must be calculated and coded correctly in Data Acquisition and Handling Systems (DAHS) to meet regulatory requirements.  
-   - **Supplemental Guidance**: Clarifications provided to assist facility owners/operators in programming DAHS for compliance.
+### 2. **Data Validation for Continuous Source Monitoring**
+- **Regulatory Context**: Based on Pennsylvania DEP Continuous Source Monitoring Manual Revision No. 8.
+- **Valid Data Reading**: Defined as a valid one-minute average.
+- **Hourly Average Validation**: Clarifies criteria for coding/calculating hourly averages in DAHS.
+- **Supplementary Guidance**: Intended to assist facility owners/operators without altering regulatory requirements.
 
-3. **Fuel Factor Updates**  
-   - **Prorated Fuel Factor**: Adjustments to fuel factor values based on hourly data for coal and gas usage, heat input, and emissions parameters.  
-   - **Data Quality Flags**: Parameters may be marked as missing, invalid, suspect, or under maintenance.
+### 3. **Fuel Factor Updates**
+- **Prorated Fuel Factor**: Adjustments to fuel factor values based on hourly operational data.
+- **Parameters Tracked**: Includes coal/gas usage, heat input, CO₂ emissions, flow rates, NOx, Hg, SO₂ metrics.
+- **Data Quality Flags**: Missing, invalid, suspect, maintenance, calculated, and modified indicators.
 
-4. **Server Migration and Database Management**  
-   - **DataLink Configuration**: Improper configuration can cause uncontrolled growth of the `AverageValueLog` table.  
-   - **Network Drive Mapping**: Required when local storage is insufficient for backups during migration.  
-   - **SQL Integration**: Mapping network drives directly in SQL Server to facilitate backups.
-
----
-
-### Technical Details
-
-#### 1. DataRules Operation
-- **Execution**: Uses SQL directly for faster rule application compared to CNDMGR.
-- **Task Arguments**:
-  - Required: `-rs` (Rule Set), `-pl` (Parameter List)
-  - Optional: `-r` (Real-time alarming)
-- **SQL Tables**:
-  - `dbo.DataRulesRule` – Stores Rule Sets
-  - `dbo.DataRulesParameterList` – Stores Parameter Lists
-  - `dbo.AlarmNotificationConfig` – Stores alarm settings
-  - `dbo.EmailAddressList` – Stores email notification lists
-- **Creation**: Rule Sets and Parameter Lists are created in DataRulesEditor (Excel) and imported into SQL via SSMS.
-
-#### 2. Data Validation (DEP Clarification)
-- **Regulatory Context**: Based on Continuous Source Monitoring Manual Rev. 8.
-- **Hourly Average Criteria**: Must be derived from valid one-minute averages.
-- **Flexibility**: DEP may allow more stringent criteria upon petition.
-
-#### 3. Fuel Factor Updates
-- **Parameters**: Include unit operation status, heat input, CO₂, flow rates, fuel factors for gas and coal, and emissions (NOx, Hg, SO₂).
-- **Data Flags**: Missing, invalid, suspect, maintenance, calculated, calculation error, modified.
-
-#### 4. Server Migration Procedures
-- **DataLink Issue Resolution**:
-  - If `AverageValueLogConfig` is blank, set first box to `1` and second to `6` to limit logging.
-  - Use `TRUNCATE TABLE AverageValueLog` in StackVision DB to clear excessive data.
-- **Mapping Network Drive to SQL**:
-  - Share target folder on network.
-  - Map drive in Windows Explorer.
-  - Use `XP_CMDSHELL` in SQL to map drive:
-    ```sql
-    EXEC XP_CMDSHELL 'net use S: \\RemoteServerName\ShareName /user:USERNAME PASSWORD'
-    ```
-  - Enable `XP_CMDSHELL` if disabled:
-    ```sql
-    EXEC sp_configure 'show advanced options', 1;
-    RECONFIGURE;
-    EXEC sp_configure 'xp_cmdshell', 1;
-    RECONFIGURE;
-    ```
-  - Verify mapping:
-    ```sql
-    EXEC XP_CMDSHELL 'Dir S:'
-    ```
-  - Perform backups via SSMS to mapped drive.
+### 4. **Server Migration and SQL Management**
+- **DataLink Installation Issue**: Unconfigured `dbo.AverageValueLogConfig` can cause uncontrolled growth of `dbo.AverageValueLog`.
+- **Network Drive Mapping for Backups**: Enables direct database backup to remote servers during migration.
+- **SQL Configuration**: Use of `XP_CMDSHELL` and `sp_configure` to enable network drive mapping.
+- **Backup Execution**: Verification of mapped drives and use of SSMS backup GUI.
 
 ---
 
-### Best Practices
+## Technical Details
 
+### DataRules SQL Tables
+- **dbo.DataRulesRule**: Stores Rule Sets.
+- **dbo.DataRulesParameterList**: Stores Parameter Lists.
+- **dbo.AlarmNotificationConfig**: Stores alarm settings.
+- **dbo.EmailAddressList**: Stores email lists for notifications.
+
+**Creation Process**:
+- Rule Sets and Parameter Lists are created in the DataRulesEditor spreadsheet.
+- Data is copied from Excel to SQL using SSMS.
+
+---
+
+### Data Validation Procedures
+- **Hourly Average Criteria**:
+  - Must be based on valid one-minute averages.
+  - Owners/operators may petition for more stringent criteria.
+- **DAHS Programming**:
+  - Ensure coding/calculation logic aligns with DEP guidance.
+  - Apply validation flags appropriately.
+
+---
+
+### Fuel Factor Update Workflow
+- **Data Review**:
+  - Compare "Before" and "After" values for operational parameters.
+  - Adjust fuel factor calculations for coal and gas proportionally.
+- **Quality Control**:
+  - Apply flags for missing or suspect data.
+  - Maintain logs for calculated and modified values.
+
+---
+
+### Server Migration Steps
+1. **DataLink Configuration**:
+   - If `dbo.AverageValueLogConfig` is blank, set first box to `1` and second to `6` to limit logging.
+   - Truncate `dbo.AverageValueLog` if oversized.
+2. **Network Drive Mapping**:
+   - Share target folder on new server.
+   - Map drive on old server via File Explorer.
+   - Use SQL commands to map drive (`net use`) and enable `XP_CMDSHELL` if needed.
+3. **Backup Execution**:
+   - Verify mapped drive with `Dir` command.
+   - Perform backup via SSMS GUI.
+
+---
+
+## Best Practices
 - **DataRules**:
-  - Keep Rule Sets modular for reuse across parameter lists.
-  - Document all Rule Sets and Parameter Lists for audit purposes.
-- **Data Validation**:
-  - Align DAHS programming with DEP’s definition of valid data.
-  - Regularly review hourly average calculations for compliance.
+  - Keep Rule Sets generic for reuse across multiple Parameter Lists.
+  - Document Rule Set logic for audit purposes.
+- **Validation**:
+  - Align DAHS programming with DEP definitions of valid data.
+  - Maintain clear records of petitions for more stringent validation.
 - **Fuel Factor Management**:
-  - Implement automated checks for data flags to maintain data integrity.
-  - Maintain historical records of fuel factor changes for traceability.
+  - Regularly review operational data for accuracy.
+  - Apply consistent quality flags to maintain data integrity.
 - **Server Migration**:
-  - Pre-check DataLink configuration to prevent uncontrolled table growth.
-  - Use network drive mapping for large backups to avoid local storage issues.
-  - Test backup and restore procedures before decommissioning old servers.
+  - Configure DataLink before enabling logging to prevent uncontrolled table growth.
+  - Always verify network permissions before mapping drives.
+  - Enable `XP_CMDSHELL` only when necessary and disable afterward for security.
 
 ---
 
-### Source Attribution
-
-- **[Document 1: DataRules Whitepaper]**  
-  Key contributions: Detailed explanation of DataRules architecture, SQL table usage, task configuration, and DataRulesEditor workflow.
-
-- **[Document 2: DEP Data Validation Clarification]**  
-  Key contributions: Regulatory context and clarification on valid data readings and hourly average calculations.
-
-- **[Document 3: Boswell Fuel Factor Updates]**  
-  Key contributions: Hourly fuel factor adjustment data, parameter definitions, and data quality flagging.
-
-- **[Document 4: DataLink Configuration Issue]**  
-  Key contributions: Identification and resolution of uncontrolled table growth in `AverageValueLog` during DataLink installation.
-
-- **[Document 5 & 6: Mapping Network Drive to SQL for Backups]**  
-  Key contributions: Step-by-step instructions for mapping network drives in Windows and SQL, enabling `XP_CMDSHELL`, and performing backups during server migrations.
+## Source Attribution
+- **[Document 1: DataRules Whitepaper]**: Provided foundational concepts, SQL table structures, and operational procedures for applying Rule Sets to Parameter Lists in StackVision.
+- **[Document 2: Data Validation Clarification]**: Clarified regulatory definitions and procedures for validating hourly averages in continuous source monitoring.
+- **[Document 3: Fuel Factor Updates]**: Detailed operational parameters, before/after comparisons, and quality control flags for prorated fuel factor adjustments.
+- **[Document 4: DataLink Issue in Migration]**: Identified potential uncontrolled table growth issue and provided SQL-based mitigation steps.
+- **[Document 5 & 6: Mapping Network Drive to SQL]**: Delivered step-by-step instructions for mapping network drives in SQL for database backups during server migrations.
 
 ---
 
-Would you like me to also create a **visual workflow diagram** showing how DataRules, validation, fuel factor updates, and migration procedures fit together in a CSMS operational lifecycle? That could make this consolidated entry more actionable.
+Would you like me to also include a **visual workflow diagram** showing the relationship between DataRules, validation, fuel factor updates, and migration tasks? This could make the consolidated guide easier to follow.
